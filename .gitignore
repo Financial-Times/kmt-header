@@ -1,0 +1,23 @@
+# Dependency directory
+node_modules
+bower_components
+public
+test
+test2
+vendor
+
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# IDE directory
+/.idea
+
+# Docker dependencies
+system
+docker-compose.yml
+
+# configs
+/.env
+/config.js

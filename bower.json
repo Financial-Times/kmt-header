@@ -1,10 +1,9 @@
 {
-  "name": "kmt-header-component",
+  "name": "kmt-header",
   "main": "index.js",
   "homepage": "https://github.com/Financial-Times/kmt-header",
   "authors": [
-    "Tye",
-    "Thurston <Thurston.Tye@FT.com>"
+    "Ciprian Lujeru <ciprian.lujeru@ft.com>"
   ],
   "description": "react wrapper of o-header-services",
   "keywords": [
@@ -22,6 +21,6 @@
     "tests"
   ],
    "dependencies": {
-    "o-header-services" : "1.0.0-beta.2"
+    "o-header-services" : "latest"
   }
 }

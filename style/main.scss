@@ -1,0 +1,9 @@
+$o-header-is-silent: false;
+$o-header-services-is-silent: false;
+
+@import '../bower_components/o-header-services/main';
+
+body {
+  // Remove space around the document
+  margin: 0;
+}
