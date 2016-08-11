@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html class="core">
   <head>
     <title>KMT Header</title>
     <meta charset="UTF-8">
@@ -12,4 +12,9 @@
     <div id="root"></div>
   </body>
   <script src="{{BASE_PATH_URL}}bundle.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      document.dispatchEvent(new CustomEvent('kmt.DOMContentLoaded'));
+    });
+  </script>
 </html>

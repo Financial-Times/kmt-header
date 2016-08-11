@@ -5,8 +5,8 @@ const exec = require('child_process').exec;
 
 gulp.task('build', function() {
   return obt.build(gulp, {
-    js: './src/index.js',
-    sass: './style/main.scss',
+    js: './main.js',
+    sass: './main.scss',
     buildJs: 'bundle.js',
     buildCss: 'bundle.css',
     buildFolder: 'public',
