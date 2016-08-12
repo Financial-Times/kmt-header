@@ -1,7 +1,35 @@
 import KmtHeader from './src';
 
 const initKmtHeader = () => {
-  KmtHeader.init("#root");
+  const theOptions = {
+    rootEl: "#root",
+    data: {
+      mainMenu: {
+        items: [
+          {
+            label: "DASHBOARD",
+            href: "#"
+          },
+          {
+            label: "MY FT",
+            href: "#",
+            active: true
+          },
+          {
+            label: "USERS",
+            href: "#"
+          }
+        ],
+        enableMobile: true
+      },
+      headerTitle: {
+        label: "KMT",
+        summary: "KNOWLEDGE MANAGER TOOLS"
+      }
+    }
+  };
+
+  KmtHeader.init(theOptions);
   document.removeEventListener('kmt.DOMContentLoaded', initKmtHeader);
 };
 

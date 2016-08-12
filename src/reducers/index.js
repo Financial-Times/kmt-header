@@ -1,8 +1,10 @@
 import { combineReducers } from 'redux';
-import testing from './test';
+import mainMenu from './main-menu';
+import headerTitle from './header-title';
 
 const KmtHeaderApp = combineReducers({
-  testing
+  mainMenu,
+  headerTitle
 });
 
 export default KmtHeaderApp;

@@ -2,42 +2,42 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import configureStore from './store/configureStore';
-import HeaderContainer from './containers/header';
+import KmtHeaderContainer from './containers/kmt-header';
 
 class KmtHeader {
-  constructor (rootEl) {
-    if (!rootEl) {
-      rootEl = document.body;
-    } else if (typeof rootEl === 'string') {
-      rootEl = document.querySelector(rootEl);
+  constructor (options = {}) {
+    if (!options.rootEl) {
+      options.rootEl = document.body;
+    } else if (typeof options.rootEl === 'string') {
+      options.rootEl = document.querySelector(options.rootEl);
     }
 
-    if (rootEl.hasAttribute('data-kmt-header--js')) {
+    if (options.rootEl.hasAttribute('data-kmt-header--js')) {
       return;
     }
 
-    this.rootEl = rootEl;
+    this.rootEl = options.rootEl;
     this.rootEl.removeAttribute('data-kmt-header--no-js');
     this.rootEl.setAttribute('data-kmt-header--js', '');
 
-    const store = configureStore();
+    const store = configureStore(options.data);
 
     ReactDOM.render(
       <Provider store={store}>
-        <HeaderContainer />
+        <KmtHeaderContainer />
       </Provider>,
       this.rootEl);
   }
 
-  static init (rootEl) {
-    if (!rootEl) {
-      rootEl = document.body;
-    } else if (typeof rootEl === 'string') {
-      rootEl = document.querySelector(rootEl);
+  static init (options = {}) {
+    if (!options.rootEl) {
+      options.rootEl = document.body;
+    } else if (typeof options.rootEl === 'string') {
+      options.rootEl = document.querySelector(options.rootEl);
     }
 
-    if (!rootEl.hasAttribute('data-kmt-header--js')) {
-      return new KmtHeader(rootEl);
+    if (!options.rootEl.hasAttribute('data-kmt-header--js')) {
+      return new KmtHeader(options);
     }
   }
 }
