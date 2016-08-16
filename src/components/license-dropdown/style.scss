@@ -40,10 +40,11 @@
 
     &-dropdown {
       display: none;
-      margin-top: 5px;
+      margin-top: 1px;
       padding: 20px;
       position: fixed;
       background-color: oColorsGetPaletteColor("warm-4");
+      cursor: auto;
       z-index: 1;
 
       // ignoring the nesting warning as it's not actually a nested class (it's BEM)
