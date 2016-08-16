@@ -1,30 +1,34 @@
 import KmtHeader from './src';
+import KmtHeaderContainer from './src/containers/kmt-header';
+import { KmtHeaderNs } from './src/reducers';
 
 const initKmtHeader = () => {
   const theOptions = {
     rootEl: "#root",
     data: {
-      mainMenu: {
-        items: [
-          {
-            label: "DASHBOARD",
-            href: "#"
-          },
-          {
-            label: "MY FT",
-            href: "#",
-            active: true
-          },
-          {
-            label: "USERS",
-            href: "#"
-          }
-        ],
-        enableMobile: true
-      },
-      headerTitle: {
-        label: "KMT",
-        summary: "KNOWLEDGE MANAGER TOOLS"
+      KmtHeaderNs: {
+        mainMenu: {
+          items: [
+            {
+              label: "DASHBOARD",
+              href: "#"
+            },
+            {
+              label: "MY FT",
+              href: "#",
+              active: true
+            },
+            {
+              label: "USERS",
+              href: "#"
+            }
+          ],
+          enableMobile: true
+        },
+        headerTitle: {
+          label: "KMT",
+          summary: "KNOWLEDGE MANAGER TOOLS"
+        }
       }
     }
   };
@@ -35,4 +39,5 @@ const initKmtHeader = () => {
 
 document.addEventListener('kmt.DOMContentLoaded', initKmtHeader);
 
+export { KmtHeaderContainer, KmtHeaderNs };
 export default KmtHeader;

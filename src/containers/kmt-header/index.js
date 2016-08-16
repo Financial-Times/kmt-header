@@ -32,7 +32,7 @@ KmtHeaderContainer.propTypes = {
 
 const mapStateToProps = (store) => {
   return {
-    enableMobileMenu: store.mainMenu.enableMobile
+    enableMobileMenu: store.KmtHeaderNs.mainMenu.enableMobile
   };
 };
 

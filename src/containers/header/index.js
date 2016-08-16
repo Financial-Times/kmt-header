@@ -28,8 +28,8 @@ HeaderContainer.propTypes = {
 
 const mapStateToProps = (store) => {
   return {
-    menu: store.mainMenu,
-    headerTitle: store.headerTitle
+    menu: store.KmtHeaderNs.mainMenu,
+    headerTitle: store.KmtHeaderNs.headerTitle
   };
 };
 
