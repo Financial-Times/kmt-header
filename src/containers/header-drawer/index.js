@@ -21,7 +21,7 @@ class HeaderDrawerContainer extends Component {
           </div>
 
           <HeaderNav mobile={true} menu={this.props.menu} />
-          <HeaderExtraActions mobile={true} />
+          <HeaderExtraActions mobile={true} extraActions={this.props.extraActions} />
 
         </div>
       </div>
@@ -31,16 +31,19 @@ class HeaderDrawerContainer extends Component {
 
 import { menuTypes } from "../../reducers/main-menu";
 import { headerTitleTypes } from "../../reducers/header-title";
+import { extraActionsTypes } from "../../reducers/extra-actions";
 
 HeaderDrawerContainer.propTypes = {
   menu: PropTypes.shape(menuTypes).isRequired,
-  headerTitle: PropTypes.shape(headerTitleTypes).isRequired
+  headerTitle: PropTypes.shape(headerTitleTypes).isRequired,
+  extraActions: PropTypes.shape(extraActionsTypes).isRequired
 };
 
 const mapStateToProps = (store) => {
   return {
     menu: store.KmtHeaderNs.mainMenu,
-    headerTitle: store.KmtHeaderNs.headerTitle
+    headerTitle: store.KmtHeaderNs.headerTitle,
+    extraActions: store.KmtHeaderNs.extraActions
   };
 };
 

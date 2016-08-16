@@ -31,7 +31,6 @@ const defaultState = {
 };
 
 const mainMenu = (state = defaultState, action = {}) => {
-
   return state;
 };
 

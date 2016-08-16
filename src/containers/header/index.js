@@ -9,9 +9,16 @@ class HeaderContainer extends Component {
   }
 
   render() {
+    const headerTopProps = {
+      dispatch: this.props.dispatch,
+      headerTitle: this.props.headerTitle,
+      enableMobileMenu: this.props.menu.enableMobile,
+      extraActions: this.props.extraActions
+    };
+
     return (
       <header className='o-header-services o-header-services--b2b' data-o-component='o-header'>
-        <HeaderTop headerTitle={this.props.headerTitle} enableMobileMenu={this.props.menu.enableMobile} />
+        <HeaderTop {...headerTopProps} />
         <HeaderNav menu={this.props.menu} />
       </header>
     );
@@ -20,16 +27,19 @@ class HeaderContainer extends Component {
 
 import { menuTypes } from "../../reducers/main-menu";
 import { headerTitleTypes } from "../../reducers/header-title";
+import { extraActionsTypes } from "../../reducers/extra-actions";
 
 HeaderContainer.propTypes = {
   menu: PropTypes.shape(menuTypes).isRequired,
-  headerTitle: PropTypes.shape(headerTitleTypes).isRequired
+  headerTitle: PropTypes.shape(headerTitleTypes).isRequired,
+  extraActions: PropTypes.shape(extraActionsTypes).isRequired
 };
 
 const mapStateToProps = (store) => {
   return {
     menu: store.KmtHeaderNs.mainMenu,
-    headerTitle: store.KmtHeaderNs.headerTitle
+    headerTitle: store.KmtHeaderNs.headerTitle,
+    extraActions: store.KmtHeaderNs.extraActions
   };
 };
 

@@ -21,6 +21,7 @@ class HeaderNav extends Component {
   render() {
     const { menu } = this.props;
 
+    // if there are no items
     if (menu.items === undefined) {
       return <div></div>;
     }
@@ -28,6 +29,7 @@ class HeaderNav extends Component {
     let liCls = "o-header-services__nav-item";
     let aCls = "o-header-services__nav-link";
 
+    // if not for the mobile version
     if (this.props.mobile !== true) {
       return (
         <nav className='o-header-services__primary-nav'>
@@ -40,9 +42,9 @@ class HeaderNav extends Component {
       );
     }
 
+    // for the mobile version
     liCls = "o-header__drawer-menu-item";
     aCls = "o-header__drawer-menu-link";
-
     return (
       <nav className="o-header__drawer-menu o-header__drawer-menu--primary" role="navigation" aria-label="Primary navigation">
         <ul className="o-header__drawer-menu-list">
@@ -57,7 +59,7 @@ import { menuTypes } from "../../reducers/main-menu";
 
 HeaderNav.propTypes = {
   mobile: PropTypes.bool,
-  menu: PropTypes.shape(menuTypes).isRequired,
+  menu: PropTypes.shape(menuTypes).isRequired
 };
 
 HeaderNav.defaultProps = {

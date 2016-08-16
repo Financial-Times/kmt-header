@@ -7,25 +7,7 @@ const initKmtHeader = () => {
     rootEl: "#root",
     data: {
       KmtHeaderNs: {
-        mainMenu: {
-          items: [
-            {
-              label: "DASHBOARD",
-              href: "#"
-            },
-            {
-              label: "MY FT",
-              href: "#",
-              active: true
-            },
-            {
-              label: "USERS",
-              href: "#"
-            }
-          ],
-          enableMobile: true
-        },
-        headerTitle: {
+        headerTitle: {// custom header title
           label: "KMT",
           summary: "KNOWLEDGE MANAGER TOOLS"
         }

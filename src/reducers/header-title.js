@@ -11,7 +11,6 @@ const defaultState = {
 };
 
 const headerTitle = (state = defaultState, action = {}) => {
-
   return state;
 };
 

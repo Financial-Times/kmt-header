@@ -1,0 +1,56 @@
+.kmt-header {
+  &__license {
+
+    &-wrapper {
+      cursor: pointer;
+
+      // ignoring the nesting warning as it's not actually a nested class (it's BEM)
+      // scss-lint:disable NestingDepth
+      &--mobile {
+        .kmt-header__license-dropdown {
+          padding: 0;
+          position: relative;
+          background-color: transparent;
+        }
+      }
+    }
+
+    &-label {
+      position: relative;
+      padding-right: 15px;
+
+      // ignoring the nesting warning as it's not actually a nested class (it's BEM)
+      // scss-lint:disable NestingDepth
+      &::after {
+        @include oIconsGetIcon('arrow-up-down', oColorsGetPaletteColor('org-b2b'), 12);
+        content: "";
+        position: absolute;
+        top: 3px;
+        right: 0;
+      }
+    }
+
+    &-user {
+
+    }
+
+    &-used {
+      color: oColorsGetPaletteColor("org-b2b");
+    }
+
+    &-dropdown {
+      display: none;
+      margin-top: 5px;
+      padding: 20px;
+      position: fixed;
+      background-color: oColorsGetPaletteColor("warm-4");
+      z-index: 1;
+
+      // ignoring the nesting warning as it's not actually a nested class (it's BEM)
+      // scss-lint:disable NestingDepth
+      &--expanded {
+        display: block;
+      }
+    }
+  }
+}

@@ -29,7 +29,7 @@ class HeaderTop extends Component {
           }
         </div>
 
-        <HeaderExtraActions />
+        <HeaderExtraActions extraActions={this.props.extraActions} />
 
       </div>
     );
@@ -37,13 +37,13 @@ class HeaderTop extends Component {
 };
 
 import { headerTitleTypes } from "../../reducers/header-title";
+import { extraActionsTypes } from "../../reducers/extra-actions";
 
 HeaderTop.propTypes = {
+  dispatch: PropTypes.func.isRequired,
   enableMobileMenu: PropTypes.bool,
-  headerTitle: PropTypes.shape(headerTitleTypes).isRequired
-};
-
-HeaderTop.defaultProps = {
+  headerTitle: PropTypes.shape(headerTitleTypes).isRequired,
+  extraActions: PropTypes.shape(extraActionsTypes).isRequired
 };
 
 export default HeaderTop;
