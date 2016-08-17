@@ -5,9 +5,14 @@ $o-forms-is-silent: false;
 @import '../bower_components/o-header-services/main';
 @import '../bower_components/o-forms/main';
 
+html {
+  height: 100%;
+}
+
 body {
   // Remove space around the document
   margin: 0;
+  height: 100%;
 }
 
 @import '../src/components/license-dropdown/style';

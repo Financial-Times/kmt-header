@@ -24,6 +24,7 @@
      "o-header-services" : "latest",
      "o-forms": "^2.0.3",
      "o-viewport": "^2.2.0",
-     "ftdomdelegate": "^2.0.3"
+     "ftdomdelegate": "^2.0.3",
+     "o-dom": "^1.0.0"
   }
 }

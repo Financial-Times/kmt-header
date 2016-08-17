@@ -1,8 +1,9 @@
 import React, { Component, PropTypes } from 'react';
 import Delegate from 'ftdomdelegate';
 import viewport from 'o-viewport';
-
+import oDom from 'o-dom';
 import { toggleDropdown, updateDropdownStyle } from "../../actions/license-dropdown";
+let componentEventsBound = false;
 
 class LicenseDropdown extends Component {
   constructor(props) {
@@ -12,11 +13,18 @@ class LicenseDropdown extends Component {
     this.positionDropdown = this.positionDropdown.bind(this);
     this.licenseChanged = this.licenseChanged.bind(this);
     this.onWindowResize = this.onWindowResize.bind(this);
+    this.handleBodyClick = this.handleBodyClick.bind(this);
 
-    viewport.listenTo('resize');
-    this.theDoc = new Delegate();
-    this.theDoc.root(document.body);
-    this.theDoc.on('oViewport.resize', 'body', this.onWindowResize);
+    // because this uses the same state (no matter how many times it's used) we need to bind the events only once
+    if (componentEventsBound !== true) {
+      viewport.listenTo('resize');
+      this.theDoc = new Delegate();
+      this.theDoc.root(document.body);
+      this.theDoc.on('oViewport.resize', 'body', this.onWindowResize);
+      this.theDoc.on('click', 'body', this.handleBodyClick);
+
+      componentEventsBound = true;
+    }
   }
 
   componentDidUpdate (prevProps, prevState) {
@@ -30,6 +38,13 @@ class LicenseDropdown extends Component {
   toggleDropdown(e) {
     // toggle the dropdown
     this.props.dispatch(toggleDropdown());
+  }
+
+  handleBodyClick (e) {
+    // if the dropdown is shown and if the click target is not in the dropdown container
+    if (this.props.licenseData.show === true && !oDom.getClosestMatch(e.target, ".kmt-header__license-wrapper")) {
+      this.toggleDropdown(e);
+    }
   }
 
   positionDropdown() {

@@ -43,7 +43,7 @@ KmtHeader.init(options);
 * React Redux store data (both for when **Inside** and **Outside** React Redux app):
 ```js
 KmtHeaderNs: { // {Object} - optional - Namespace for the KMT header React Redux store - if store data is provided it needs to be wrapped inside this object
-  mainMenu: { // {Object} - optional - Menu state. If provided, all the child elements are required
+  mainMenu: { // {Object} - optional - Menu data. If provided, all the child elements are required
     items: [ // {Array} Links to be shown
       { // {Object} Link data
         label: "DASHBOARD", // {String} Link label
@@ -54,9 +54,9 @@ KmtHeaderNs: { // {Object} - optional - Namespace for the KMT header React Redux
   },
   headerTitle: { // {Object} - optional -  Header text data. If provided, all the child elements are required
     label: "KMT", // {String} Header main title
-    summary: "KNOWLEDGE MANAGER TOOLS" // {String} Header (optional) summary
+    summary: "KNOWLEDGE MANAGER TOOLS" // {String} - optional - Header summary
   },
-  extraActions: { // {Object} - optional -  Header extra actions. If provided, all the child elements are required
+  extraActions: { // {Object} - optional -  Header extra action data. If provided, all the child elements are required
     items: [ // {Object} links to be shown
       { // {Object} Link data
         label: "Logout", // {String} Link label
@@ -69,7 +69,7 @@ KmtHeaderNs: { // {Object} - optional - Namespace for the KMT header React Redux
 
 * Normal standalone use:
 ```js
-rootEl: "#root" // - optional - {String|DOM element} Query string or DOM element inside which the KMT Header will be placed.
+rootEl: "#root" // {String|DOM element} - optional - Query string or DOM element inside which the KMT Header will be placed.
 ```
 
 ```js
