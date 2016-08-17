@@ -14,7 +14,7 @@ class HeaderDrawerContainer extends Component {
         <div className="o-header__drawer-inner">
 
           <div className="o-header__drawer-tools">
-            <span>Tool or Service name</span>
+            <span>{this.props.headerTitle.summary}</span>
             <button type="button" className="o-header__drawer-tools-close" aria-controls="o-header-drawer">
               <span className="o-header__visually-hidden">Close</span>
             </button>
