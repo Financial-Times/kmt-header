@@ -23,7 +23,7 @@ class HeaderNav extends Component {
 
     // if there are no items
     if (menu.items === undefined) {
-      return <div></div>;
+      return null;
     }
 
     let liCls = "o-header-services__nav-item";

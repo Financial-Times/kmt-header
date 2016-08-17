@@ -16,7 +16,7 @@ class HeaderTop extends Component {
           ? <div className='o--if-js o-header-services__hamburger'>
               <a className='o-header-services__hamburger-icon' href="#o-header-drawer" aria-controls="o-header-drawer"></a>
             </div>
-          : ""
+          : null
         }
 
         <div className='o-header-services__ftlogo'></div>
@@ -25,7 +25,7 @@ class HeaderTop extends Component {
           <h1 className='o-header-services__product-name'>{headerTitle.label}</h1>
           {headerTitle.summary
             ? <span className='o-header-subrand__product-tagline'>{headerTitle.summary}</span>
-            : ""
+            : null
           }
         </div>
 

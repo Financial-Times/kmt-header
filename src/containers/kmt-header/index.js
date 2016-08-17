@@ -19,7 +19,7 @@ class KmtHeaderContainer extends Component {
         <HeaderContainer />
         {this.props.enableMobileMenu === true
           ? <HeaderDrawerContainer />
-          : ""
+          : null
         }
       </div>
     );
@@ -27,7 +27,7 @@ class KmtHeaderContainer extends Component {
 }
 
 KmtHeaderContainer.propTypes = {
-  enableMobileMenu: PropTypes.bool,
+  enableMobileMenu: PropTypes.bool
 };
 
 const mapStateToProps = (store) => {
