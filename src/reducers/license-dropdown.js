@@ -1,4 +1,5 @@
 import { PropTypes } from 'react';
+import { getCookieUserDetails } from './../helpers/helpers';
 
 export const licenseDropdownPropTypes = {
   items: PropTypes.array.isRequired,
@@ -8,33 +9,21 @@ export const licenseDropdownPropTypes = {
   style: PropTypes.object.isRequired
 };
 
-const defaultState = {
-  items: [
-    {
-      value: "0",
-      label: "License #0"
-    },
-    {
-      value: "1",
-      label: "License #1"
-    },
-    {
-      value: "2",
-      label: "License #2"
-    },
-    {
-      value: "3",
-      label: "License #3"
-    }
-  ],
-  username: "Username",
+// get the user details from the cookies
+const cookieUserDetails = getCookieUserDetails();
+
+const initialState = {
+  items: [],
+  username: "",
   selected: {
-    value: "1",
-    label: "License #1"
+    value: "",
+    label: ""
   },
   show: false,
   style: {}
 };
+
+const defaultState = Object.assign({}, initialState, cookieUserDetails);
 
 const licenseDropdown = (state = defaultState, action = {}) => {
   switch (action.type) {

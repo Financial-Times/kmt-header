@@ -3,6 +3,7 @@ import Delegate from 'ftdomdelegate';
 import viewport from 'o-viewport';
 import oDom from 'o-dom';
 import { toggleDropdown, updateDropdownStyle } from "../../actions/license-dropdown";
+import { changeLicense } from "../../actions/license-change";
 let componentEventsBound = false;
 
 class LicenseDropdown extends Component {
@@ -14,6 +15,7 @@ class LicenseDropdown extends Component {
     this.licenseChanged = this.licenseChanged.bind(this);
     this.onWindowResize = this.onWindowResize.bind(this);
     this.handleBodyClick = this.handleBodyClick.bind(this);
+    this.trimLicenseId = this.trimLicenseId.bind(this);
 
     // because this uses the same state (no matter how many times it's used) we need to bind the events only once
     if (componentEventsBound !== true) {
@@ -77,11 +79,26 @@ class LicenseDropdown extends Component {
   }
 
   licenseChanged (e) {
-    // TODO: active license needs to be changed
+    // trigger a change action
+    this.props.dispatch(changeLicense(e.target.value));
+
+    // if the change function has been added
+    if (this.props.changeFn) {
+      this.props.changeFn(e);
+    }
+  }
+
+  trimLicenseId(licenseId) {
+    return `${licenseId.length > 10 ? "[...]" : ""}${licenseId.slice(-10)}`;
   }
 
   render() {
     const { licenseData } = this.props;
+
+    // if there are no licenses
+    if (licenseData.items.length === 0) {
+      return null;
+    }
 
     let dropdownCls = "kmt-header__license-dropdown";
     if (licenseData.show === true) {
@@ -103,7 +120,7 @@ class LicenseDropdown extends Component {
           <select className="o-forms-select" onChange={this.licenseChanged} defaultValue={licenseData.selected.value}>
             {
               licenseData.items.map((item, index) => {
-                return <option value={item.value} key={index}>{item.label}</option>;
+                return <option value={item.value} key={index}>{item.label} - {this.trimLicenseId(item.value)}</option>;
               })
             }
           </select>
@@ -117,6 +134,7 @@ import { licenseDropdownPropTypes } from "../../reducers/license-dropdown";
 
 LicenseDropdown.propTypes = {
   dispatch: PropTypes.func.isRequired,
+  changeFn: PropTypes.func,
   licenseData: PropTypes.shape(licenseDropdownPropTypes).isRequired,
   mobile: PropTypes.bool
 };
