@@ -74,7 +74,7 @@ export function getCookieUserDetails() {
   //now.setTime(expireTime);
   //document.cookie = `licenseList=${encodeURIComponent(JSON.stringify(licenseList))};expires=${now.toGMTString()}`;
   document.cookie = `licenseList=${encodeURIComponent(JSON.stringify(licenseList))}`;
-  document.cookie = `FT_User=USERID=6000172648:EMAIL=ciprian.lujeru@ft.com:FNAME=Ciprian:LNAME=Lujeru:TIME=%5BWed%2C+17-Aug-2016+13%3A50%3A48+GMT%5D:USERNAME=ciprian.lujeru@ft.com:REMEMBER=_REMEMBER_:ERIGHTSID=2000172648:PRODUCTS=_Tools_P0_P2_:RESOURCES=:GROUPS=:X=`;
+  document.cookie = `FT_User2=USERID=6000172648:EMAIL=ciprian.lujeru@ft.com:FNAME=Ciprian:LNAME=Lujeru:TIME=%5BWed%2C+17-Aug-2016+13%3A50%3A48+GMT%5D:USERNAME=ciprian.lujeru@ft.com:REMEMBER=_REMEMBER_:ERIGHTSID=2000172648:PRODUCTS=_Tools_P0_P2_:RESOURCES=:GROUPS=:X=`;
   // TODO: the above should be removed
 
   const userDetails = {items: [], username: "", selected: {value: "", label: ""}};
@@ -116,9 +116,9 @@ export function getCookieUserDetails() {
   }
 
   // if the user cookie is found
-  if (cookieList["FT_User"]) { // TODO: the user details might have a different key and structure
+  if (cookieList["FT_User2"]) { // TODO: the user details might have a different key and structure
     // parse the value
-    const ftUserDetails = getObjectFromCookieLikeStr(cookieList["FT_User"], ":");
+    const ftUserDetails = getObjectFromCookieLikeStr(cookieList["FT_User2"], ":");
 
     // if the first name or the last name is found
     if (ftUserDetails["FNAME"] || ftUserDetails["LNAME"]) {
