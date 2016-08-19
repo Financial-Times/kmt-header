@@ -116,9 +116,9 @@ export function getCookieUserDetails() {
   }
 
   // if the user cookie is found
-  if (cookieList["FT_User2"]) { // TODO: the user details might have a different key and structure
+  if (cookieList["FT_User"] || cookieList["FT_User2"]) { // TODO: the user details might have a different key and structure
     // parse the value
-    const ftUserDetails = getObjectFromCookieLikeStr(cookieList["FT_User2"], ":");
+    const ftUserDetails = getObjectFromCookieLikeStr(cookieList["FT_User"] || cookieList["FT_User2"], ":");
 
     // if the first name or the last name is found
     if (ftUserDetails["FNAME"] || ftUserDetails["LNAME"]) {
