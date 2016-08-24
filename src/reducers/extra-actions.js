@@ -7,7 +7,7 @@ export const extraActionsTypes ={
 const defaultState = {
   items: [
     {
-      label: "Logout",
+      label: "Sign out",
       href: "#"
     }
   ]

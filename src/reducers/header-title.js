@@ -7,7 +7,7 @@ export const headerTitleTypes ={
 
 const defaultState = {
   label: "KMT",
-  summary: "KNOWLEDGE MANAGER TOOLS"
+  summary: "maximising your FT experience"
 };
 
 const headerTitle = (state = defaultState, action = {}) => {

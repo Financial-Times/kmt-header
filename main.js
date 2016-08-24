@@ -9,7 +9,7 @@ const initKmtHeader = () => {
       KmtHeaderNs: {
         headerTitle: {// custom header title
           label: "KMT",
-          summary: "KNOWLEDGE MANAGER TOOLS"
+          summary: "maximising your FT experience"
         }
       }
     }
