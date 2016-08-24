@@ -15,29 +15,5 @@ body {
   height: 100%;
 }
 
-.o-header-services--b2b {
-  .o-header-services__nav-link--selected {
-    color: oColorsGetPaletteColor("warm-4");
-    font-weight: bold;
-  }
-}
-
-.o-header-services__nav-item {
-  &:first-child {
-    // align the first item with the logo
-    margin-left: -10px;
-  }
-}
-
-.o-header-services__related-content {
-  padding-right: 0;
-}
-
-.o-header-services__related-content {
-  > a:last-child {
-    margin-right: 0;
-  }
-}
-
 @import '../src/components/license-dropdown/style';
 @import '../src/components/header-nav/style';
