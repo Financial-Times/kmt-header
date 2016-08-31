@@ -113,14 +113,14 @@ class LicenseDropdown extends Component {
     return (
       <div className={wrapperCls} ref="theWrapper">
         <div className="kmt-header__license-label" onClick={this.toggleDropdown}>
-          <span className="kmt-header__license-user">{licenseData.username}</span>
+          <a className="kmt-header__license-user" href={licenseData.usernameUrl} onClick={(e) => { e.stopPropagation(); }}>{licenseData.username}</a>
           <span className="kmt-header__license-used"> ({licenseData.selected.label})</span>
         </div>
         <div className={dropdownCls} style={this.props.mobile !== true ? licenseData.style : {}}>
-          <select className="o-forms-select" onChange={this.licenseChanged} defaultValue={licenseData.selected.value}>
+          <select className="o-forms-select" onChange={this.licenseChanged} defaultValue={licenseData.selected.licenceId}>
             {
               licenseData.items.map((item, index) => {
-                return <option value={item.value} key={index}>{item.label} - {this.trimLicenseId(item.value)}</option>;
+                return <option value={item.licenceId} key={index}>{item.label} - {this.trimLicenseId(item.licenceId)}</option>;
               })
             }
           </select>

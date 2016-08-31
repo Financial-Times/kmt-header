@@ -15,8 +15,9 @@ const cookieUserDetails = getCookieUserDetails();
 const initialState = {
   items: [],
   username: "",
+  usernameUrl: "https://myaccount.ft.com/",
   selected: {
-    value: "",
+    licenceId: "",
     label: ""
   },
   show: false,

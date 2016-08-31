@@ -15,5 +15,22 @@ body {
   height: 100%;
 }
 
+// styles copied from .o-header-services__related-content > a
+.o-header-services__related-content-link {
+  text-decoration: none;
+  display: inline-block;
+  color: oColorsGetColorFor('o-header-services-top', text);
+  margin: 0 $_o-header-services-padding-x;
+  font-weight: 600;
+
+  &:visited {
+    color: oColorsGetColorFor('o-header-services-top', text);
+  }
+
+  &:hover {
+    border-bottom: dotted white 1px;
+  }
+}
+
 @import '../src/components/license-dropdown/style';
 @import '../src/components/header-nav/style';
