@@ -117,10 +117,10 @@ class LicenseDropdown extends Component {
           <span className="kmt-header__license-used"> ({licenseData.selected.label})</span>
         </div>
         <div className={dropdownCls} style={this.props.mobile !== true ? licenseData.style : {}}>
-          <select className="o-forms-select" onChange={this.licenseChanged} defaultValue={licenseData.selected.value}>
+          <select className="o-forms-select" onChange={this.licenseChanged} defaultValue={licenseData.selected.licenceId}>
             {
               licenseData.items.map((item, index) => {
-                return <option value={item.value} key={index}>{item.label} - {this.trimLicenseId(item.value)}</option>;
+                return <option value={item.licenceId} key={index}>{item.label} - {this.trimLicenseId(item.licenceId)}</option>;
               })
             }
           </select>
