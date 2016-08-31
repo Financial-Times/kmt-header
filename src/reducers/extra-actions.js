@@ -8,7 +8,7 @@ const defaultState = {
   items: [
     {
       label: "Sign out",
-      href: "#"
+      href: "https://accounts.ft.com/logout"
     }
   ]
 };
