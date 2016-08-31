@@ -22,9 +22,9 @@ class HeaderExtraActions extends Component {
     if (this.props.mobile !== true) {
       return (
         <div className='o-header-services__related-content'>
-          <a className="o-header-services__related-content-link">
+          <span className="o-header-services__related-content-link">
             <HeaderLicense />
-          </a>
+          </span>
           {extraActions.items.map((item, index) => this.createItem(item, index, aCls))}
         </div>
       );
@@ -36,9 +36,9 @@ class HeaderExtraActions extends Component {
       <nav className="o-header__drawer-menu o-header__drawer-menu--user" role="navigation" aria-label="User navigation">
         <ul className="o-header__drawer-menu-list">
           <li className="o-header__drawer-menu-item">
-            <a className="o-header__drawer-menu-link">
+            <span className="o-header__drawer-menu-link">
               <HeaderLicense mobile={this.props.mobile} />
-            </a>
+            </span>
           </li>
           {
             extraActions.items.map((item, index) => {
