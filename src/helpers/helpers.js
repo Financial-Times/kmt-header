@@ -19,7 +19,11 @@ function _sortAndNameLicenses(licenses) {
   });
 
   return licenses.map((license, index) => {
-    return Object.assign({}, license, {label: `License #${index + 1}`});
+    let theLabel = `License #${index + 1}`;
+    if(license.contractId !== undefined && license.product !== undefined) {
+      theLabel = `${license.contractId} - ${license.product}`;
+    }
+    return Object.assign({}, license, {label: theLabel});
   });
 }
 
