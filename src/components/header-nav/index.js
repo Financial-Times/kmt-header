@@ -34,7 +34,7 @@ class HeaderNav extends Component {
       return (
         <nav className='o-header-services__primary-nav'>
           <div className='o-header-services__container'>
-            <ul className='o-header-services__nav-list'>
+            <ul className='o-header-services__nav-list kmt-text--transform-none'>
               {menu.items.map((item, index) => this.createItem(item, index, liCls, aCls))}
             </ul>
           </div>
