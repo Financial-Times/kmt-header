@@ -19,7 +19,7 @@ const initKmtHeader = () => {
 						href: "#",
 						active: true
 					}, {
-						label: "Users",
+						label: "USERS",
 						href: "#"
 					}
 				],
