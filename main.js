@@ -11,7 +11,7 @@ const initKmtHeader = () => {
           label: "KAT",
           summary: "Knowledge & Administraion Tools"
         }
-      }
+      },
 			mainMenu: {
 				items: [
 					{
