@@ -8,10 +8,23 @@ const initKmtHeader = () => {
     data: {
       KmtHeaderNs: {
         headerTitle: {// custom header title
-          label: "KMT",
-          summary: "maximising your FT experience"
+          label: "KAT",
+          summary: "Knowledge & Administraion Tools"
         }
       }
+			mainMenu: {
+				items: [
+					{
+						label: "myFT",
+						href: "#",
+						active: true
+					}, {
+						label: "Users",
+						href: "#"
+					}
+				],
+				enableMobile: true
+			},
     }
   };
 
