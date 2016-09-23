@@ -1,3 +1,5 @@
+let licenceData = undefined;
+
 /**
  * Sort the licenses by the creation date
  * @param {Array} licenses
@@ -32,19 +34,22 @@ function _sortAndNameLicenses(licenses) {
  * @returns {{}}
  */
 export function getCookieUserDetails() {
-  const licenceData = {};
-  if (window.KMT_CONFIG) {
-    licenceData.items = _sortAndNameLicenses(window.KMT_CONFIG.licenceList || []);
-    licenceData.username = window.KMT_CONFIG.displayName || "Unknown User";
+  // if the data has not been retrieved
+  if (licenceData === undefined) {
+    licenceData = {};
+    if (window.KMT_CONFIG) {
+      licenceData.items = _sortAndNameLicenses(window.KMT_CONFIG.licenceList || []);
+      licenceData.username = window.KMT_CONFIG.displayName || "Unknown User";
 
-    if (window.LICENCE_ID) {
-      licenceData.items.every((item) => {
-        if (item.licenceId === window.LICENCE_ID) {
-          licenceData.selected = item;
-          return false;
-        }
-        return true;
-      });
+      if (window.LICENCE_ID) {
+        licenceData.items.every((item) => {
+          if (item.licenceId === window.LICENCE_ID) {
+            licenceData.selected = item;
+            return false;
+          }
+          return true;
+        });
+      }
     }
   }
   return licenceData;

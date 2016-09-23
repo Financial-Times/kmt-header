@@ -7,6 +7,11 @@ class HeaderNav extends Component {
     this.createItem = this.createItem.bind(this);
   }
 
+  shouldComponentUpdate(nextProps, nextState) {
+    // only render if the props (state) have changed
+    return JSON.stringify(nextProps) !== JSON.stringify(this.props);
+  }
+
   createItem(item, index, liCls, aCls) {
     if (item.active === true) {
       aCls += ` ${aCls}--selected`;

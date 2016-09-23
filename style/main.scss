@@ -26,10 +26,6 @@ body {
   &:visited {
     color: oColorsGetColorFor('o-header-services-top', text);
   }
-
-  &:hover {
-    border-bottom: dotted white 1px;
-  }
 }
 
 @import '../src/components/license-dropdown/style';

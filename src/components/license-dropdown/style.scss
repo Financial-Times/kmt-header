@@ -28,6 +28,13 @@
         top: 3px;
         right: 0;
       }
+
+      &:hover {
+        opacity: 0.5;
+        &::after {
+          opacity: 0.5;
+        }
+      }
     }
 
     &-user {

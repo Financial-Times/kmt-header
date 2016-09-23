@@ -10,21 +10,21 @@ const initKmtHeader = () => {
         headerTitle: {// custom header title
           label: "KAT",
           summary: "Knowledge & Administraion Tools"
+        },
+        mainMenu: {
+          items: [
+            {
+              label: "myFT",
+              href: "#",
+              active: true
+            }, {
+              label: "USERS",
+              href: "#"
+            }
+          ],
+          enableMobile: true
         }
-      },
-			mainMenu: {
-				items: [
-					{
-						label: "myFT",
-						href: "#",
-						active: true
-					}, {
-						label: "USERS",
-						href: "#"
-					}
-				],
-				enableMobile: true
-			},
+      }
     }
   };
 

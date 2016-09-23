@@ -8,6 +8,11 @@ class HeaderDrawerContainer extends Component {
     super(props);
   }
 
+  shouldComponentUpdate(nextProps, nextState) {
+    // only render if the props (state) have changed
+    return JSON.stringify(nextProps) !== JSON.stringify(this.props);
+  }
+
   render() {
     return (
       <div className="o-header__drawer--services o-header__drawer o--if-js" id="o-header-drawer" data-o-header-drawer data-o-header-drawer--no-js>
