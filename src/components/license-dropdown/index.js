@@ -29,6 +29,11 @@ class LicenseDropdown extends Component {
     }
   }
 
+  shouldComponentUpdate(nextProps, nextState) {
+    // only render if the props (state) have changed
+    return JSON.stringify(nextProps) !== JSON.stringify(this.props);
+  }
+
   componentDidUpdate (prevProps, prevState) {
     // if it's not in the mobile container AND if it needs to be shown AND if it was hidden
     if (this.props.mobile !== true && this.props.licenseData.show === true && prevProps.licenseData.show !== this.props.licenseData.show) {
@@ -113,8 +118,7 @@ class LicenseDropdown extends Component {
     return (
       <div className={wrapperCls} ref="theWrapper">
         <div className="kmt-header__license-label" onClick={this.toggleDropdown}>
-          <a className="kmt-header__license-user" href={licenseData.usernameUrl} onClick={(e) => { e.stopPropagation(); }}>{licenseData.username}</a>
-          <span className="kmt-header__license-used"> ({licenseData.selected.label})</span>
+          <span className="kmt-header__license-used">{licenseData.selected.label}</span>
         </div>
         <div className={dropdownCls} style={this.props.mobile !== true ? licenseData.style : {}}>
           <select className="o-forms-select" onChange={this.licenseChanged} defaultValue={licenseData.selected.licenceId}>

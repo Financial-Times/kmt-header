@@ -7,6 +7,11 @@ class HeaderLicense extends Component {
     super(props);
   }
 
+  shouldComponentUpdate(nextProps, nextState) {
+    // only render if the props (state) have changed
+    return JSON.stringify(nextProps) !== JSON.stringify(this.props);
+  }
+
   render() {
     const licenseProps = {
       dispatch: this.props.dispatch,

@@ -18,6 +18,7 @@
     &-label {
       position: relative;
       padding-right: 15px;
+      color: oColorsGetPaletteColor("org-b2b");
 
       // ignoring the nesting warning as it's not actually a nested class (it's BEM)
       // scss-lint:disable NestingDepth
@@ -28,15 +29,14 @@
         top: 3px;
         right: 0;
       }
-    }
 
-    &-user {
-      color: inherit;
-      text-decoration: inherit;
-    }
-
-    &-used {
-      color: oColorsGetPaletteColor("org-b2b");
+      &:hover {
+        color: oColorsGetPaletteColor("org-b2b-dark");
+        
+        &::after {
+          @include oIconsGetIcon('arrow-up-down', oColorsGetPaletteColor('org-b2b-dark'), 12);
+        }
+      }
     }
 
     &-dropdown {

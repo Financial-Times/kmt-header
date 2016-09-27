@@ -6,8 +6,8 @@ export const headerTitleTypes ={
 };
 
 const defaultState = {
-  label: "KMT",
-  summary: "maximising your FT experience"
+  label: "Knowledge & Administration Tools",
+  summary: ""
 };
 
 const headerTitle = (state = defaultState, action = {}) => {
