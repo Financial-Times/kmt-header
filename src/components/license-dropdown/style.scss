@@ -32,7 +32,7 @@
 
       &:hover {
         color: oColorsGetPaletteColor("org-b2b-dark");
-        
+
         &::after {
           @include oIconsGetIcon('arrow-up-down', oColorsGetPaletteColor('org-b2b-dark'), 12);
         }
@@ -52,6 +52,12 @@
       // scss-lint:disable NestingDepth
       &--expanded {
         display: block;
+      }
+
+      select,
+      option {
+        @include oTypographySans(s);
+        font-weight: inherit;
       }
     }
   }
