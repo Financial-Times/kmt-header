@@ -46,7 +46,7 @@ class FeedbackForm extends Component {
   render() {
     return (
       <div>
-        <form method="POST" className="nps-feedback" action={`/overview/feedback`} onSubmit={this.submit}>
+        <form method="POST" className="nps-feedback" action={window.FEEDBACK_ROUTE} onSubmit={this.submit}>
           <div className="o-forms-group">
             <div>We'd love to hear your feedback on the new FT.com website. Please tell us your thoughts below. If you would like a reply, please leave your name and email address with your comments.</div>
           </div>
