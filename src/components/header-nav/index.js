@@ -16,6 +16,12 @@ class HeaderNav extends Component {
     if (item.active === true) {
       aCls += ` ${aCls}--selected`;
     }
+    if (item.last === true) {
+      liCls += ` ${liCls}--last`;
+    }
+    if (item.cls !== undefined) {
+      aCls += ` ${item.cls}`;
+    }
     return (
       <li className={liCls} key={index}>
         <a className={aCls} href={item.href}>{item.label}</a>

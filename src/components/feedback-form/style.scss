@@ -1,0 +1,76 @@
+.nps-feedback {
+  display: flex;
+  //padding: 20px 10px;
+  flex-direction: column;
+  align-items: center;
+
+  > div {
+    width: 475px;
+  }
+  .nps-label {
+    margin-right: 14px;
+  }
+
+  // scss-lint:disable DeclarationOrder
+  @include oGridRespondTo($until: M) {
+    > div {
+      width: 100%;
+    }
+
+    .nps-label {
+      display: block;
+    }
+  }
+}
+
+.nps-feedback__score {
+  clear: both;
+
+  @include oGridRespondTo(M) {
+    margin: 0px -30px;
+    padding-left: 30px;
+  }
+}
+
+.nps-feedback__less {
+  float: left;
+
+  @include oGridRespondTo($until: M) {
+    float: none;
+    position: absolute;
+    top: 1px;
+    margin-left: 45px;
+    margin-top: 0;
+  }
+}
+
+.nps-feedback__more {
+  float: right;
+
+  @include oGridRespondTo($until: M) {
+    float: none;
+    position: absolute;
+    bottom: 3px;
+    margin-left: 45px;
+  }
+}
+
+.nps-feedback__submit {
+  @include oButtons();
+  display: block;
+}
+
+.feedback-row {
+  max-width: 475px;
+  margin: 0 auto;
+
+  hr {
+    border: 0;
+    height: 1px;
+    background: #333333;
+  }
+}
+
+.back-button {
+  text-align: center;
+}

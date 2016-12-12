@@ -1,8 +1,4 @@
 {
-  "ecmaFeatures": {
-    "jsx": true,
-    "modules": true
-  },
   "env": {
     "es6": true,
     "browser": true
@@ -10,6 +6,12 @@
   "plugins": [
     "react"
   ],
+  "parserOptions": {
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
   "rules": {
     "no-unused-vars": [2, { "vars": "all", "args": "none" }],
     "no-undef": 2,

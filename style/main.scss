@@ -1,9 +1,11 @@
 $o-header-is-silent: false;
 $o-header-services-is-silent: false;
 $o-forms-is-silent: false;
+$o-overlay-is-silent: false;
 
 @import '../bower_components/o-header-services/main';
 @import '../bower_components/o-forms/main';
+@import '../bower_components/o-overlay/main';
 
 html {
   height: 100%;
@@ -30,3 +32,4 @@ body {
 
 @import '../src/components/license-dropdown/style';
 @import '../src/components/header-nav/style';
+@import '../src/components/feedback-form/style';

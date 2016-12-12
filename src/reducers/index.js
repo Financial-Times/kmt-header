@@ -4,13 +4,15 @@ import headerTitle from './header-title';
 import licenseDropdown from './license-dropdown';
 import extraActions from './extra-actions';
 import licenseChange from './license-change';
+import feedbackForm from './feedback-form';
 
 const mainReducers = {
   mainMenu,
   headerTitle,
   licenseDropdown,
   extraActions,
-  licenseChange
+  licenseChange,
+  feedbackForm
 };
 
 // combine the app reducers

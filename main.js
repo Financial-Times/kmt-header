@@ -20,9 +20,19 @@ const initKmtHeader = () => {
             }, {
               label: "USERS",
               href: "#"
+            },
+            {
+              label: "Feedback",
+              href: "#",
+              cls: "aaa",
+              last: true
             }
           ],
           enableMobile: true
+        },
+        feedbackForm: {
+          isExpanded: false,
+          submitFn: () => { console.log("????????????????????"); }
         }
       }
     }
