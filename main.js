@@ -31,7 +31,7 @@ const initKmtHeader = () => {
           enableMobile: true
         },
         helpers: {
-          doRequest: (theUrl, options) => { return new Promise((res) => { return res(theUrl); }) }
+          doRequest: (theUrl, options) => { return new Promise((res) => { return res(theUrl); }); }
         }
       }
     }
