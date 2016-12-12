@@ -22,7 +22,6 @@ export function submitFeedback(theUrl, data) {
     if (typeof theStore.KmtHeaderNs.helpers.doRequest === "function") {
       const options = {method: "POST", body: JSON.stringify(data), headers: { 'Content-Type': 'application/json' }};
       theStore.KmtHeaderNs.helpers.doRequest(theUrl, options).then((response) => {
-        console.log(response);
         dispatch(togglePanel());
 
         let theMessage = {

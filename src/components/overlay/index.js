@@ -87,7 +87,7 @@ class Overlay extends Component {
 
   render() {
     return (
-      <div>
+      <div className="kat-overlay">
         <div className="o-overlay-shadow"></div>
         <div className="o-overlay o-overlay--modal" role="dialog" tabIndex="0" ref="theOverlay" style={{left: 0, top: 0}}>
           <header className="o-overlay__heading" ref="theOverlayHeader">

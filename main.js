@@ -24,7 +24,7 @@ const initKmtHeader = () => {
             {
               label: "Feedback",
               href: "#",
-              cls: "aaa",
+              cls: "kat-feedback__btn",
               last: true
             }
           ],

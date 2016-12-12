@@ -25,7 +25,7 @@ class HeaderContainer extends Component {
   addListeners () {
     const bodyDelegate = new Delegate();
     bodyDelegate.root(document.body);
-    bodyDelegate.on('click', '.aaa', this.handleFeedbackOpenClick);
+    bodyDelegate.on('click', '.kat-feedback__btn', this.handleFeedbackOpenClick);
   }
 
   handleFeedbackOpenClick (e) {
