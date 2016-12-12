@@ -2,10 +2,12 @@ $o-header-is-silent: false;
 $o-header-services-is-silent: false;
 $o-forms-is-silent: false;
 $o-overlay-is-silent: false;
+$n-notification-is-silent: false;
 
 @import '../bower_components/o-header-services/main';
 @import '../bower_components/o-forms/main';
 @import '../bower_components/o-overlay/main';
+@import '../bower_components/n-notification/main';
 
 html {
   height: 100%;

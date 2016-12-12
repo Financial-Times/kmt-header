@@ -30,9 +30,8 @@ const initKmtHeader = () => {
           ],
           enableMobile: true
         },
-        feedbackForm: {
-          isExpanded: false,
-          submitFn: () => { console.log("????????????????????"); }
+        helpers: {
+          doRequest: (theUrl, options) => { return new Promise((res) => { return res(theUrl); }) }
         }
       }
     }

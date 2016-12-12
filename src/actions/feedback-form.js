@@ -1,3 +1,5 @@
+import nNotification from 'n-notification';
+
 /**
  * Toggles the panel
  * @returns {{type: String}}
@@ -17,24 +19,22 @@ export function togglePanel() {
 export function submitFeedback(theUrl, data) {
   return (dispatch, getState) => {
     const theStore = getState();
-    if (theStore.KmtHeaderNs && theStore.KmtHeaderNs.feedbackForm && typeof theStore.KmtHeaderNs.feedbackForm.submitFn === "function") {
-      theStore.KmtHeaderNs.feedbackForm.submitFn(theUrl, data);
+    if (typeof theStore.KmtHeaderNs.helpers.doRequest === "function") {
+      const options = {method: "POST", body: JSON.stringify(data), headers: { 'Content-Type': 'application/json' }};
+      theStore.KmtHeaderNs.helpers.doRequest(theUrl, options).then((response) => {
+        console.log(response);
+        dispatch(togglePanel());
+
+        let theMessage = {
+          type: 'success',
+          title: 'Thanks for your feedback',
+          content: ''
+        };
+        nNotification.show(theMessage);
+
+      }, (error) => {
+
+      });
     }
-    //const options = {method: "POST", body: JSON.stringify(data), headers: { 'Content-Type': 'application/json' }};
-    //
-    //doRequest(theUrl, options).then((response) => {
-    //
-    //  dispatch(togglePanel());
-    //
-    //  let theMessage = {
-    //    type: 'success',
-    //    title: 'Thanks for your feedback',
-    //    content: ''
-    //  };
-    //  nNotification.show(theMessage);
-    //
-    //}, (error) => {
-    //
-    //});
   };
 }

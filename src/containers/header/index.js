@@ -29,7 +29,6 @@ class HeaderContainer extends Component {
   }
 
   handleFeedbackOpenClick (e) {
-    console.log(e);
     e.preventDefault();
     this.props.dispatch(togglePanel());
   }
