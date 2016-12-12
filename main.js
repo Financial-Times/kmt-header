@@ -20,9 +20,18 @@ const initKmtHeader = () => {
             }, {
               label: "USERS",
               href: "#"
+            },
+            {
+              label: "Feedback",
+              href: "#",
+              cls: "kat-feedback__btn",
+              last: true
             }
           ],
           enableMobile: true
+        },
+        helpers: {
+          doRequest: (theUrl, options) => { return new Promise((res) => { return res(theUrl); }); }
         }
       }
     }

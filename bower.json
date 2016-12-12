@@ -25,6 +25,11 @@
      "o-forms": "^2.0.3",
      "o-viewport": "^2.2.0",
      "ftdomdelegate": "^2.0.3",
+     "n-notification": "^5.0.0",
+     "o-overlay": "^1.8.5",
      "o-dom": "^1.0.0"
+  },
+  "resolutions": {
+    "n-notification": "^5.0.0"
   }
 }

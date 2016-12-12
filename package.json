@@ -31,7 +31,6 @@
     "@financial-times/n-express": "^16.9.0",
     "babel-preset-stage-1": "^6.1.18",
     "es6-promise": "^3.2.1",
-    "isomorphic-fetch": "^2.2.1",
     "react": "^0.14.3",
     "react-dom": "^0.14.3",
     "react-router": "^2.0.1",
@@ -41,12 +40,14 @@
     "hbs": "^4.0.0",
     "bower": "^1.7.9",
     "gulp": "^3.9.1",
+    "gulp-imagemin": "^2.2.1",
+    "gulp-livereload": "^3.8.1",
+    "gulp-nodemon": "^2.2.1",
+    "gulp-size": "^1.2.1",
     "eslint-plugin-react": "^5.2.2",
-    "nodemon": "^1.9.2",
     "redux": "^3.5.2",
     "react-redux": "^4.4.5",
     "redux-logger": "^2.6.1",
-    "redux-thunk": "^2.1.0",
-    "bluebird": "^3.4.1"
+    "redux-thunk": "^2.1.0"
   }
 }
