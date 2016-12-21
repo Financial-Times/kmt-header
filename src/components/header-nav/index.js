@@ -16,9 +16,9 @@ class HeaderNav extends Component {
     if (item.active === true) {
       aCls += ` ${aCls}--selected`;
     }
-    if (item.last === true) {
-      liCls += ` ${liCls}--last`;
-    }
+    // if (item.last === true) {
+    //   liCls += ` ${liCls}--last`;
+    // }
     if (item.cls !== undefined) {
       aCls += ` ${item.cls}`;
     }

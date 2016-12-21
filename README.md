@@ -3,6 +3,12 @@
 Header component for KMT app
 
 
+## Building this project
+`npm start` should run a gulp based build before serving up the an example of the page.
+However if you see an error like:
+`Error: Node Sass does not yet support your current environment: OS X 64-bit with Unsupported runtime`
+You will probably need to run `npm rebuild node-sass` to overcome this. You should probably update `origami-build-tools` at the same time.
+
 ###Installation:
 ```
 bower install --S kmt-header
@@ -88,7 +94,3 @@ const options = {
 
 KmtHeader.init(options);
 ```
-
-
-
-
