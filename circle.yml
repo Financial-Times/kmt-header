@@ -1,11 +1,11 @@
 machine:
   node:
-    version: 6.2.2
+    version: 7.2.2
 
 dependencies:
-  cache_directories:
-    - node_modules
-    - bower_components
+  # cache_directories:
+  #   - node_modules
+  #   - bower_components
 
   override:
     - npm prune && npm install
