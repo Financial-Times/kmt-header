@@ -21,7 +21,7 @@
     "tests"
   ],
    "dependencies": {
-     "o-header-services" : "1.0.0",
+     "o-header-services" : "1.1.0",
      "o-forms": "^2.0.3",
      "o-viewport": "^2.2.0",
      "ftdomdelegate": "^2.0.3",
@@ -30,6 +30,7 @@
      "o-dom": "^1.0.0"
   },
   "resolutions": {
-    "n-notification": "^5.0.0"
+    "n-notification": "^5.0.0",
+    "o-icons": "~4.4.2"
   }
 }
