@@ -4,6 +4,8 @@ $o-forms-is-silent: false;
 $o-overlay-is-silent: false;
 $n-notification-is-silent: false;
 
+@import '../bower_components/o-colors/main';
+@include oColorsSetColor('claret-inverse', #4f1828);
 @import '../bower_components/o-header-services/main';
 @import '../bower_components/o-forms/main';
 @import '../bower_components/o-overlay/main';
