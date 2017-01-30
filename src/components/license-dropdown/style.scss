@@ -7,10 +7,24 @@
       // ignoring the nesting warning as it's not actually a nested class (it's BEM)
       // scss-lint:disable NestingDepth
       &--mobile {
-        .kmt-header__license-dropdown {
-          padding: 0;
-          position: relative;
-          background-color: transparent;
+        .kmt-header {
+          &__license-dropdown {
+            padding: 0;
+            position: relative;
+            background-color: transparent;
+            background-color: red;
+          }
+
+          &__license {
+            &-label {
+              color: oColorsGetPaletteColor("claret");
+              &::after {
+                @include oIconsGetIcon('arrow-up-down', oColorsGetPaletteColor('claret'), 12);
+              }
+            }
+
+
+          }
         }
       }
     }
@@ -18,12 +32,12 @@
     &-label {
       position: relative;
       padding-right: 15px;
-      color: oColorsGetPaletteColor("org-b2b");
+      color: oColorsGetPaletteColor("white");
 
       // ignoring the nesting warning as it's not actually a nested class (it's BEM)
       // scss-lint:disable NestingDepth
       &::after {
-        @include oIconsGetIcon('arrow-up-down', oColorsGetPaletteColor('org-b2b'), 12);
+        @include oIconsGetIcon('arrow-up-down', oColorsGetPaletteColor('white'), 12);
         content: "";
         position: absolute;
         top: 3px;
@@ -31,12 +45,14 @@
       }
 
       &:hover {
-        color: oColorsGetPaletteColor("org-b2b-dark");
+        color: oColorsGetPaletteColor("grey-tint2");
 
         &::after {
-          @include oIconsGetIcon('arrow-up-down', oColorsGetPaletteColor('org-b2b-dark'), 12);
+          @include oIconsGetIcon('arrow-up-down', oColorsGetPaletteColor('grey-tint2'), 12);
         }
       }
+
+
     }
 
     &-dropdown {
