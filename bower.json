@@ -31,6 +31,7 @@
   },
   "resolutions": {
     "n-notification": "~5.0.0",
-    "o-icons": "~4.4.2"
+    "o-icons": "~4.4.2",
+    "o-viewport": "~2.2.0"
   }
 }
