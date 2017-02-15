@@ -33,6 +33,14 @@ body {
     color: oColorsGetColorFor('o-header-services-top', text);
   }
 }
+.o-header-services__product-name--drawer {
+  color: oColorsGetPaletteColor('black');
+}
+
+.o-overlay__close {
+  border: 0;
+}
+
 
 @import '../src/components/license-dropdown/style';
 @import '../src/components/header-nav/style';

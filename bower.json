@@ -23,16 +23,18 @@
    "dependencies": {
      "o-header-services" : "~1.1.0",
      "o-icons": "~4.4.2",
-     "o-forms": "~2.0.3",
+     "o-forms": "~3.5.0",
      "o-viewport": "~2.2.0",
      "ftdomdelegate": "~2.0.3",
      "n-notification": "~5.0.0",
-     "o-overlay": "~1.8.5",
+     "o-overlay": "~1.12.1",
      "o-dom": "~1.0.0"
   },
   "resolutions": {
+    "o-forms": "~3.5.0",
     "n-notification": "~5.0.0",
     "o-icons": "~4.4.2",
-    "o-viewport": "~2.2.0"
+    "o-viewport": "~2.2.0",
+    "o-overlay": "~1.12.1"
   }
 }
