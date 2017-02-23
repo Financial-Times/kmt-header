@@ -35,6 +35,14 @@ body {
 }
 .o-header-services__product-name--drawer {
   color: oColorsGetPaletteColor('black');
+  padding-right: 32px;
+  display: inline-block;
+}
+
+.o-header__drawer-tools-close {
+  position: absolute;
+  right: 0;
+  top: 20px;
 }
 
 .o-overlay__close {
