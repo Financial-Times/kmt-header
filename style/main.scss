@@ -11,8 +11,11 @@ $n-notification-is-silent: false;
 @import '../bower_components/o-overlay/main';
 @import '../bower_components/n-notification/main';
 
+$sans-serif: oFontsGetFontFamilyWithFallbacks(MetricWeb);
+
 html {
   height: 100%;
+  font-family: $sans-serif;
 }
 
 body {
@@ -43,6 +46,11 @@ body {
   position: absolute;
   right: 0;
   top: 20px;
+}
+
+.o-overlay__title {
+  font-size: 18px;
+  line-height: 22px;
 }
 
 .o-overlay__close {

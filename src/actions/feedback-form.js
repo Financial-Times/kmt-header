@@ -26,7 +26,7 @@ export function submitFeedback(theUrl, data) {
 
         let theMessage = {
           type: 'success',
-          title: 'Thanks for your feedback',
+          title: 'Thank you for your feedback',
           content: ''
         };
         nNotification.show(theMessage);
