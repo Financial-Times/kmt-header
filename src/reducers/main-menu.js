@@ -15,20 +15,20 @@ const defaultState = {
   items: [
     {
       label: "DASHBOARD",
-      attr: {
+      attrs: {
         href: "#"
       }
     },
     {
       label: "MY FT",
       active: true,
-      attr: {
+      attrs: {
         href: "#"
       }
     },
     {
       label: "USERS",
-      attr: {
+      attrs: {
         href: "#"
       }
     }
