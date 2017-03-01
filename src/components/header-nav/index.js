@@ -24,7 +24,7 @@ class HeaderNav extends Component {
     }
     return (
       <li className={liCls} key={index}>
-        <a className={aCls} {...item.attrs} >{item.label}</a>
+        <a className={aCls} {...item.attr} >{item.label}</a>
       </li>
     );
   }
