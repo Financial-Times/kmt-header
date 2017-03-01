@@ -1,14 +1,21 @@
-.nps-feedback {
+.kat-feedback {
   display: flex;
   //padding: 20px 10px;
   flex-direction: column;
   align-items: center;
+  font-size: 16px;
+  line-height: 20px;
 
   > div {
     width: 475px;
   }
   .nps-label {
-    margin-right: 14px;
+    padding-right: 18px;
+    margin-right: 0;
+
+    @include oGridRespondTo($until: M) {
+      padding-bottom: 6px;
+    }
   }
 
   // scss-lint:disable DeclarationOrder
@@ -23,54 +30,47 @@
   }
 }
 
-.nps-feedback__score {
+.kat-feedback__row {
+  padding-bottom: 20px;
+  position: relative;
+}
+
+.kat-feedback__score {
   clear: both;
 
   @include oGridRespondTo(M) {
-    margin: 0px -30px;
-    padding-left: 30px;
+    margin: 0px -20px;
+    padding-left: 20px;
   }
 }
 
-.nps-feedback__less {
+.kat-feedback__less {
   float: left;
 
   @include oGridRespondTo($until: M) {
     float: none;
     position: absolute;
-    top: 1px;
+    top: 2px;
     margin-left: 45px;
     margin-top: 0;
   }
 }
 
-.nps-feedback__more {
+.kat-feedback__more {
   float: right;
 
   @include oGridRespondTo($until: M) {
     float: none;
     position: absolute;
-    bottom: 3px;
+    bottom: 25px;
     margin-left: 45px;
   }
 }
 
-.nps-feedback__submit {
-  @include oButtons();
-  display: block;
+.kat-feedback__textarea {
+  max-width: 100%;
 }
 
-.feedback-row {
-  max-width: 475px;
-  margin: 0 auto;
-
-  hr {
-    border: 0;
-    height: 1px;
-    background: #333333;
-  }
-}
-
-.back-button {
-  text-align: center;
+.kat-feedback__submit {
+  @include oButtons;
 }
