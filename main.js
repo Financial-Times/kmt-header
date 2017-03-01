@@ -15,18 +15,26 @@ const initKmtHeader = () => {
           items: [
             {
               label: "myFT",
-              href: "#",
+              attrs: {
+                href: "#"
+              },
               active: true
-            }, {
+            },
+            {
               label: "USERS",
-              href: "#"
+              attrs: {
+                href: "#",
+                target: "_blank"
+              }
+            },
+            {
+              label: "Feedback",
+              attrs: {
+                href: "#"
+              },
+              cls: "kat-feedback__btn",
+              last: true
             }
-            // {
-            //   label: "Feedback",
-            //   href: "#",
-            //   cls: "kat-feedback__btn",
-            //   last: true
-            // }
           ],
           enableMobile: true
         },

@@ -15,16 +15,22 @@ const defaultState = {
   items: [
     {
       label: "DASHBOARD",
-      href: "#"
+      attrs: {
+        href: "#"
+      }
     },
     {
       label: "MY FT",
-      href: "#",
-      active: true
+      active: true,
+      attrs: {
+        href: "#"
+      }
     },
     {
       label: "USERS",
-      href: "#"
+      attrs: {
+        href: "#"
+      }
     }
   ],
   enableMobile: true
