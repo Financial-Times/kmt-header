@@ -26,15 +26,15 @@ const initKmtHeader = () => {
                 href: "#",
                 target: "_blank"
               }
+            },
+            {
+              label: "Feedback",
+              attrs: {
+                href: "#"
+              },
+              cls: "kat-feedback__btn",
+              last: true
             }
-            //,{
-            //  label: "Feedback",
-            //  attrs: {
-            //    href: "#",
-            //  },
-            //  cls: "kat-feedback__btn",
-            //  last: true
-            //}
           ],
           enableMobile: true
         },
