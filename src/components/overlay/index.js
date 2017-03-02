@@ -20,8 +20,11 @@ class Overlay extends Component {
   }
 
   shouldComponentUpdate(nextProps, nextState) {
+    // children will be a React object that can't be stringified
+    const replacer = (k, v) => k === "children" ? v.props || null : v;
+
     // only render if the props (state) have changed
-    return JSON.stringify(nextProps) !== JSON.stringify(this.props);
+    return JSON.stringify(nextProps, replacer) !== JSON.stringify(this.props, replacer);
   }
 
   componentDidMount() {
