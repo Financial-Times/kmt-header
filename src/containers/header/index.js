@@ -56,7 +56,7 @@ class HeaderContainer extends Component {
         <HeaderNav menu={this.props.menu} />
         {this.props.feedbackIsExpanded === true
           ? <Overlay {...overlayProps}>
-              <FeedbackForm dispatch={this.props.dispatch} />
+              <FeedbackForm dispatch={this.props.dispatch} isValid={this.props.feedbackIsValid} />
             </Overlay>
           : null
         }
@@ -73,7 +73,8 @@ HeaderContainer.propTypes = {
   menu: PropTypes.shape(menuTypes).isRequired,
   headerTitle: PropTypes.shape(headerTitleTypes).isRequired,
   extraActions: PropTypes.shape(extraActionsTypes).isRequired,
-  feedbackIsExpanded: PropTypes.bool.isRequired
+  feedbackIsExpanded: PropTypes.bool.isRequired,
+  feedbackIsValid: PropTypes.bool.isRequired
 };
 
 const mapStateToProps = (store) => {
@@ -81,7 +82,8 @@ const mapStateToProps = (store) => {
     menu: store.KmtHeaderNs.mainMenu,
     headerTitle: store.KmtHeaderNs.headerTitle,
     extraActions: store.KmtHeaderNs.extraActions,
-    feedbackIsExpanded: store.KmtHeaderNs.feedbackForm.isExpanded
+    feedbackIsExpanded: store.KmtHeaderNs.feedbackForm.isExpanded,
+    feedbackIsValid: store.KmtHeaderNs.feedbackForm.isValid
   };
 };
 

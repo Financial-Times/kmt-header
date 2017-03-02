@@ -11,6 +11,16 @@ export function togglePanel() {
 }
 
 /**
+ * Toggles feedback form valid state
+ * @returns {{type: String}}
+ */
+export function toggleFeedbackValid() {
+  return {
+    type: "F_TOGGLE_VALID"
+  };
+}
+
+/**
  * Submit the user feedback
  * @param {String} theUrl
  * @param {Object} data
