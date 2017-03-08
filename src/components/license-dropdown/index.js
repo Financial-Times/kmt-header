@@ -38,7 +38,7 @@ class LicenseDropdown extends Component {
     // if it's not in the mobile container AND if it needs to be shown AND if it was hidden
     if (this.props.mobile !== true && this.props.licenseData.show === true && prevProps.licenseData.show !== this.props.licenseData.show) {
       // calculate its position
-      this.positionDropdown();
+      //this.positionDropdown();
     }
   }
 
@@ -80,7 +80,7 @@ class LicenseDropdown extends Component {
   }
 
   onWindowResize () {
-    this.positionDropdown();
+    //this.positionDropdown();
   }
 
   licenseChanged (e) {
