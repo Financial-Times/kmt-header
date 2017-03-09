@@ -1,8 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import Delegate from 'ftdomdelegate';
-import viewport from 'o-viewport';
 import oDom from 'o-dom';
-import { toggleDropdown, updateDropdownStyle } from "../../actions/license-dropdown";
+import { toggleDropdown } from "../../actions/license-dropdown";
 import { changeLicense } from "../../actions/license-change";
 let componentEventsBound = false;
 
