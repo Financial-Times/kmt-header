@@ -15,7 +15,7 @@ class HeaderTop extends Component {
     const { headerTitle } = this.props;
 
     return (
-      <div className='o-header-services__top o-header-services__container'>
+      <div className='o-header-services__top o-header-services__container kmt-header__top'>
 
         {this.props.enableMobileMenu === true
           ? <div className='o--if-js o-header-services__hamburger'>
