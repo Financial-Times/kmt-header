@@ -76,8 +76,8 @@ class FeedbackForm extends Component {
             <label className="o-forms__label">How satisfied are you with FT KAT?</label>
           </div>
           <div className="kat-feedback__row">
-            <small className="o-forms__additional-info kat-feedback__less">Less Likely</small>
-            <small className="o-forms__additional-info kat-feedback__more">Extremely Likely</small>
+            <small className="o-forms__additional-info kat-feedback__less">Extremely unsatisfied</small>
+            <small className="o-forms__additional-info kat-feedback__more">Extremely satisfied</small>
             <div className="kat-feedback__score">
               <input type="radio" name="npsscore" value="0" className="o-forms__radio o-forms__radio--small" id="nps0" ref="nps0" onChange={this.toggleValidState} />
               <label htmlFor="nps0" className="o-forms__label nps-label">0</label>
