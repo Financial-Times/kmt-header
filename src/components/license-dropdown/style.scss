@@ -15,6 +15,15 @@
 
             .kmt-forms__select {
               max-width: 100%;
+              background: none;
+            }
+
+            select,
+            option {
+              @include oTypographySans(s);
+              background-color: oColorsGetPaletteColor("white");
+              color: oColorsGetPaletteColor("black");
+              border: 0;
             }
           }
 
@@ -36,6 +45,7 @@
       position: relative;
       padding-right: 15px;
       color: oColorsGetPaletteColor("white");
+      font-weight: 400;
 
       // ignoring the nesting warning as it's not actually a nested class (it's BEM)
       // scss-lint:disable NestingDepth
@@ -55,7 +65,18 @@
         }
       }
 
+    }
 
+    &-label--noIcon {
+      position: relative;
+      padding-right: 15px;
+      color: oColorsGetPaletteColor("white");
+      font-weight: 400;
+      // ignoring the nesting warning as it's not actually a nested class (it's BEM)
+      // scss-lint:disable NestingDepth
+      &:hover {
+        color: oColorsGetPaletteColor("grey-tint2");
+      }
     }
 
     &-dropdown {
@@ -73,10 +94,21 @@
         display: block;
       }
 
+      select {
+        height: auto;
+      }
+      option {
+        padding: 5px 0;
+      }
+
       select,
       option {
         @include oTypographySans(s);
-        font-weight: inherit;
+        font-weight: 400;
+        font-size: 13px;
+        background-color: oColorsGetPaletteColor("black");
+        color: oColorsGetPaletteColor("white");
+        border: 0;
       }
     }
   }

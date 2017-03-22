@@ -6,6 +6,7 @@ import extraActions from './extra-actions';
 import licenseChange from './license-change';
 import feedbackForm from './feedback-form';
 import helpers from './helpers';
+import linkUser from './link-user';
 
 const mainReducers = {
   mainMenu,
@@ -14,7 +15,8 @@ const mainReducers = {
   extraActions,
   licenseChange,
   feedbackForm,
-  helpers
+  helpers,
+  linkUser
 };
 
 // combine the app reducers
@@ -22,6 +24,5 @@ const KmtHeaderNs = combineReducers(mainReducers);
 
 // create a namespace for this app store
 const KmtHeaderApp = combineReducers(Object.assign({}, {KmtHeaderNs}));
-
 export { KmtHeaderNs };
 export default KmtHeaderApp;

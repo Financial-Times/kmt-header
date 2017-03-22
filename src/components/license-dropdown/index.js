@@ -57,7 +57,6 @@ class LicenseDropdown extends Component {
 
   render() {
     const { licenseData } = this.props;
-
     // if there are no licenses
     if (licenseData.items.length === 0) {
       return null;
@@ -72,21 +71,29 @@ class LicenseDropdown extends Component {
     if (this.props.mobile === true) {
       wrapperCls += ` ${wrapperCls}--mobile`;
     }
+    let kmtHeaderLicenseLabel= "";
+    licenseData.items.length > 1 ? kmtHeaderLicenseLabel = "kmt-header__license-label" : kmtHeaderLicenseLabel = "kmt-header__license-label--noIcon";
 
     return (
+
       <div className={wrapperCls} ref="theWrapper">
-        <div className="kmt-header__license-label" onClick={this.toggleDropdown}>
+        <div className={kmtHeaderLicenseLabel} onClick={this.toggleDropdown}>
           <span className="kmt-header__license-used">{licenseData.selected.label}</span>
         </div>
-        <div className={dropdownCls} style={this.props.mobile !== true ? licenseData.style : {}}>
-          <select className="o-forms__select kmt-forms__select" onChange={this.licenseChanged} defaultValue={licenseData.selected.licenceId}>
-            {
-              licenseData.items.map((item, index) => {
-                return <option value={item.licenceId} key={index}>{item.label} - {this.trimLicenseId(item.licenceId)}</option>;
-              })
-            }
-          </select>
-        </div>
+      {
+        (licenseData.items.length > 1) ?
+          <div className={dropdownCls} style={this.props.mobile !== true ? licenseData.style : {}}>
+            <select size={licenseData.items.length} className="o-forms__select kmt-forms__select" onChange={this.licenseChanged} defaultValue={licenseData.selected.licenceId}>
+              {
+                licenseData.items.map((item, index) => {
+                  return <option value={item.licenceId} key={index}>{item.label} - {this.trimLicenseId(item.licenceId)}</option>;
+                })
+              }
+            </select>
+          </div>
+          :
+          null
+      }
       </div>
     );
   }

@@ -38,6 +38,10 @@ const initKmtHeader = () => {
           ],
           enableMobile: true
         },
+        //linkUser: {
+        //  href: "https://myaccount.ft.com/",
+        //  label: "My Account"
+        //},
         helpers: {
           doRequest: (theUrl, options) => { return new Promise((res) => { return res(theUrl); }); }
         }
