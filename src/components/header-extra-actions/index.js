@@ -36,7 +36,7 @@ class HeaderExtraActions extends Component {
       <nav className="o-header__drawer-menu o-header__drawer-menu--user" role="navigation" aria-label="User navigation">
         <ul className="o-header__drawer-menu-list">
           <li className="o-header__drawer-menu-item">
-            <span className="o-header__drawer-menu-link">
+            <span className="o-header__drawer-menu-link kmt-header__drawer-menu-link">
               <HeaderLicense mobile={this.props.mobile} />
             </span>
           </li>
