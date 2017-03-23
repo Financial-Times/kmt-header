@@ -21,9 +21,10 @@
             select,
             option {
               @include oTypographySans(s);
-              background-color: oColorsGetPaletteColor("white");
+              background-color: oColorsGetPaletteColor("pink-tint2");
               color: oColorsGetPaletteColor("black");
               border: 0;
+              padding: 11px 0px;
             }
           }
 
@@ -82,11 +83,12 @@
     &-dropdown {
       display: none;
       margin-top: 1px;
-      padding: 20px;
+      padding: 19px 0 0;
       position: absolute;
       background-color: oColorsGetPaletteColor("warm-4");
       cursor: auto;
       z-index: 1;
+      opacity: 0.9;
 
       // ignoring the nesting warning as it's not actually a nested class (it's BEM)
       // scss-lint:disable NestingDepth
@@ -94,21 +96,28 @@
         display: block;
       }
 
-      select {
-        height: auto;
-      }
-      option {
-        padding: 5px 0;
-      }
+
 
       select,
       option {
         @include oTypographySans(s);
         font-weight: 400;
         font-size: 13px;
-        background-color: oColorsGetPaletteColor("black");
+        background-color: oColorsGetPaletteColor("warm-4");
         color: oColorsGetPaletteColor("white");
         border: 0;
+      }
+
+      select {
+        height: auto;
+        padding: 0;
+      }
+      option {
+        padding: 11px 20px;
+
+      }
+      .kmt-forms-option--selected {
+          background-color: oColorsGetPaletteColor("black");
       }
     }
   }

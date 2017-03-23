@@ -45,8 +45,6 @@ class HeaderContainer extends Component {
       extraActions: this.props.extraActions
     };
 
-    const userLink = this.props.userLink;
-
     const overlayProps = {
       title: "Help us to improve.",
       closeFn: this.closeFeedback
@@ -55,7 +53,7 @@ class HeaderContainer extends Component {
     return (
       <header className='o-header-services o-header-services--b2b' data-o-component='o-header'>
         <HeaderTop {...headerTopProps} />
-        <HeaderNav menu={this.props.menu} userLink={userLink}/>
+        <HeaderNav menu={this.props.menu}/>
         {this.props.feedbackIsExpanded === true
           ? <Overlay {...overlayProps}>
               <FeedbackForm dispatch={this.props.dispatch} isValid={this.props.feedbackIsValid} />
@@ -86,7 +84,6 @@ const mapStateToProps = (store) => {
     extraActions: store.KmtHeaderNs.extraActions,
     feedbackIsExpanded: store.KmtHeaderNs.feedbackForm.isExpanded,
     feedbackIsValid: store.KmtHeaderNs.feedbackForm.isValid,
-    userLink: store.KmtHeaderNs.linkUser
   };
 };
 

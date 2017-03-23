@@ -6,7 +6,6 @@ import extraActions from './extra-actions';
 import licenseChange from './license-change';
 import feedbackForm from './feedback-form';
 import helpers from './helpers';
-import linkUser from './link-user';
 
 const mainReducers = {
   mainMenu,
@@ -15,8 +14,7 @@ const mainReducers = {
   extraActions,
   licenseChange,
   feedbackForm,
-  helpers,
-  linkUser
+  helpers
 };
 
 // combine the app reducers

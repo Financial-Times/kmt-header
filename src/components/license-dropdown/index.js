@@ -72,6 +72,7 @@ class LicenseDropdown extends Component {
       wrapperCls += ` ${wrapperCls}--mobile`;
     }
     let kmtHeaderLicenseLabel= "";
+    let className ="";
     licenseData.items.length > 1 ? kmtHeaderLicenseLabel = "kmt-header__license-label" : kmtHeaderLicenseLabel = "kmt-header__license-label--noIcon";
 
     return (
@@ -83,10 +84,11 @@ class LicenseDropdown extends Component {
       {
         (licenseData.items.length > 1) ?
           <div className={dropdownCls} style={this.props.mobile !== true ? licenseData.style : {}}>
-            <select size={licenseData.items.length} className="o-forms__select kmt-forms__select" onChange={this.licenseChanged} defaultValue={licenseData.selected.licenceId}>
+            <select size={licenseData.items.length} className="o-forms__select kmt-forms__select" onChange={this.licenseChanged} >
               {
                 licenseData.items.map((item, index) => {
-                  return <option value={item.licenceId} key={index}>{item.label} - {this.trimLicenseId(item.licenceId)}</option>;
+                  licenseData.selected.licenceId === item.licenceId ? className = "kmt-forms-option--selected" : className = null;
+                  return <option value={item.licenceId} key={index} className={className}>{item.label} - {this.trimLicenseId(item.licenceId)}</option>;
                 })
               }
             </select>

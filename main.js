@@ -34,14 +34,17 @@ const initKmtHeader = () => {
               },
               cls: "kat-feedback__btn",
               last: true
+            },
+            {
+              label: "My Account",
+              attrs: {
+                href: "https://myaccount.ft.com/"
+              },
+              last: true
             }
           ],
           enableMobile: true
         },
-        //linkUser: {
-        //  href: "https://myaccount.ft.com/",
-        //  label: "My Account"
-        //},
         helpers: {
           doRequest: (theUrl, options) => { return new Promise((res) => { return res(theUrl); }); }
         }

@@ -14,7 +14,6 @@ class HeaderDrawerContainer extends Component {
   }
 
   render() {
-    const userLink = this.props.userLink;
     return (
       <div className="o-header__drawer--services o-header__drawer o--if-js" id="o-header-drawer" data-o-header-drawer data-o-header-drawer--no-js>
         <div className="o-header__drawer-inner">
@@ -26,7 +25,7 @@ class HeaderDrawerContainer extends Component {
             </button>
           </div>
 
-          <HeaderNav mobile={true} menu={this.props.menu} userLink={userLink}/>
+          <HeaderNav mobile={true} menu={this.props.menu} />
           <HeaderExtraActions mobile={true} extraActions={this.props.extraActions} />
 
         </div>
@@ -50,7 +49,6 @@ const mapStateToProps = (store) => {
     menu: store.KmtHeaderNs.mainMenu,
     headerTitle: store.KmtHeaderNs.headerTitle,
     extraActions: store.KmtHeaderNs.extraActions,
-    userLink: store.KmtHeaderNs.linkUser
   };
 };
 
