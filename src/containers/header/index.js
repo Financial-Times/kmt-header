@@ -83,7 +83,7 @@ const mapStateToProps = (store) => {
     headerTitle: store.KmtHeaderNs.headerTitle,
     extraActions: store.KmtHeaderNs.extraActions,
     feedbackIsExpanded: store.KmtHeaderNs.feedbackForm.isExpanded,
-    feedbackIsValid: store.KmtHeaderNs.feedbackForm.isValid,
+    feedbackIsValid: store.KmtHeaderNs.feedbackForm.isValid
   };
 };
 

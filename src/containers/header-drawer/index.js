@@ -48,7 +48,7 @@ const mapStateToProps = (store) => {
   return {
     menu: store.KmtHeaderNs.mainMenu,
     headerTitle: store.KmtHeaderNs.headerTitle,
-    extraActions: store.KmtHeaderNs.extraActions,
+    extraActions: store.KmtHeaderNs.extraActions
   };
 };
 

@@ -57,8 +57,9 @@ class LicenseDropdown extends Component {
 
   render() {
     const { licenseData } = this.props;
+    let licenseDataLength = licenseData.items.length;
     // if there are no licenses
-    if (licenseData.items.length === 0) {
+    if (licenseDataLength === 0) {
       return null;
     }
 
@@ -73,8 +74,8 @@ class LicenseDropdown extends Component {
     }
     let kmtHeaderLicenseLabel= "";
     let className ="";
-    licenseData.items.length > 1 ? kmtHeaderLicenseLabel = "kmt-header__license-label" : kmtHeaderLicenseLabel = "kmt-header__license-label--noIcon";
-    
+    licenseDataLength > 1 ? kmtHeaderLicenseLabel = "kmt-header__license-label" : kmtHeaderLicenseLabel = "kmt-header__license-label--noIcon";
+
     return (
 
       <div className={wrapperCls} ref="theWrapper">
@@ -82,9 +83,9 @@ class LicenseDropdown extends Component {
           <span className="kmt-header__license-used">{licenseData.selected.label}</span>
         </div>
       {
-        (licenseData.items.length > 1) ?
+        (licenseDataLength > 1) ?
           <div className={dropdownCls} style={this.props.mobile !== true ? licenseData.style : {}}>
-            <select size={licenseData.items.length <= 4 ? licenseData.items.length : 4} className="o-forms__select kmt-forms__select" onChange={this.licenseChanged} >
+            <select size={licenseDataLength <= 4 ? licenseDataLength : 4} className="o-forms__select kmt-forms__select" onChange={this.licenseChanged} >
               {
                 licenseData.items.map((item, index) => {
                   licenseData.selected.licenceId === item.licenceId ? className = "kmt-forms-option--selected" : className = null;

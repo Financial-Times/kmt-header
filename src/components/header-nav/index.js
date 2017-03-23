@@ -80,7 +80,7 @@ import { menuTypes } from "../../reducers/main-menu";
 
 HeaderNav.propTypes = {
   mobile: PropTypes.bool,
-  menu: PropTypes.shape(menuTypes).isRequired,
+  menu: PropTypes.shape(menuTypes).isRequired
 };
 
 HeaderNav.defaultProps = {
