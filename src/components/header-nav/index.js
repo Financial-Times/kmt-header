@@ -31,7 +31,6 @@ class HeaderNav extends Component {
 
   render() {
     const { menu } = this.props;
-
     // if there are no items
     if (menu.items === undefined) {
       return null;
@@ -40,13 +39,24 @@ class HeaderNav extends Component {
     let liCls = "o-header-services__nav-item";
     let aCls = "o-header-services__nav-link";
 
+    const lastItems = [];
+    let allItems = menu.items.filter(item => {
+      if (item.last === true) {
+        lastItems.push(item);
+        return false;
+      }
+      return true;
+    });
+
+    allItems = allItems.concat(lastItems.reverse());
+
     // if not for the mobile version
     if (this.props.mobile !== true) {
       return (
         <nav className='o-header-services__primary-nav'>
           <div className='o-header-services__container'>
             <ul className='o-header-services__nav-list kmt-text--transform-none'>
-              {menu.items.map((item, index) => this.createItem(item, index, liCls, aCls))}
+              {allItems.map((item, index) => this.createItem(item, index, liCls, aCls))}
             </ul>
           </div>
         </nav>

@@ -15,15 +15,39 @@
 
             .kmt-forms__select {
               max-width: 100%;
+              background: none;
+            }
+
+            option {
+              padding: 12px 16px;
+            }
+
+            select,
+            option {
+              @include oTypographySans(s);
+              background-color: oColorsGetPaletteColor("pink-tint2");
+              color: oColorsGetPaletteColor("black");
+              border: 0;
+            }
+
+            .kmt-forms-option--selected {
+              background-color: oColorsGetPaletteColor("teal-1");
+              color: oColorsGetPaletteColor("white");
             }
           }
 
           &__license {
             &-label {
               color: oColorsGetPaletteColor("claret");
+              padding: 12px 16px;
               &::after {
                 @include oIconsGetIcon('arrow-up-down', oColorsGetPaletteColor('claret'), 12);
+                margin: 12px 16px;
               }
+            }
+            &-label--noIcon {
+              padding: 12px 16px;
+              color: oColorsGetPaletteColor('claret');
             }
 
 
@@ -36,6 +60,7 @@
       position: relative;
       padding-right: 15px;
       color: oColorsGetPaletteColor("white");
+      font-weight: 400;
 
       // ignoring the nesting warning as it's not actually a nested class (it's BEM)
       // scss-lint:disable NestingDepth
@@ -55,13 +80,18 @@
         }
       }
 
+    }
 
+    &-label--noIcon {
+      position: relative;
+      font-weight: 400;
+      cursor: auto;
     }
 
     &-dropdown {
       display: none;
       margin-top: 1px;
-      padding: 20px;
+      padding: 19px 0 0;
       position: absolute;
       background-color: oColorsGetPaletteColor("warm-4");
       cursor: auto;
@@ -73,10 +103,29 @@
         display: block;
       }
 
+
+
       select,
       option {
         @include oTypographySans(s);
-        font-weight: inherit;
+        font-weight: 400;
+        font-size: 13px;
+        background-color: oColorsGetPaletteColor("warm-4");
+        color: oColorsGetPaletteColor("white");
+        border: 0;
+      }
+
+      select {
+        height: auto;
+        padding: 0;
+        overflow-y: auto;
+      }
+      option {
+        padding: 11px 20px;
+
+      }
+      .kmt-forms-option--selected {
+          background-color: oColorsGetPaletteColor("black");
       }
     }
   }

@@ -22,6 +22,5 @@ const KmtHeaderNs = combineReducers(mainReducers);
 
 // create a namespace for this app store
 const KmtHeaderApp = combineReducers(Object.assign({}, {KmtHeaderNs}));
-
 export { KmtHeaderNs };
 export default KmtHeaderApp;

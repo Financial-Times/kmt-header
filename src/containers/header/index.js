@@ -53,7 +53,7 @@ class HeaderContainer extends Component {
     return (
       <header className='o-header-services o-header-services--b2b' data-o-component='o-header'>
         <HeaderTop {...headerTopProps} />
-        <HeaderNav menu={this.props.menu} />
+        <HeaderNav menu={this.props.menu}/>
         {this.props.feedbackIsExpanded === true
           ? <Overlay {...overlayProps}>
               <FeedbackForm dispatch={this.props.dispatch} isValid={this.props.feedbackIsValid} />

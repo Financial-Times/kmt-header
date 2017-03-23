@@ -57,9 +57,9 @@ class LicenseDropdown extends Component {
 
   render() {
     const { licenseData } = this.props;
-
+    let licenseDataLength = licenseData.items.length;
     // if there are no licenses
-    if (licenseData.items.length === 0) {
+    if (licenseDataLength === 0) {
       return null;
     }
 
@@ -72,21 +72,31 @@ class LicenseDropdown extends Component {
     if (this.props.mobile === true) {
       wrapperCls += ` ${wrapperCls}--mobile`;
     }
+    let kmtHeaderLicenseLabel= "";
+    let className ="";
+    licenseDataLength > 1 ? kmtHeaderLicenseLabel = "kmt-header__license-label" : kmtHeaderLicenseLabel = "kmt-header__license-label--noIcon";
 
     return (
+
       <div className={wrapperCls} ref="theWrapper">
-        <div className="kmt-header__license-label" onClick={this.toggleDropdown}>
+        <div className={kmtHeaderLicenseLabel} onClick={this.toggleDropdown}>
           <span className="kmt-header__license-used">{licenseData.selected.label}</span>
         </div>
-        <div className={dropdownCls} style={this.props.mobile !== true ? licenseData.style : {}}>
-          <select className="o-forms__select kmt-forms__select" onChange={this.licenseChanged} defaultValue={licenseData.selected.licenceId}>
-            {
-              licenseData.items.map((item, index) => {
-                return <option value={item.licenceId} key={index}>{item.label} - {this.trimLicenseId(item.licenceId)}</option>;
-              })
-            }
-          </select>
-        </div>
+      {
+        (licenseDataLength > 1) ?
+          <div className={dropdownCls} style={this.props.mobile !== true ? licenseData.style : {}}>
+            <select size={licenseDataLength <= 4 ? licenseDataLength : 4} className="o-forms__select kmt-forms__select" onChange={this.licenseChanged} >
+              {
+                licenseData.items.map((item, index) => {
+                  licenseData.selected.licenceId === item.licenceId ? className = "kmt-forms-option--selected" : className = null;
+                  return <option value={item.licenceId} key={index} className={className}>{item.label} - {this.trimLicenseId(item.licenceId)}</option>;
+                })
+              }
+            </select>
+          </div>
+          :
+          null
+      }
       </div>
     );
   }

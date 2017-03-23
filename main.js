@@ -34,6 +34,13 @@ const initKmtHeader = () => {
               },
               cls: "kat-feedback__btn",
               last: true
+            },
+            {
+              label: "My Account",
+              attrs: {
+                href: "https://myaccount.ft.com/"
+              },
+              last: true
             }
           ],
           enableMobile: true

@@ -15,7 +15,7 @@ const cookieUserDetails = getCookieUserDetails();
 const initialState = {
   items: [],
   selected: {
-    licenceId: "",
+    licenseId: "",
     label: ""
   },
   show: false,
