@@ -105,13 +105,13 @@ class FeedbackForm extends Component {
           </div>
           <div className="kat-feedback__row">
             <label className="o-forms__label">Would you like to...</label>
-            <label className="o-forms__label">Leave a comment?</label>
-            <textarea className="o-forms__textarea kat-feedback__textarea" name="positivefeedback" ref="positivefeedback" onChange={this.toggleValidState}></textarea>
+            <label className="o-forms__label" htmlFor="positivefeedback">Leave a comment?</label>
+            <textarea className="o-forms__textarea kat-feedback__textarea" name="positivefeedback" id="positivefeedback" ref="positivefeedback" onChange={this.toggleValidState}></textarea>
           </div>
 
           <div className="kat-feedback__row">
-            <label className="o-forms__label">Report something is missing or not working?</label>
-            <textarea className="o-forms__textarea kat-feedback__textarea" name="negativefeedback" ref="negativefeedback" onChange={this.toggleValidState}></textarea>
+            <label className="o-forms__label" htmlFor="negativefeedback">Report something is missing or not working?</label>
+            <textarea className="o-forms__textarea kat-feedback__textarea" name="negativefeedback" id="negativefeedback" ref="negativefeedback" onChange={this.toggleValidState}></textarea>
           </div>
           <div className="kat-feedback__row">
             <button className="kat-feedback__submit" {...submitAttr}>Submit</button>
