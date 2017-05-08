@@ -70,7 +70,7 @@ class FeedbackForm extends Component {
       <div>
         <form method="POST" className="kat-feedback" {...formAttr}>
           <div className="kat-feedback__row">
-            <div>We'd love to hear your feedback about our Knowledge & Administration Tools, aka KAT. Please tell us your thoughts below. If you would like a reply, please leave your name and email address with your comments.</div>
+            <div>Please share your feedback on the new Knowledge and Administration Tool (KAT) so that we can continue to develop it in line with customer requirements.</div>
           </div>
           <div className="kat-feedback__row">
             <label className="o-forms__label">How satisfied are you with FT KAT?</label>
