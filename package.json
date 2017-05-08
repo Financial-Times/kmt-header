@@ -36,7 +36,7 @@
     "react-router": "~2.0.1",
     "polyfill-service": "~3.7.0",
     "dotenv": "~2.0.0",
-    "origami-build-tools": "~5.5.3",
+    "origami-build-tools": "~5.6.1",
     "hbs": "~4.0.0",
     "bower": "~1.7.9",
     "gulp": "~3.9.1",
