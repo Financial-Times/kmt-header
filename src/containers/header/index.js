@@ -46,7 +46,7 @@ class HeaderContainer extends Component {
     };
 
     const overlayProps = {
-      title: "Help us to improve.",
+      title: "Help us improve",
       closeFn: this.closeFeedback
     };
 
