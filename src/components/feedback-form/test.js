@@ -1,12 +1,12 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { mount } from 'enzyme';
 import FeedbackForm from './index.js';
 
 describe("<FeedbackForm />", () => {
 	const mockDispatch = jest.fn();
 
-	const feedbackFormComponent = shallow(
-		<FeedbackForm dispatch={mockDispatch} isValid={true} />
+	const feedbackFormComponent = mount(
+		<FeedbackForm dispatch={mockDispatch} isValid={false} />
 	);
 
 	it('should render without errors', () => {
@@ -20,7 +20,7 @@ describe("<FeedbackForm />", () => {
 		});
 
 		it('should have its own label', () => {
-			expect(feedbackFormComponent.find(`label[htmlFor="${textareaFields.get(0).props.id}"]`).length).toBe(1);
+			expect(feedbackFormComponent.find(`label[htmlFor="${textareaFields.prop('id')}"]`).length).toBe(1);
 		});
 	});
 
@@ -35,20 +35,37 @@ describe("<FeedbackForm />", () => {
 			expect(feedbackFormComponent.find('.nps-label').length).toBe(5);
 
 			expect(scoreOptions.everyWhere(scoreOptionField => {
-				return feedbackFormComponent.find(`label[htmlFor="${scoreOptionField.get(0).props.id}"]`).length === 1;
+				return feedbackFormComponent.find(`label[htmlFor="${scoreOptionField.prop('id')}"]`).length === 1;
 			})).toBe(true);
 		});
 	});
 
-	xit('should disable the submit button by default', () => {
+	// it('has the right content', () => {
+	// 	const feedbackFormComponentMounted = mount(
+	// 		<FeedbackForm dispatch={mockDispatch} isValid={true} />
+	// 	);
 
-	});
+	// 	const content = 
+	// 	// <div>
+ //  //       <form method="POST" className="kat-feedback" action="#">
+ //          <div className="kat-feedback__row">
+ //            <p className="kat-feedback__intro-text">Please share your feedback on the new Knowledge and Administration Tool (KAT) so that we can continue to develop it in line with customer requirements.</p>
+ //          </div>
 
-	xit('should enable the submit button when a score has been selected', () => {
-		
-	});
+	// 	expect(feedbackFormComponentMounted.contains(content)).toBe(true);
+	// });
+	
+	describe('submit button', () => {
+		const submitButton = feedbackFormComponent.find('.kat-feedback__submit');
 
-	xit('should enable the submit button when a textarea field has had some text entered', () => {
-		
+		it('should be enabled when the form is valid', () => {
+			feedbackFormComponent.setProps({isValid: true});
+			expect(submitButton.is('[disabled]')).toBe(false);
+		});
+
+		it('should be disabled when the form is not valid', () => {
+			feedbackFormComponent.setProps({isValid: false});
+			expect(submitButton.is('[disabled]')).toBe(true);
+		});
 	});
 });
