@@ -1,10 +1,7 @@
 // ToDo:
 // - Meaningful function names (e.g. getData - What data are we getting and from where)
-// - Remove one textarea
-// - Reduce score options to five
 // - Ask where the data from this form goes (db/email)
 // - Ask what is the minimum data that we want users to send back?
-
 
 import React, { Component, PropTypes } from 'react';
 import { submitFeedback, toggleFeedbackValid } from "../../actions/feedback-form";
