@@ -3,18 +3,19 @@
   "version": "0.0.1",
   "description": "",
   "main": "server.js",
-  "repository": "",
-  "scripts": {
-    "prestart": "./node_modules/.bin/gulp",
-    "start": "node server.js",
-    "heroku-postbuild": "./node_modules/.bin/bower install"
-  },
-  "engines": {
-    "node": "^6.2.0"
-  },
   "repository": {
     "type": "git",
     "url": "https://github.com/Financial-Times/kmt-header.git"
+  },
+  "scripts": {
+    "prestart": "./node_modules/.bin/gulp",
+    "start": "node server.js",
+    "heroku-postbuild": "./node_modules/.bin/bower install",
+    "test": "jest src/*",
+    "testWatch": "jest src/* --watch"
+  },
+  "engines": {
+    "node": "^6.2.0"
   },
   "author": "ciprian.lujeru@ft.com",
   "license": "MIT",
@@ -24,7 +25,10 @@
     "babel-loader": "~6.2.0",
     "babel-preset-es2015": "~6.1.18",
     "babel-preset-react": "~6.1.18",
-    "babel-register": "~6.9.0"
+    "babel-register": "~6.9.0",
+    "enzyme": "~1.4.1",
+    "jest": "^20.0.1",
+    "react-addons-test-utils": "~0.14.7"
   },
   "dependencies": {
     "node-sass": "~3.8.0",
@@ -49,5 +53,10 @@
     "react-redux": "~4.4.5",
     "redux-logger": "~2.6.1",
     "redux-thunk": "~2.1.0"
+  },
+  "jest": {
+    "moduleNameMapper": {
+      "n-notification": "<rootDir>/bower_components/n-notification/main.js"
+    }
   }
 }
