@@ -75,19 +75,19 @@ class FeedbackForm extends Component {
                 <input type="radio" name="npsscore" value="1" className="o-forms__radio o-forms__radio--small" id="nps1" ref="nps1" onChange={this.toggleValidState} />
                 <label htmlFor="nps1" className="o-forms__label nps-label">1 - Extremely dissatisfied</label>
               </div>
-              <div>              
+              <div>
                 <input type="radio" name="npsscore" value="2" className="o-forms__radio o-forms__radio--small" id="nps2" ref="nps2" onChange={this.toggleValidState} />
                 <label htmlFor="nps2" className="o-forms__label nps-label">2 - Somewhat dissatisfied</label>
               </div>
-              <div>              
+              <div>
                 <input type="radio" name="npsscore" value="3" className="o-forms__radio o-forms__radio--small" id="nps3" ref="nps3" onChange={this.toggleValidState} />
                 <label htmlFor="nps3" className="o-forms__label nps-label">3 - Neither satisfied nor dissatisfied</label>
               </div>
-              <div>              
+              <div>
                 <input type="radio" name="npsscore" value="4" className="o-forms__radio o-forms__radio--small" id="nps4" ref="nps4" onChange={this.toggleValidState} />
                 <label htmlFor="nps4" className="o-forms__label nps-label">4 - Somewhat satisfied</label>
               </div>
-              <div>              
+              <div>
                 <input type="radio" name="npsscore" value="5" className="o-forms__radio o-forms__radio--small" id="nps5" ref="nps5" onChange={this.toggleValidState} />
                 <label htmlFor="nps5" className="o-forms__label nps-label">5 - Extremely satisfied</label>
               </div>
