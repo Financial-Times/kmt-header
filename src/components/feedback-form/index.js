@@ -1,8 +1,3 @@
-// ToDo:
-// - Meaningful function names (e.g. getData - What data are we getting and from where)
-// - Ask where the data from this form goes (db/email)
-// - Ask what is the minimum data that we want users to send back?
-
 import React, { Component, PropTypes } from 'react';
 import { submitFeedback, toggleFeedbackValid } from "../../actions/feedback-form";
 
@@ -11,7 +6,7 @@ class FeedbackForm extends Component {
     super(props);
 
     this.submit = this.submit.bind(this);
-    this.getData = this.getData.bind(this);
+    this.getFormData = this.getFormData.bind(this);
     this.toggleValidState = this.toggleValidState.bind(this);
   }
 
@@ -21,26 +16,22 @@ class FeedbackForm extends Component {
   }
 
   toggleValidState() {
-    const theData = this.getData();
+    const theData = this.getFormData();
     const isValid = Object.keys(theData).some((key) => theData[key] !== undefined && theData[key].trim().length > 0);
     if (this.props.isValid !== isValid) {
       this.props.dispatch(toggleFeedbackValid());
     }
   }
 
-  getData() {
+  getFormData() {
     const theData = {
       npsscore: undefined,
-      positivefeedback: undefined,
-      negativefeedback: undefined
+      improvefeedback: this.refs.improvefeedback.value
     };
+
     Object.keys(this.refs).forEach((key) => {
-      if (key.indexOf("nps") === 0) {
-        if (this.refs[key].checked) {
-          theData["npsscore"] = this.refs[key].value;
-        }
-      } else {
-        theData[key] = this.refs[key].value;
+      if (key.indexOf("nps") === 0 && this.refs[key].checked) {
+        theData.npsscore = this.refs[key].value;
       }
     });
 
@@ -52,7 +43,7 @@ class FeedbackForm extends Component {
     const theForm = e.target;
     if (theForm) {
       const theUrl = theForm.getAttribute("action");
-      this.props.dispatch(submitFeedback(theUrl, this.getData()));
+      this.props.dispatch(submitFeedback(theUrl, this.getFormData()));
     }
   }
 
@@ -103,8 +94,8 @@ class FeedbackForm extends Component {
             </div>
           </div>
           <div className="kat-feedback__row">
-            <label className="o-forms__label" htmlFor="positivefeedback">How can we improve KAT?</label>
-            <textarea className="o-forms__textarea kat-feedback__textarea" name="positivefeedback" id="positivefeedback" ref="positivefeedback" onChange={this.toggleValidState}></textarea>
+            <label className="o-forms__label" htmlFor="improvefeedback">How can we improve KAT?</label>
+            <textarea className="o-forms__textarea kat-feedback__textarea" name="improvefeedback" id="improvefeedback" ref="improvefeedback" onChange={this.toggleValidState}></textarea>
           </div>
           <div className="kat-feedback__row">
             <button className="kat-feedback__submit" {...submitAttr}>Submit</button>
