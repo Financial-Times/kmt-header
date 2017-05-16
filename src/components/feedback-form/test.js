@@ -72,7 +72,7 @@ describe("<FeedbackForm />", () => {
 
 		it('contains textarea title', () => {
 			const textArea =
-				<label className="o-forms__label" htmlFor="positivefeedback">How can we improve KAT?</label>;
+				<label className="o-forms__label" htmlFor="improvefeedback">How can we improve KAT?</label>;
 
 			expect(feedbackFormComponentMounted.contains(textArea)).toEqual(true);
 		});
