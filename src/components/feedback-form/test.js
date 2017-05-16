@@ -26,7 +26,7 @@ describe("<FeedbackForm />", () => {
 
 	describe('feedback score', () => {
 		const scoreOptions = feedbackFormComponent.find('[name="npsscore"]');
-		
+
 		it('should contain 5 options', () => {
 			expect(scoreOptions.length).toBe(5);
 		});
@@ -40,21 +40,48 @@ describe("<FeedbackForm />", () => {
 		});
 	});
 
-	// it('has the right content', () => {
-	// 	const feedbackFormComponentMounted = mount(
-	// 		<FeedbackForm dispatch={mockDispatch} isValid={true} />
-	// 	);
+	describe('has the right html content', () => {
+		const feedbackFormComponentMounted = mount(
+			<FeedbackForm dispatch={mockDispatch} isValid={true} />
+		);
 
-	// 	const content = 
-	// 	// <div>
- //  //       <form method="POST" className="kat-feedback" action="#">
- //          <div className="kat-feedback__row">
- //            <p className="kat-feedback__intro-text">Please share your feedback on the new Knowledge and Administration Tool (KAT) so that we can continue to develop it in line with customer requirements.</p>
- //          </div>
+		it('contains feedback intro', () => {
+			const feedbackIntro =
+			<div className="kat-feedback__row">
+				<p className="kat-feedback__intro-text">Please share your feedback on the new Knowledge and Administration Tool (KAT) so that we can continue to develop it in line with customer requirements.</p>
+			</div>;
 
-	// 	expect(feedbackFormComponentMounted.contains(content)).toBe(true);
-	// });
-	
+			expect(feedbackFormComponentMounted.contains(feedbackIntro)).toEqual(true);
+		});
+
+		it('contains form label', () => {
+			const formLabel =
+			<label className="o-forms__label">How satisfied are you with FT KAT?</label>;
+
+			expect(feedbackFormComponentMounted.contains(formLabel)).toEqual(true);
+		});
+
+		it('contains four html blocks', () => {
+			expect(feedbackFormComponentMounted.find('.kat-feedback__row').length).toEqual(4);
+		});
+
+		it('contains textarea title', () => {
+			const textArea =
+				<label className="o-forms__label" htmlFor="positivefeedback">How can we improve KAT?</label>;
+
+			expect(feedbackFormComponentMounted.contains(textArea)).toEqual(true);
+		});
+
+		it('contains one and only one submit button', () => {
+			expect(feedbackFormComponentMounted.find('button').length).toEqual(1);
+			expect(feedbackFormComponentMounted.find('.kat-feedback__submit').length).toEqual(1);
+		});
+
+		it('contains one and only one form', () => {
+			expect(feedbackFormComponentMounted.find('form').length).toEqual(1);
+		});
+	});
+
 	describe('submit button', () => {
 		const submitButton = feedbackFormComponent.find('.kat-feedback__submit');
 
