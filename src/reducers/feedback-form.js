@@ -2,6 +2,7 @@ const defaultState = {
   isExpanded: false,
   isValid: false
 };
+
 const feedbackForm = (state = defaultState, action = {}) => {
 
   switch (action.type) {

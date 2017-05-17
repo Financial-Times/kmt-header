@@ -1,0 +1,61 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<FeedbackForm /> has the right content 1`] = `
+"<div>
+<form method=\\"POST\\" className=\\"kat-feedback\\" action=\\"#\\">
+<div className=\\"kat-feedback__row\\">
+<p className=\\"kat-feedback__intro-text\\">
+Please share your feedback on the new Knowledge and Administration Tool (KAT) so that we can continue to develop it in line with customer requirements.
+</p>
+</div>
+<div className=\\"kat-feedback__row\\">
+<label className=\\"o-forms__label\\">
+How satisfied are you with FT KAT?
+</label>
+<div className=\\"kat-feedback__score\\">
+<div>
+<input type=\\"radio\\" name=\\"npsscore\\" value=\\"5\\" className=\\"o-forms__radio o-forms__radio--small\\" id=\\"nps5\\" onChange={[Function]} />
+<label htmlFor=\\"nps5\\" className=\\"o-forms__label nps-label\\">
+5 - Extremely satisfied
+</label>
+</div>
+<div>
+<input type=\\"radio\\" name=\\"npsscore\\" value=\\"4\\" className=\\"o-forms__radio o-forms__radio--small\\" id=\\"nps4\\" onChange={[Function]} />
+<label htmlFor=\\"nps4\\" className=\\"o-forms__label nps-label\\">
+4 - Somewhat satisfied
+</label>
+</div>
+<div>
+<input type=\\"radio\\" name=\\"npsscore\\" value=\\"3\\" className=\\"o-forms__radio o-forms__radio--small\\" id=\\"nps3\\" onChange={[Function]} />
+<label htmlFor=\\"nps3\\" className=\\"o-forms__label nps-label\\">
+3 - Neither satisfied nor dissatisfied
+</label>
+</div>
+<div>
+<input type=\\"radio\\" name=\\"npsscore\\" value=\\"2\\" className=\\"o-forms__radio o-forms__radio--small\\" id=\\"nps2\\" onChange={[Function]} />
+<label htmlFor=\\"nps2\\" className=\\"o-forms__label nps-label\\">
+2 - Somewhat dissatisfied
+</label>
+</div>
+<div>
+<input type=\\"radio\\" name=\\"npsscore\\" value=\\"1\\" className=\\"o-forms__radio o-forms__radio--small\\" id=\\"nps1\\" onChange={[Function]} />
+<label htmlFor=\\"nps1\\" className=\\"o-forms__label nps-label\\">
+1 - Extremely dissatisfied
+</label>
+</div>
+</div>
+</div>
+<div className=\\"kat-feedback__row\\">
+<label className=\\"o-forms__label\\" htmlFor=\\"improvefeedback\\">
+How can we improve KAT?
+</label>
+<textarea className=\\"o-forms__textarea kat-feedback__textarea\\" name=\\"improvefeedback\\" id=\\"improvefeedback\\" onChange={[Function]} />
+</div>
+<div className=\\"kat-feedback__row\\">
+<button className=\\"kat-feedback__submit\\" disabled={true} type=\\"button\\">
+Submit
+</button>
+</div>
+</form>
+</div>"
+`;
