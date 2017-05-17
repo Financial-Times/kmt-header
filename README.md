@@ -17,6 +17,11 @@ We are using [Jest](https://facebook.github.io/jest/) for testing React componen
 
 Tests for React components should be saved as `test.js` inside the folder for that component.
 
+### Running tests
+To run a one-time test: `npm test`
+
+To run tests and watch for changes: `npm run testWatch`
+
 ## Installation:
 ```
 bower install --S kmt-header
