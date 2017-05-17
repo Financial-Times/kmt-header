@@ -9,19 +9,18 @@ However if you see an error like:
 `Error: Node Sass does not yet support your current environment: OS X 64-bit with Unsupported runtime`
 You will probably need to run `npm rebuild node-sass` to overcome this. You should probably update `origami-build-tools` at the same time.
 
-###Installation:
+### Installation:
 ```
 bower install --S kmt-header
 ```
-=======
 
-###Usage:
-#####Load the CSS:
+### Usage:
+##### Load the CSS:
 ```scss
 @import '../bower_components/kmt-header/main';
 ```
 
-#####Load the JS:
+##### Load the JS:
 * **Inside** React Redux app:
 ```js
 // first add the header reducers to the parent app reducers
@@ -43,9 +42,8 @@ import KmtHeader from "kmt-header/main";
 //...
 KmtHeader.init(options);
 ```
-=======
 
-###Options:
+### Options:
 * React Redux store data (both for when **Inside** and **Outside** React Redux app):
 ```js
 KmtHeaderNs: { // {Object} - optional - Namespace for the KMT header React Redux store - if store data is provided it needs to be wrapped inside this object
