@@ -1,14 +1,34 @@
 # kmt-header [![Circle CI](https://circleci.com/gh/Financial-Times/kmt-header.svg?style=svg)](https://circleci.com/gh/Financial-Times/kmt-header)
 
-Header component for KMT app
+Header component for KAT.
 
-[TOC]
+KAT (Knowledge & administration tools) is a part of ft.com application created for Financial Times B2B clients.
 
-## Building this project
-`npm start` should run a gulp based build before serving up the an example of the page.
-However if you see an error like:
-`Error: Node Sass does not yet support your current environment: OS X 64-bit with Unsupported runtime`
-You will probably need to run `npm rebuild node-sass` to overcome this. You should probably update `origami-build-tools` at the same time.
+## Getting started
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
+
+```
+$ git clone git@github.com:Financial-Times/kmt-header.git
+$ npm install
+$ bower install
+```
+
+Then you can run `$ npm start` and go to `http://local.ft.com:5000/` in your browser to see the footer module running locally on your machine.
+
+To be able to manage footer main settings you can create an `.env` file in the root directory with the following variables:
+
+```
+NODE_ENV=development
+PORT=5000
+
+FOOTER_THEME="theme-dark"
+FOOTER_TYPE="short"
+FOOTER_PADDING_TOP="10"
+FOOTER_HELP_LINK="http://help.ft.com/help/b2b-support/knowledge-administration-tool/"
+```
+
+#### Important notes
+If you see an error like `Error: Node Sass does not yet support your current environment: OS X 64-bit with Unsupported runtime` you will probably need to run `$ npm rebuild node-sass` to overcome this. In addition you might need to update `origami-build-tools`.
 
 ## Testing
 We are using [Jest](https://facebook.github.io/jest/) for testing React components, and [Enzyme](http://airbnb.io/enzyme/) for rendering components inside our tests.
@@ -18,9 +38,25 @@ We are using [Jest](https://facebook.github.io/jest/) for testing React componen
 Tests for React components should be saved as `test.js` inside the folder for that component.
 
 ### Running tests
-To run a one-time test: `npm test`
+ - To run a one-time test: `$ npm test`;
+ - To run tests and watch for changes: `$ npm run testWatch`;
+ - `$ npm test -- --coverage` to see the coverage of tested files.
 
-To run tests and watch for changes: `npm run testWatch`
+## Deployment
+This component has been created to be included throughout other KAT components.
+
+### How to update a repo that uses the component to the new version
+If you want to update connected components with the latest version, you need to follow the following steps:
+ 1. Create a new repository release on gitHub. Please follow naming convention of previous releases.
+ 2. Go to `bower.json` file of the component you want to update, and change `"kmt-header"` dependency version to the [newly released one](https://github.com/Financial-Times/kmt-header/releases).
+ 3. Run `$ bower install` in the component repository.
+
+ The following KAT components are currently using `kmt-header`:
+  - [kmt-overview](https://github.com/Financial-Times/kmt-overview)
+  - [kmt-myft](https://github.com/Financial-Times/kmt-myft)
+  - [kat-usage-report](https://github.com/Financial-Times/kat-usage-report)
+
+ ### How to use the component
 
 ## Installation:
 ```
@@ -85,8 +121,10 @@ KmtHeaderNs: { // {Object} - optional - Namespace for the KMT header React Redux
 ```
 
 * Normal standalone use:
+
 ```js
-rootEl: "#root" // {String|DOM element} - optional - Query string or DOM element inside which the KMT Header will be placed.
+rootEl: "#root"
+// {String|DOM element} - optional - Query string or DOM element inside which the KMT Header will be placed.
 ```
 
 ```js
