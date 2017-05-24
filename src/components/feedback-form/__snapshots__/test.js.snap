@@ -5,7 +5,7 @@ exports[`<FeedbackForm /> has the right content 1`] = `
 <form method=\\"POST\\" className=\\"kat-feedback\\" action=\\"#\\">
 <div className=\\"kat-feedback__row\\">
 <p className=\\"kat-feedback__intro-text\\">
-Please share your feedback on the new Knowledge and Administration Tool (KAT) so that we can continue to develop it in line with customer requirements.
+Please share your feedback on the new Knowledge &amp; administration tools (KAT) so that we can continue to develop it in line with customer requirements.
 </p>
 </div>
 <div className=\\"kat-feedback__row\\">
