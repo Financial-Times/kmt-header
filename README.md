@@ -2,7 +2,7 @@
 
 Header component for KAT.
 
-KAT (Knowledge & administration tools) is a part of ft.com application created for Financial Times B2B clients.
+KAT (Knowledge & administration tools) is an ft.com application created for Financial Times B2B clients.
 
 ## Getting started
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
@@ -47,7 +47,7 @@ This component has been created to be included throughout other KAT components.
 
 ### How to update a repo that uses the component to the new version
 If you want to update connected components with the latest version, you need to follow the following steps:
- 1. Create a new repository release on gitHub. Please follow naming convention of previous releases.
+ 1. Create a new repository release on GitHub. Please follow naming convention of previous releases.
  2. Go to `bower.json` file of the component you want to update, and change `"kmt-header"` dependency version to the [newly released one](https://github.com/Financial-Times/kmt-header/releases).
  3. Run `$ bower install` in the component repository.
 
