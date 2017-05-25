@@ -6,7 +6,7 @@ export const headerTitleTypes ={
 };
 
 const defaultState = {
-  label: "Knowledge & Administration Tools",
+  label: "Knowledge & administration tools",
   summary: ""
 };
 

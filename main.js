@@ -8,7 +8,7 @@ const initKmtHeader = () => {
     data: {
       KmtHeaderNs: {
         headerTitle: {// custom header title
-          label: "Knowledge & Administration Tools",
+          label: "Knowledge & administration tools",
           summary: ""
         },
         mainMenu: {
