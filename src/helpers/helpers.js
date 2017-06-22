@@ -1,4 +1,5 @@
 let licenceData = undefined;
+import { kmtConfig } from "../../config-window.js";
 
 /**
  * Sort the licenses by the creation date
@@ -37,6 +38,12 @@ export function getCookieUserDetails() {
   // if the data has not been retrieved
   if (licenceData === undefined) {
     licenceData = {};
+
+    // FOR THE PURPOSE TO RUN LOCALLY< TO BE DELETED
+    if (!window.KMT_CONFIG) {
+      window.KMT_CONFIG = kmtConfig;
+    }
+
     if (window.KMT_CONFIG) {
       licenceData.items = _sortAndNameLicenses(window.KMT_CONFIG.licenceList || []);
       licenceData.username = window.KMT_CONFIG.displayName || "Unknown User";
