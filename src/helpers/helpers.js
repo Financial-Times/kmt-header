@@ -1,5 +1,6 @@
 let licenceData = undefined;
 import { kmtConfig } from "../../config-window.js";
+import { licenceID } from "../../config-window.js";
 
 /**
  * Sort the licenses by the creation date
@@ -42,6 +43,9 @@ export function getCookieUserDetails() {
     // FOR THE PURPOSE TO RUN LOCALLY< TO BE DELETED
     if (!window.KMT_CONFIG) {
       window.KMT_CONFIG = kmtConfig;
+    }
+    if (!window.LICENCE_ID) {
+      window.LICENCE_ID = licenceID;
     }
 
     if (window.KMT_CONFIG) {
