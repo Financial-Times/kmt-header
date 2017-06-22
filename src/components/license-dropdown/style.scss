@@ -77,12 +77,13 @@
         content: "";
         position: absolute;
         padding: 8px;
-        right: 0;
+        right: -2px;
       }
 
       &:hover {
         color: oColorsGetPaletteColor("grey-tint2");
       }
+
     }
 
     &-label--noIcon {
