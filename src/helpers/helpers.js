@@ -37,6 +37,7 @@ export function getCookieUserDetails() {
   // if the data has not been retrieved
   if (licenceData === undefined) {
     licenceData = {};
+
     if (window.KMT_CONFIG) {
       licenceData.items = _sortAndNameLicenses(window.KMT_CONFIG.licenceList || []);
       licenceData.username = window.KMT_CONFIG.displayName || "Unknown User";

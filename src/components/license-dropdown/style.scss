@@ -2,6 +2,7 @@
   &__license {
 
     &-wrapper {
+      border: 1px solid oColorsGetPaletteColor("white");
       cursor: pointer;
 
       // ignoring the nesting warning as it's not actually a nested class (it's BEM)
@@ -56,6 +57,12 @@
       }
     }
 
+    &-used {
+      margin: 5px 20px;
+      font-size: 18px;
+      line-height: 26px;
+    }
+
     &-label {
       position: relative;
       padding-right: 15px;
@@ -65,19 +72,16 @@
       // ignoring the nesting warning as it's not actually a nested class (it's BEM)
       // scss-lint:disable NestingDepth
       &::after {
-        @include oIconsGetIcon('arrow-up-down', oColorsGetPaletteColor('white'), 12);
+        @include oIconsGetIcon('arrow-down', oColorsGetPaletteColor("claret"), 10);
+        background-color: oColorsGetPaletteColor("white");
         content: "";
         position: absolute;
-        top: 3px;
-        right: 0;
+        padding: 8px;
+        right: -2px;
       }
 
       &:hover {
         color: oColorsGetPaletteColor("grey-tint2");
-
-        &::after {
-          @include oIconsGetIcon('arrow-up-down', oColorsGetPaletteColor('grey-tint2'), 12);
-        }
       }
 
     }
@@ -101,6 +105,10 @@
       // scss-lint:disable NestingDepth
       &--expanded {
         display: block;
+      }
+
+      .kmt-forms__select {
+        border: 1px solid oColorsGetPaletteColor("white");
       }
 
 
