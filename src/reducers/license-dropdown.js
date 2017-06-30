@@ -6,6 +6,7 @@ export const licenseDropdownPropTypes = {
   username: PropTypes.string.isRequired,
   selected: PropTypes.object.isRequired,
   show: PropTypes.bool.isRequired,
+  filterStr: PropTypes.string.isRequired,
   style: PropTypes.object.isRequired
 };
 
@@ -19,6 +20,7 @@ const initialState = {
     label: ""
   },
   show: false,
+  filterStr: "",
   style: {}
 };
 
@@ -32,6 +34,10 @@ const licenseDropdown = (state = defaultState, action = {}) => {
 
     case "KMT_LD_UPDATE_STYLE":
       state = Object.assign({}, state, {style: action.style});
+      break;
+
+    case "KMT_LD_UPDATE_FILTER":
+      state = Object.assign({}, state, {filterStr: action.filterStr});
       break;
   }
   return state;

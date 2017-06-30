@@ -8,31 +8,40 @@
       // scss-lint:disable NestingDepth
       &--mobile {
         .kmt-header {
-          &__license-dropdown {
-            padding: 0;
-            position: relative;
-            background-color: transparent;
+          &__license {
+            &-filter {
+              &-wrapper {
+                padding: 5px 15px;
+              }
+            }
 
-            .kmt-forms__select {
+            &-dropdown {
+              padding: 0;
+              position: relative;
+              background-color: transparent;
               max-width: 100%;
-              background: none;
-            }
 
-            option {
-              padding: 12px 16px;
-            }
+              .kmt-forms__select {
+                max-width: 100%;
+                background: none;
+              }
 
-            select,
-            option {
-              @include oTypographySans(s);
-              background-color: oColorsGetPaletteColor("pink-tint2");
-              color: oColorsGetPaletteColor("black");
-              border: 0;
-            }
+              option {
+                padding: 12px 16px;
+              }
 
-            .kmt-forms-option--selected {
-              background-color: oColorsGetPaletteColor("teal-1");
-              color: oColorsGetPaletteColor("white");
+              select,
+              option {
+                @include oTypographySans(s);
+                background-color: oColorsGetPaletteColor("pink-tint2");
+                color: oColorsGetPaletteColor("black");
+                border: 0;
+              }
+
+              .kmt-forms-option--selected {
+                background-color: oColorsGetPaletteColor("teal-1");
+                color: oColorsGetPaletteColor("white");
+              }
             }
           }
 
@@ -45,7 +54,7 @@
                 margin: 12px 16px;
               }
             }
-            &-label--noIcon {
+            &-label--no-icon {
               padding: 12px 16px;
               color: oColorsGetPaletteColor('claret');
             }
@@ -82,10 +91,24 @@
 
     }
 
-    &-label--noIcon {
+    &-label--no-icon {
       position: relative;
       font-weight: 400;
       cursor: auto;
+    }
+
+    &-filter {
+      padding: 5px;
+      width: 100%;
+      font-weight: normal;
+      border: 0;
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+
+      &-wrapper {
+        padding: 5px 20px;
+      }
     }
 
     &-dropdown {
@@ -96,14 +119,13 @@
       background-color: oColorsGetPaletteColor("warm-4");
       cursor: auto;
       z-index: 1;
+      max-width: 350px;
 
       // ignoring the nesting warning as it's not actually a nested class (it's BEM)
       // scss-lint:disable NestingDepth
       &--expanded {
         display: block;
       }
-
-
 
       select,
       option {
@@ -113,6 +135,7 @@
         background-color: oColorsGetPaletteColor("warm-4");
         color: oColorsGetPaletteColor("white");
         border: 0;
+        white-space: normal;
       }
 
       select {

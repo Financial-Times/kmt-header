@@ -22,8 +22,8 @@ function _sortAndNameLicenses(licenses) {
 
   return licenses.map((license, index) => {
     let theLabel = `License #${index + 1}`;
-    if(license.contractId !== undefined && license.product !== undefined) {
-      theLabel = `${license.contractId} - ${license.product}`;
+    if (license.name.trim() !== "") {
+      theLabel = `${license.contractId} - ${license.name}`;
     }
     return Object.assign({}, license, {label: theLabel});
   });
