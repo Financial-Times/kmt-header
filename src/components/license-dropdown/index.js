@@ -51,9 +51,9 @@ class LicenseDropdown extends Component {
     }
   }
 
-  trimLicenseId(licenseId) {
-    return `${licenseId.length > 10 ? "[...]" : ""}${licenseId.slice(-10)}`;
-  }
+  //trimLicenseId(licenseId) {
+  //  return `${licenseId.length > 10 ? "[...]" : ""}${licenseId.slice(-10)}`;
+  //}
 
   render() {
     const { licenseData } = this.props;
@@ -89,7 +89,7 @@ class LicenseDropdown extends Component {
               {
                 licenseData.items.map((item, index) => {
                   licenseData.selected.licenceId === item.licenceId ? className = "kmt-forms-option--selected" : className = null;
-                  return <option value={item.licenceId} key={index} className={className}>{item.label} - {this.trimLicenseId(item.licenceId)}</option>;
+                  return <option value={item.licenceId} key={index} className={className}>{item.label}</option>;
                 })
               }
             </select>
