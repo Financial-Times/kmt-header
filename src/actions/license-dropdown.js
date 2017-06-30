@@ -19,3 +19,15 @@ export function updateDropdownStyle(style) {
     style
   };
 }
+
+/**
+ * Updates the filter string
+ * @param {String} filterStr
+ * @returns {{type: String, filterStr: String}}
+ */
+export function updateFilterStr(filterStr) {
+  return {
+    type: "KMT_LD_UPDATE_FILTER",
+    filterStr
+  };
+}
