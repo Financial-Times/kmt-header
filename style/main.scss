@@ -3,6 +3,7 @@ $o-header-services-is-silent: false;
 $o-forms-is-silent: false;
 $o-overlay-is-silent: false;
 $n-notification-is-silent: false;
+$o-icons-service-base-url: "https://www.ft.com/__origami/service/image";
 
 @import '../bower_components/o-colors/main';
 @include oColorsSetColor('claret-inverse', #4f1828);
