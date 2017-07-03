@@ -14,14 +14,64 @@ $n-notification-is-silent: false;
 $sans-serif: oFontsGetFontFamilyWithFallbacks(MetricWeb);
 
 html {
-  height: 100%;
+  // The iconic pink background
+  @include oColorsFor(page, background);
+
+  // Set a font family on the whole document
   font-family: $sans-serif;
+
+  // Prevent navigation menus from creating
+  // extra space on sides of the page
+  overflow-x: hidden;
+  height: 100%;
 }
 
 body {
   // Remove space around the document
   margin: 0;
   height: 100%;
+}
+
+input::-ms-clear {
+  display: none;
+}
+
+.o-tabs {
+  [role="tab"] {
+    a {
+      border: 0;
+    }
+  }
+}
+
+.o-link-list__item--hover {
+  @include oColorsFor(o-link-list__item--hover);
+}
+
+:focus {
+  outline: none;
+}
+
+.o-header-services__nav-link,
+.o-header-services__related-content-link,
+.kmt-header__license-user {
+  border-bottom: 0;
+}
+
+.kmt-header__license-user {
+  &:focus,
+  &:active,
+  &:hover {
+    color: inherit;
+  }
+}
+
+.kmt-text--transform-none {
+  text-transform: none;
+}
+
+.pull-right {
+  float: right;
 }
 
 // styles copied from .o-header-services__related-content > a
@@ -56,7 +106,6 @@ body {
 .o-overlay__close {
   border: 0;
 }
-
 
 @import '../src/components/license-dropdown/style';
 @import '../src/components/header-nav/style';
