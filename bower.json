@@ -29,7 +29,8 @@
      "ftdomdelegate": "^2.0.3",
      "n-notification": "^6.0.0",
      "o-overlay": "^2.0.0",
-     "o-dom": "^2.0.3"
+     "o-dom": "^2.0.3",
+     "o-card": "^3.0.0"
   },
   "resolutions": {
     "o-buttons": "^5.0.2",

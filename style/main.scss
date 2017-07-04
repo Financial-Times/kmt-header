@@ -3,13 +3,15 @@ $o-header-services-is-silent: false;
 $o-forms-is-silent: false;
 $o-overlay-is-silent: false;
 $n-notification-is-silent: false;
+$o-card-is-silent: false;
 
 @import '../bower_components/o-colors/main';
-@include oColorsSetColor('claret-inverse', #4f1828);
 @import '../bower_components/o-header-services/main';
 @import '../bower_components/o-forms/main';
 @import '../bower_components/o-overlay/main';
 @import '../bower_components/n-notification/main';
+@import '../bower_components/o-card/main';
+@import './legacy-section-card';
 
 $sans-serif: oFontsGetFontFamilyWithFallbacks(MetricWeb);
 
@@ -76,6 +78,14 @@ input::-ms-clear {
 
 .kat-text-right {
   text-align: right;
+}
+
+.kat-text-left {
+  text-align: left;
+}
+
+.kat-text-center {
+  text-align: center;
 }
 
 // styles copied from .o-header-services__related-content > a
