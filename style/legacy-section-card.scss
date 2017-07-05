@@ -114,34 +114,6 @@ $rule-size: 1px;
 		}
 	}
 
-	// top rule (horizontal line)
-	&::before {
-		content: '';
-		position: absolute;
-		height: $rule-size;
-		left: 0;
-		right: 0;
-		top: -$rule-size;
-		background-color: oColorsGetPaletteColor('black-20');
-	}
-
-	// left rule (vertical line)
-	&::after {
-		content: '';
-		position: absolute;
-		width: $rule-size;
-		top: 0;
-		bottom: oGridGutter() / -2;
-		left: oGridGutter() / -2;
-		background-color: oColorsGetPaletteColor('black-20');
-
-		@include oGridRespondTo(M) {
-			top: 0;
-			bottom: oGridGutter(M) / -2;
-			left: oGridGutter(M) / -2;
-		}
-	}
-
 	&[data-image~="left"],
 	&[data-image~="right"] {
 		@include oCardThemeLandscape;
