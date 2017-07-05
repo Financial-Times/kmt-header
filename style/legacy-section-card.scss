@@ -222,8 +222,11 @@ $rule-size: 1px;
 }
 
 .card__concept-article-link {
-	border-bottom-width: 0;
-	color: oColorsGetPaletteColor('black-70');
+  font-family: oFontsGetFontFamilyWithFallbacks(FinancierDisplayWeb);
+  color: oColorsGetPaletteColor('black-70');
+  border-bottom-width: 0;
+  font-size: 18px;
+  line-height: 22px;
 }
 
 .card__concept-article-text {
