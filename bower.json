@@ -20,23 +20,16 @@
     "test",
     "tests"
   ],
-   "dependencies": {
-     "o-header-services" : "^2.0.1",
-     "o-buttons": "^5.0.2",
-     "o-icons": "^5.4.0",
-     "o-forms": "^4.0.3",
-     "o-viewport": "^3.1.2",
-     "ftdomdelegate": "^2.0.3",
-     "n-notification": "^6.0.0",
-     "o-overlay": "^2.0.0",
-     "o-dom": "^2.0.3",
-     "o-card": "^3.0.0"
-  },
-  "resolutions": {
+  "dependencies": {
+    "o-header-services": "^2.0.1",
     "o-buttons": "^5.0.2",
-    "o-colors": "^4.0.4",
-    "o-typography": "^5.0.2",
-    "o-fonts": "^3.0.0",
-    "o-visual-effects": "^2.0.0"
+    "o-icons": "^5.4.0",
+    "o-forms": "^4.0.3",
+    "o-viewport": "^3.1.2",
+    "ftdomdelegate": "^2.0.3",
+    "n-notification": "^6.0.0",
+    "o-overlay": "^2.0.0",
+    "o-dom": "^2.0.3",
+    "o-card": "^3.0.0"
   }
 }
