@@ -12,7 +12,10 @@
     "start": "node server.js",
     "heroku-postbuild": "./node_modules/.bin/bower install",
     "test": "jest src/*",
-    "testWatch": "jest src/* --watch"
+    "testWatch": "jest src/* --watch",
+    "precommit": "node_modules/.bin/secret-squirrel",
+    "commitmsg": "node_modules/.bin/secret-squirrel-commitmsg",
+    "prepush": "make verify -j3"
   },
   "engines": {
     "node": "^6.2.0"
