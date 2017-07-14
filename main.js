@@ -14,34 +14,34 @@ const initKmtHeader = () => {
         mainMenu: {
           items: [
             {
-              tracking: "my-ft",
               label: "myFT",
               attrs: {
+                'data-trackable': "my-ft",
                 href: "#"
               },
               active: true
             },
             {
-              tracking: "users",
               label: "USERS",
               attrs: {
+                'data-trackable': "users",
                 href: "#",
                 target: "_blank"
               }
             },
             {
-              tracking: "feedback",
               label: "Feedback",
               attrs: {
+                'data-trackable': "feedback",
                 href: "#"
               },
               cls: "kat-feedback__btn",
               last: true
             },
             {
-              tracking: "my-account",
               label: "My Account",
               attrs: {
+                'data-trackable': "my-account",
                 href: "https://myaccount.ft.com/"
               },
               last: true
