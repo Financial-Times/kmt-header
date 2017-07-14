@@ -14,6 +14,7 @@ const initKmtHeader = () => {
         mainMenu: {
           items: [
             {
+              tracking: "my-ft"
               label: "myFT",
               attrs: {
                 href: "#"
@@ -21,6 +22,7 @@ const initKmtHeader = () => {
               active: true
             },
             {
+              tracking: "users"
               label: "USERS",
               attrs: {
                 href: "#",
@@ -28,6 +30,7 @@ const initKmtHeader = () => {
               }
             },
             {
+              tracking: "feedback"
               label: "Feedback",
               attrs: {
                 href: "#"
@@ -36,6 +39,7 @@ const initKmtHeader = () => {
               last: true
             },
             {
+              tracking: "my-account"
               label: "My Account",
               attrs: {
                 href: "https://myaccount.ft.com/"

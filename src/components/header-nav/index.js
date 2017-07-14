@@ -24,7 +24,7 @@ class HeaderNav extends Component {
     }
     return (
       <li className={liCls} key={index}>
-        <a className={aCls} {...item.attrs} >{item.label}</a>
+        <a data-trackable="{item.tracking}" className={aCls} {...item.attrs} >{item.label}</a>
       </li>
     );
   }
