@@ -16,6 +16,7 @@ const initKmtHeader = () => {
             {
               label: "myFT",
               attrs: {
+                'data-trackable': "my-ft",
                 href: "#"
               },
               active: true
@@ -23,6 +24,7 @@ const initKmtHeader = () => {
             {
               label: "USERS",
               attrs: {
+                'data-trackable': "users",
                 href: "#",
                 target: "_blank"
               }
@@ -30,6 +32,7 @@ const initKmtHeader = () => {
             {
               label: "Feedback",
               attrs: {
+                'data-trackable': "feedback",
                 href: "#"
               },
               cls: "kat-feedback__btn",
@@ -38,6 +41,7 @@ const initKmtHeader = () => {
             {
               label: "My Account",
               attrs: {
+                'data-trackable': "my-account",
                 href: "https://myaccount.ft.com/"
               },
               last: true
