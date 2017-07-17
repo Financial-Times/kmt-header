@@ -2,16 +2,16 @@ import React, { Component, PropTypes } from 'react';
 import HeaderExtraActions from './../header-extra-actions';
 
 class HeaderTop extends Component {
-  constructor(props) {
+  constructor (props) {
     super(props);
   }
 
-  shouldComponentUpdate(nextProps, nextState) {
+  shouldComponentUpdate (nextProps) {
     // only render if the props (state) have changed
     return JSON.stringify(nextProps) !== JSON.stringify(this.props);
   }
 
-  render() {
+  render () {
     const { headerTitle } = this.props;
 
     return (
@@ -19,7 +19,7 @@ class HeaderTop extends Component {
 
         {this.props.enableMobileMenu === true
           ? <div className='o--if-js o-header-services__hamburger'>
-              <a className='o-header-services__hamburger-icon' href="#o-header-drawer" aria-controls="o-header-drawer"></a>
+              <a className='o-header-services__hamburger-icon' href='#o-header-drawer' aria-controls='o-header-drawer'></a>
             </div>
           : null
         }
@@ -41,8 +41,8 @@ class HeaderTop extends Component {
   }
 };
 
-import { headerTitleTypes } from "../../reducers/header-title";
-import { extraActionsTypes } from "../../reducers/extra-actions";
+import { headerTitleTypes } from '../../reducers/header-title';
+import { extraActionsTypes } from '../../reducers/extra-actions';
 
 HeaderTop.propTypes = {
   dispatch: PropTypes.func.isRequired,

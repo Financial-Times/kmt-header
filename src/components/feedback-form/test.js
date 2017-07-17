@@ -1,8 +1,10 @@
+/* eslint-env jest */
+
 import React from 'react';
 import { mount, shallow } from 'enzyme';
 import FeedbackForm from './index.js';
 
-describe("<FeedbackForm />", () => {
+describe('<FeedbackForm />', () => {
 	const mockDispatch = jest.fn();
 
 	const feedbackFormComponent = mount(
@@ -16,7 +18,7 @@ describe("<FeedbackForm />", () => {
 		const feedbackFormShallow = shallow(<FeedbackForm dispatch={mockDispatch} isValid={false} />);
 		expect(feedbackFormShallow.debug()).toMatchSnapshot();
 	});
-	
+
 	describe('improvement field', () => {
 		const textareaFields = feedbackFormComponent.find('textarea');
 
@@ -25,12 +27,12 @@ describe("<FeedbackForm />", () => {
 		});
 
 		it('should have its own label', () => {
-			expect(feedbackFormComponent.find(`label[htmlFor="${textareaFields.prop('id')}"]`).length).toBe(1);
+			expect(feedbackFormComponent.find(`label[htmlFor='${textareaFields.prop('id')}']`).length).toBe(1);
 		});
 	});
 
 	describe('feedback score', () => {
-		const scoreOptions = feedbackFormComponent.find('[name="npsscore"]');
+		const scoreOptions = feedbackFormComponent.find('[name=\'npsscore\']');
 
 		it('should contain 5 options', () => {
 			expect(scoreOptions.length).toBe(5);
@@ -40,7 +42,7 @@ describe("<FeedbackForm />", () => {
 			expect(feedbackFormComponent.find('.nps-label').length).toBe(5);
 
 			expect(scoreOptions.everyWhere(scoreOptionField => {
-				return feedbackFormComponent.find(`label[htmlFor="${scoreOptionField.prop('id')}"]`).length === 1;
+				return feedbackFormComponent.find(`label[htmlFor='${scoreOptionField.prop('id')}']`).length === 1;
 			})).toBe(true);
 		});
 	});
@@ -52,8 +54,8 @@ describe("<FeedbackForm />", () => {
 
 		it('contains feedback intro', () => {
 			const feedbackIntro =
-			<div className="kat-feedback__row">
-				<p className="kat-feedback__intro-text">Please share your feedback on the new Knowledge and Administration Tool (KAT) so that we can continue to develop it in line with customer requirements.</p>
+			<div className='kat-feedback__row'>
+				<p className='kat-feedback__intro-text'>Please share your feedback on the new Knowledge and Administration Tool (KAT) so that we can continue to develop it in line with customer requirements.</p>
 			</div>;
 
 			expect(feedbackFormComponentMounted.contains(feedbackIntro)).toEqual(true);
@@ -61,7 +63,7 @@ describe("<FeedbackForm />", () => {
 
 		it('contains form label', () => {
 			const formLabel =
-			<label className="o-forms__label">How satisfied are you with FT KAT?</label>;
+			<label className='o-forms__label'>How satisfied are you with FT KAT?</label>;
 
 			expect(feedbackFormComponentMounted.contains(formLabel)).toEqual(true);
 		});
@@ -72,7 +74,7 @@ describe("<FeedbackForm />", () => {
 
 		it('contains textarea title', () => {
 			const textArea =
-				<label className="o-forms__label" htmlFor="improvefeedback">How can we improve KAT?</label>;
+				<label className='o-forms__label' htmlFor='improvefeedback'>How can we improve KAT?</label>;
 
 			expect(feedbackFormComponentMounted.contains(textArea)).toEqual(true);
 		});

@@ -25,3 +25,5 @@ docker-compose.yml
 .eslintrc.js
 .editorconfig
 .pa11yci.js
+
+*.env*

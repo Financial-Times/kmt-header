@@ -4,41 +4,41 @@ import { KmtHeaderNs } from './src/reducers';
 
 const initKmtHeader = () => {
   const theOptions = {
-    rootEl: "#root",
+    rootEl: '#root',
     data: {
       KmtHeaderNs: {
         headerTitle: {// custom header title
-          label: "Knowledge & administration tools",
-          summary: ""
+          label: 'Knowledge & administration tools',
+          summary: ''
         },
         mainMenu: {
           items: [
             {
-              label: "myFT",
+              label: 'myFT',
               attrs: {
-                href: "#"
+                href: '#'
               },
               active: true
             },
             {
-              label: "USERS",
+              label: 'USERS',
               attrs: {
-                href: "#",
-                target: "_blank"
+                href: '#',
+                target: '_blank'
               }
             },
             {
-              label: "Feedback",
+              label: 'Feedback',
               attrs: {
-                href: "#"
+                href: '#'
               },
-              cls: "kat-feedback__btn",
+              cls: 'kat-feedback__btn',
               last: true
             },
             {
-              label: "My Account",
+              label: 'My Account',
               attrs: {
-                href: "https://myaccount.ft.com/"
+                href: 'https://myaccount.ft.com/'
               },
               last: true
             }
@@ -46,7 +46,7 @@ const initKmtHeader = () => {
           enableMobile: true
         },
         helpers: {
-          doRequest: (theUrl, options) => { return new Promise((res) => { return res(theUrl); }); }
+          doRequest: (theUrl) => { return new Promise((res) => { return res(theUrl); }); }
         }
       }
     }

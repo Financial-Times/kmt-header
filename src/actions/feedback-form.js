@@ -4,9 +4,9 @@ import nNotification from 'n-notification';
  * Toggles the panel
  * @returns {{type: String}}
  */
-export function togglePanel() {
+export function togglePanel () {
   return {
-    type: "F_TOGGLE"
+    type: 'F_TOGGLE'
   };
 }
 
@@ -14,9 +14,9 @@ export function togglePanel() {
  * Toggles feedback form valid state
  * @returns {{type: String}}
  */
-export function toggleFeedbackValid() {
+export function toggleFeedbackValid () {
   return {
-    type: "F_TOGGLE_VALID"
+    type: 'F_TOGGLE_VALID'
   };
 }
 
@@ -26,12 +26,12 @@ export function toggleFeedbackValid() {
  * @param {Object} data
  * @returns {Function}
  */
-export function submitFeedback(theUrl, data) {
+export function submitFeedback (theUrl, data) {
   return (dispatch, getState) => {
     const theStore = getState();
-    if (typeof theStore.KmtHeaderNs.helpers.doRequest === "function") {
-      const options = {method: "POST", body: JSON.stringify(data), headers: { 'Content-Type': 'application/json' }, "mode": "no-cors"};
-      theStore.KmtHeaderNs.helpers.doRequest(theUrl, options).then((response) => {
+    if (typeof theStore.KmtHeaderNs.helpers.doRequest === 'function') {
+      const options = {method: 'POST', body: JSON.stringify(data), headers: { 'Content-Type': 'application/json' }, 'mode': 'no-cors'};
+      theStore.KmtHeaderNs.helpers.doRequest(theUrl, options).then(() => {
         dispatch(togglePanel());
 
         let theMessage = {
@@ -41,7 +41,7 @@ export function submitFeedback(theUrl, data) {
         };
         nNotification.show(theMessage);
 
-      }, (error) => {
+      }, () => {
 
       });
     }

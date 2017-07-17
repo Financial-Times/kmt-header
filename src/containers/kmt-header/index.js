@@ -5,11 +5,11 @@ import HeaderContainer from './../header';
 import HeaderDrawerContainer from './../header-drawer';
 
 class KmtHeaderContainer extends Component {
-  constructor(props) {
+  constructor (props) {
     super(props);
   }
 
-  shouldComponentUpdate(nextProps, nextState) {
+  shouldComponentUpdate (nextProps) {
     // only render if the props (state) have changed
     return JSON.stringify(nextProps) !== JSON.stringify(this.props);
   }
@@ -18,7 +18,7 @@ class KmtHeaderContainer extends Component {
     Header.init();
   }
 
-  render() {
+  render () {
     return (
       <div>
         <HeaderContainer />

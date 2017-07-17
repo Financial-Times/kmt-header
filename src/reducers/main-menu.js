@@ -14,29 +14,29 @@ export const itemsTypes ={
 const defaultState = {
   items: [
     {
-      label: "DASHBOARD",
+      label: 'DASHBOARD',
       attrs: {
-        href: "#"
+        href: '#'
       }
     },
     {
-      label: "MY FT",
+      label: 'MY FT',
       active: true,
       attrs: {
-        href: "#"
+        href: '#'
       }
     },
     {
-      label: "USERS",
+      label: 'USERS',
       attrs: {
-        href: "#"
+        href: '#'
       }
     }
   ],
   enableMobile: true
 };
 
-const mainMenu = (state = defaultState, action = {}) => {
+const mainMenu = (state = defaultState) => {
   return state;
 };
 

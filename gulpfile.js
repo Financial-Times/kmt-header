@@ -8,14 +8,14 @@ const size = require('gulp-size');
 const livereload = require('gulp-livereload');
 let appServer;
 
-const verifyFn = function() {
+const verifyFn = function () {
   return obt.verify(gulp, {
     scssLintPath: './.scss-lint.yml',
     esLintPath: './.eslintrc'
   });
 };
 
-gulp.task('build', ['global-config'], function() {
+gulp.task('build', ['global-config'], function () {
   return obt.build(gulp, {
     js: './main.js',
     sass: './style/main.scss',
@@ -28,41 +28,42 @@ gulp.task('build', ['global-config'], function() {
   });
 });
 
-gulp.task('install', function() {
+gulp.task('install', function () {
   return obt.install();
 });
 
 gulp.task('verify', verifyFn);
 gulp.task('dev-verify', ['img', 'watch'], verifyFn);
 
-gulp.task('test', function() {
+gulp.task('test', function () {
   return obt.test.npmTest(gulp);
 });
 
-gulp.task('serve', ['dev-add-livereload', 'build'], function(){
+gulp.task('serve', ['dev-add-livereload', 'build'], function (){
   appServer = nodemon({
     'script': 'server.js',
     'verbose': true,
     'watch': false,
-    'ignore': ["*.*"]
+    'ignore': ['*.*']
   }).on('restart', function () {
+    /* eslint no-console: ['error', { allow: ['warn', 'log'] }] */
     console.log('>>>>>>> nodemon app is restarting <<<<<<<<');
   });
 });
 
-gulp.task('restart-server', function() {
+gulp.task('restart-server', function () {
   appServer.restart();
 });
 
-gulp.task('refresh-page', ['build'], function() {
-  livereload.changed("src/index.js");
+gulp.task('refresh-page', ['build'], function () {
+  livereload.changed('src/index.js');
 });
 
-gulp.task('global-config', function() {
+gulp.task('global-config', function () {
   exec('node generate-config.js');
 });
 
-gulp.task('watch', ['serve'], function() {
+gulp.task('watch', ['serve'], function () {
   livereload.listen({port: process.env.LIVERELOAD_PORT});
   gulp.watch(['./style/**/*', './src/**/*'], ['refresh-page']);
   gulp.watch('./*.*', ['restart-server']);
@@ -76,10 +77,10 @@ gulp.task('img', function () {
       svgoPlugins: []
     }))
     .pipe(size({ showFiles: true, title: 'images compressed:' }))
-    .pipe(gulp.dest("./public/images"));
+    .pipe(gulp.dest('./public/images'));
 });
 
-gulp.task('dev-add-livereload', function() {
+gulp.task('dev-add-livereload', function () {
   process.env.DEV_ADD_LIVERELOAD = true;
 });
 

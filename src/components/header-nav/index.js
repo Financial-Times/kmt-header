@@ -1,18 +1,18 @@
 import React, { Component, PropTypes } from 'react';
 
 class HeaderNav extends Component {
-  constructor(props) {
+  constructor (props) {
     super(props);
 
     this.createItem = this.createItem.bind(this);
   }
 
-  shouldComponentUpdate(nextProps, nextState) {
+  shouldComponentUpdate (nextProps) {
     // only render if the props (state) have changed
     return JSON.stringify(nextProps) !== JSON.stringify(this.props);
   }
 
-  createItem(item, index, liCls, aCls) {
+  createItem (item, index, liCls, aCls) {
     if (item.active === true) {
       aCls += ` ${aCls}--selected`;
     }
@@ -29,15 +29,15 @@ class HeaderNav extends Component {
     );
   }
 
-  render() {
+  render () {
     const { menu } = this.props;
     // if there are no items
     if (menu.items === undefined) {
       return null;
     }
 
-    let liCls = "o-header-services__nav-item";
-    let aCls = "o-header-services__nav-link";
+    let liCls = 'o-header-services__nav-item';
+    let aCls = 'o-header-services__nav-link';
 
     const lastItems = [];
     let allItems = menu.items.filter(item => {
@@ -64,11 +64,11 @@ class HeaderNav extends Component {
     }
 
     // for the mobile version
-    liCls = "o-header__drawer-menu-item";
-    aCls = "o-header__drawer-menu-link";
+    liCls = 'o-header__drawer-menu-item';
+    aCls = 'o-header__drawer-menu-link';
     return (
-      <nav className="o-header__drawer-menu o-header__drawer-menu--primary" role="navigation" aria-label="Primary navigation">
-        <ul className="o-header__drawer-menu-list">
+      <nav className='o-header__drawer-menu o-header__drawer-menu--primary' role='navigation' aria-label='Primary navigation'>
+        <ul className='o-header__drawer-menu-list'>
           {menu.items.map((item, index) => this.createItem(item, index, liCls, aCls))}
         </ul>
       </nav>
@@ -76,7 +76,7 @@ class HeaderNav extends Component {
   }
 };
 
-import { menuTypes } from "../../reducers/main-menu";
+import { menuTypes } from '../../reducers/main-menu';
 
 HeaderNav.propTypes = {
   mobile: PropTypes.bool,

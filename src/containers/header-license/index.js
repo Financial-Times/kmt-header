@@ -3,16 +3,16 @@ import { connect } from 'react-redux';
 import LicenseDropdown from './../../components/license-dropdown';
 
 class HeaderLicense extends Component {
-  constructor(props) {
+  constructor (props) {
     super(props);
   }
 
-  shouldComponentUpdate(nextProps, nextState) {
+  shouldComponentUpdate (nextProps) {
     // only render if the props (state) have changed
     return JSON.stringify(nextProps) !== JSON.stringify(this.props);
   }
 
-  render() {
+  render () {
     const licenseProps = {
       dispatch: this.props.dispatch,
       licenseData: this.props.licenseData,
@@ -26,7 +26,7 @@ class HeaderLicense extends Component {
   }
 }
 
-import { licenseDropdownPropTypes } from "../../reducers/license-dropdown";
+import { licenseDropdownPropTypes } from '../../reducers/license-dropdown';
 
 HeaderLicense.propTypes = {
   changeFn: PropTypes.func,

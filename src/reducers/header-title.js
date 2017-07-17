@@ -6,11 +6,11 @@ export const headerTitleTypes ={
 };
 
 const defaultState = {
-  label: "Knowledge & administration tools",
-  summary: ""
+  label: 'Knowledge & administration tools',
+  summary: ''
 };
 
-const headerTitle = (state = defaultState, action = {}) => {
+const headerTitle = (state = defaultState) => {
   return state;
 };
 
