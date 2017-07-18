@@ -27,3 +27,5 @@ docker-compose.yml
 .pa11yci.js
 
 *.env*
+
+.scss-lint.yml
