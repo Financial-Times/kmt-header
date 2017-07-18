@@ -4,7 +4,7 @@ import reducers from '../reducers';
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
-export default function configureStore(preloadedState) {
+export default function configureStore (preloadedState) {
   const args = [thunk];
 
   return createStore(

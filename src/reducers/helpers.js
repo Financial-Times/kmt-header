@@ -1,7 +1,7 @@
 const defaultState = {
   doRequest : () => {}
 };
-const helpers = (state = defaultState, action = {}) => {
+const helpers = (state = defaultState) => {
   return state;
 };
 

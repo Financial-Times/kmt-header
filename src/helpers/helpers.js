@@ -6,7 +6,7 @@ let licenceData = undefined;
  * @returns {Array}
  * @private
  */
-function _sortAndNameLicenses(licenses) {
+function _sortAndNameLicenses (licenses) {
   // sort the array by the creationDate
   // TODO: creationDate key might need to be changed
   licenses.sort((item1, item2) => {
@@ -22,7 +22,7 @@ function _sortAndNameLicenses(licenses) {
 
   return licenses.map((license, index) => {
     let theLabel = `License #${index + 1}`;
-    if (license.name.trim() !== "") {
+    if (license.name.trim() !== '') {
       theLabel = `${license.contractId} - ${license.name}`;
     }
     return Object.assign({}, license, {label: theLabel});
@@ -33,13 +33,13 @@ function _sortAndNameLicenses(licenses) {
  * Gets the user details from the cookie
  * @returns {{}}
  */
-export function getCookieUserDetails() {
+export function getCookieUserDetails () {
   // if the data has not been retrieved
   if (licenceData === undefined) {
     licenceData = {};
     if (window.KMT_CONFIG) {
       licenceData.items = _sortAndNameLicenses(window.KMT_CONFIG.licenceList || []);
-      licenceData.username = window.KMT_CONFIG.displayName || "Unknown User";
+      licenceData.username = window.KMT_CONFIG.displayName || 'Unknown User';
 
       if (window.LICENCE_ID) {
         licenceData.items.every((item) => {

@@ -10,7 +10,7 @@ const initialState = {
 
 const defaultState = Object.assign({}, initialState, {items : [ ...initialState.items]});
 
-const extraActions = (state = defaultState, action = {}) => {
+const extraActions = (state = defaultState) => {
   return state;
 };
 

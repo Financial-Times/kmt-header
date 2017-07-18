@@ -2,12 +2,12 @@ import React, { Component, PropTypes } from 'react';
 import Delegate from 'ftdomdelegate';
 import viewport from 'o-viewport';
 import oDom from 'o-dom';
-import { toggleDropdown, updateDropdownStyle, updateFilterStr } from "../../actions/license-dropdown";
-import { changeLicense } from "../../actions/license-change";
+import { toggleDropdown, updateDropdownStyle, updateFilterStr } from '../../actions/license-dropdown';
+import { changeLicense } from '../../actions/license-change';
 let componentEventsBound = false;
 
 class LicenseDropdown extends Component {
-  constructor(props) {
+  constructor (props) {
     super(props);
 
     this.toggleDropdown = this.toggleDropdown.bind(this);
@@ -31,12 +31,12 @@ class LicenseDropdown extends Component {
     }
   }
 
-  shouldComponentUpdate(nextProps, nextState) {
+  shouldComponentUpdate (nextProps) {
     // only render if the props (state) have changed
     return JSON.stringify(nextProps) !== JSON.stringify(this.props);
   }
 
-  componentDidUpdate() {
+  componentDidUpdate () {
     if (this.props.licenseData.show === true) {
       const filter = this.refs.licenceFilter;
       // if the filter field is visible
@@ -47,14 +47,14 @@ class LicenseDropdown extends Component {
     }
   }
 
-  toggleDropdown(e) {
+  toggleDropdown () {
     // toggle the dropdown
     this.props.dispatch(toggleDropdown());
   }
 
   handleBodyClick (e) {
     // if the dropdown is shown and if the click target is not in the dropdown container
-    if (this.props.licenseData.show === true && !oDom.getClosestMatch(e.target, ".kmt-header__license-wrapper")) {
+    if (this.props.licenseData.show === true && !oDom.getClosestMatch(e.target, '.kmt-header__license-wrapper')) {
       this.toggleDropdown(e);
     }
   }
@@ -70,7 +70,7 @@ class LicenseDropdown extends Component {
   }
 
   //trimLicenseId(licenseId) {
-  //  return `${licenseId.length > 10 ? "[...]" : ""}${licenseId.slice(-10)}`;
+  //  return `${licenseId.length > 10 ? '[...]' : ''}${licenseId.slice(-10)}`;
   //}
 
   onWindowResize () {
@@ -78,7 +78,7 @@ class LicenseDropdown extends Component {
     this.positionDropdown();
   }
 
-  positionDropdown() {
+  positionDropdown () {
     if (this.props.licenseData.show === true) {
       const theStyle = {};
       const licenceDropdown = this.refs.licenceDropdown;
@@ -104,27 +104,27 @@ class LicenseDropdown extends Component {
     }
   }
 
-  updateSearch(e) {
+  updateSearch (e) {
     // trim and lowercase the entered value
     const searchTerm = e.target.value.toLowerCase();
     this.props.dispatch(updateFilterStr(searchTerm));
   }
 
-  filterLicences() {
+  filterLicences () {
     const { licenseData } = this.props;
 
     let licenceItems = [...licenseData.items];
     if (licenseData.filterStr !== '') {
       licenceItems = licenceItems.filter(item => {
         // escape the regex chars
-        const searchStr = licenseData.filterStr.replace(/[\-\[\]\/\{\}\(\)\*\+\?\.\\\^\$\|]/g, "\\$&");
+        const searchStr = licenseData.filterStr.replace(/[\-\[\]\/\{\}\(\)\*\+\?\.\\\^\$\|]/g, '\\$&');
         return item.label.toLowerCase().search(searchStr) !== -1;
       });
     }
     return licenceItems;
   }
 
-  render() {
+  render () {
     const { licenseData } = this.props;
 
     const licenceItems = this.filterLicences();
@@ -136,12 +136,12 @@ class LicenseDropdown extends Component {
       return null;
     }
 
-    let dropdownCls = "kmt-header__license-dropdown";
+    let dropdownCls = 'kmt-header__license-dropdown';
     if (licenseData.show === true) {
       dropdownCls += ` ${dropdownCls}--expanded`;
     }
 
-    let wrapperCls = "kmt-header__license-wrapper";
+    let wrapperCls = 'kmt-header__license-wrapper';
     if (this.props.mobile === true) {
       wrapperCls += ` ${wrapperCls}--mobile`;
     }
@@ -149,23 +149,23 @@ class LicenseDropdown extends Component {
     const selectSize = remainingNr > 4 ? 4 : (remainingNr < 2 ? 2 : remainingNr);
 
     return (
-      <div className={wrapperCls} ref="theWrapper">
+      <div className={wrapperCls} ref='theWrapper'>
         <div className={kmtHeaderLicenseLabel} onClick={this.toggleDropdown}>
-          <span className="kmt-header__license-used">{licenseData.selected.label}</span>
+          <span className='kmt-header__license-used'>{licenseData.selected.label}</span>
         </div>
         {
         (licenseDataLength > 1) ?
-          <div ref="licenceDropdown" className={dropdownCls} style={this.props.mobile !== true ? licenseData.style : {}}>
+          <div ref='licenceDropdown' className={dropdownCls} style={this.props.mobile !== true ? licenseData.style : {}}>
             {(licenseDataLength > 5)
-              ? <div className="kmt-header__license-filter-wrapper">
-                  <input value={licenseData.filterStr} ref="licenceFilter" className="kmt-header__license-filter" type="text" placeholder="Filter licences" onChange={this.updateSearch} />
+              ? <div className='kmt-header__license-filter-wrapper'>
+                  <input value={licenseData.filterStr} ref='licenceFilter' className='kmt-header__license-filter' type='text' placeholder='Filter licences' onChange={this.updateSearch} />
                 </div>
               : null
             }
-            <select size={selectSize} className="o-forms__select kmt-forms__select" onChange={this.licenseChanged} >
+            <select size={selectSize} className='o-forms__select kmt-forms__select' onChange={this.licenseChanged} >
               {
                 licenceItems.map((item, index) => {
-                  const className = licenseData.selected.licenceId === item.licenceId ? "kmt-forms-option--selected" : "";
+                  const className = licenseData.selected.licenceId === item.licenceId ? 'kmt-forms-option--selected' : '';
                   return <option value={item.licenceId} key={index} className={className}>{item.label}</option>;
                 })
               }
@@ -179,7 +179,7 @@ class LicenseDropdown extends Component {
   }
 };
 
-import { licenseDropdownPropTypes } from "../../reducers/license-dropdown";
+import { licenseDropdownPropTypes } from '../../reducers/license-dropdown';
 
 LicenseDropdown.propTypes = {
   dispatch: PropTypes.func.isRequired,

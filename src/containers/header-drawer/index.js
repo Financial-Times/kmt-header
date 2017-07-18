@@ -4,24 +4,24 @@ import HeaderNav from './../../components/header-nav';
 import HeaderExtraActions from './../../components/header-extra-actions';
 
 class HeaderDrawerContainer extends Component {
-  constructor(props) {
+  constructor (props) {
     super(props);
   }
 
-  shouldComponentUpdate(nextProps, nextState) {
+  shouldComponentUpdate (nextProps) {
     // only render if the props (state) have changed
     return JSON.stringify(nextProps) !== JSON.stringify(this.props);
   }
 
-  render() {
+  render () {
     return (
-      <div className="o-header__drawer--services o-header__drawer o--if-js" id="o-header-drawer" data-o-header-drawer data-o-header-drawer--no-js>
-        <div className="o-header__drawer-inner">
+      <div className='o-header__drawer--services o-header__drawer o--if-js' id='o-header-drawer' data-o-header-drawer data-o-header-drawer--no-js>
+        <div className='o-header__drawer-inner'>
 
-          <div className="o-header__drawer-tools">
+          <div className='o-header__drawer-tools'>
             <h1 className='o-header-services__product-name o-header-services__product-name--drawer'>{this.props.headerTitle.label}</h1>
-            <button type="button" className="o-header__drawer-tools-close" aria-controls="o-header-drawer">
-              <span className="o-header__visually-hidden">Close</span>
+            <button type='button' className='o-header__drawer-tools-close' aria-controls='o-header-drawer'>
+              <span className='o-header__visually-hidden'>Close</span>
             </button>
           </div>
 
@@ -34,9 +34,9 @@ class HeaderDrawerContainer extends Component {
   }
 }
 
-import { menuTypes } from "../../reducers/main-menu";
-import { headerTitleTypes } from "../../reducers/header-title";
-import { extraActionsTypes } from "../../reducers/extra-actions";
+import { menuTypes } from '../../reducers/main-menu';
+import { headerTitleTypes } from '../../reducers/header-title';
+import { extraActionsTypes } from '../../reducers/extra-actions';
 
 HeaderDrawerContainer.propTypes = {
   menu: PropTypes.shape(menuTypes).isRequired,

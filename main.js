@@ -4,45 +4,45 @@ import { KmtHeaderNs } from './src/reducers';
 
 const initKmtHeader = () => {
   const theOptions = {
-    rootEl: "#root",
+    rootEl: '#root',
     data: {
       KmtHeaderNs: {
         headerTitle: {// custom header title
-          label: "Knowledge & administration tools",
-          summary: ""
+          label: 'Knowledge & administration tools',
+          summary: ''
         },
         mainMenu: {
           items: [
             {
-              label: "myFT",
+              label: 'myFT',
               attrs: {
-                'data-trackable': "my-ft",
-                href: "#"
+                'data-trackable': 'my-ft',
+                href: '#'
               },
               active: true
             },
             {
-              label: "USERS",
+              label: 'USERS',
               attrs: {
-                'data-trackable': "users",
-                href: "#",
-                target: "_blank"
+                'data-trackable': 'users',
+                href: '#',
+                target: '_blank'
               }
             },
             {
-              label: "Feedback",
+              label: 'Feedback',
               attrs: {
-                'data-trackable': "feedback",
-                href: "#"
+                'data-trackable': 'feedback',
+                href: '#'
               },
-              cls: "kat-feedback__btn",
+              cls: 'kat-feedback__btn',
               last: true
             },
             {
-              label: "My Account",
+              label: 'My Account',
               attrs: {
-                'data-trackable': "my-account",
-                href: "https://myaccount.ft.com/"
+                'data-trackable': 'my-account',
+                href: 'https://myaccount.ft.com/'
               },
               last: true
             }
@@ -50,7 +50,7 @@ const initKmtHeader = () => {
           enableMobile: true
         },
         helpers: {
-          doRequest: (theUrl, options) => { return new Promise((res) => { return res(theUrl); }); }
+          doRequest: (theUrl) => { return new Promise((res) => { return res(theUrl); }); }
         }
       }
     }

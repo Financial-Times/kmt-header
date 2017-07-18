@@ -3,17 +3,5 @@ machine:
     version: 7.2.1
 
 dependencies:
-  # cache_directories:
-  #   - node_modules
-  #   - bower_components
-
   override:
-    - npm prune && npm install
-    - ./node_modules/.bin/bower prune
-    - ./node_modules/.bin/gulp install
-
-test:
-  override:
-    - ./node_modules/.bin/gulp verify
-    - ./node_modules/.bin/gulp build
-    #- ./node_modules/.bin/gulp test
+    - npm prune && npm install && ./node_modules/.bin/bower install

@@ -16,11 +16,11 @@ const cookieUserDetails = getCookieUserDetails();
 const initialState = {
   items: [],
   selected: {
-    licenseId: "",
-    label: ""
+    licenseId: '',
+    label: ''
   },
   show: false,
-  filterStr: "",
+  filterStr: '',
   style: {}
 };
 
@@ -28,15 +28,15 @@ const defaultState = Object.assign({}, initialState, cookieUserDetails);
 
 const licenseDropdown = (state = defaultState, action = {}) => {
   switch (action.type) {
-    case "KMT_LD_TOGGLE":
+    case 'KMT_LD_TOGGLE':
       state = Object.assign({}, state, {show: !state.show});
       break;
 
-    case "KMT_LD_UPDATE_STYLE":
+    case 'KMT_LD_UPDATE_STYLE':
       state = Object.assign({}, state, {style: action.style});
       break;
 
-    case "KMT_LD_UPDATE_FILTER":
+    case 'KMT_LD_UPDATE_FILTER':
       state = Object.assign({}, state, {filterStr: action.filterStr});
       break;
   }

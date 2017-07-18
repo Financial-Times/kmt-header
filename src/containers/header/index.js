@@ -5,10 +5,10 @@ import HeaderNav from './../../components/header-nav';
 import Overlay from './../../components/overlay';
 import FeedbackForm from './../../components/feedback-form';
 import Delegate from 'ftdomdelegate';
-import { togglePanel } from "./../../actions/feedback-form";
+import { togglePanel } from './../../actions/feedback-form';
 
 class HeaderContainer extends Component {
-  constructor(props) {
+  constructor (props) {
     super(props);
 
     this.handleFeedbackOpenClick = this.handleFeedbackOpenClick.bind(this);
@@ -17,7 +17,7 @@ class HeaderContainer extends Component {
     this.addListeners();
   }
 
-  shouldComponentUpdate(nextProps, nextState) {
+  shouldComponentUpdate (nextProps) {
     // only render if the props (state) have changed
     return JSON.stringify(nextProps) !== JSON.stringify(this.props);
   }
@@ -33,11 +33,11 @@ class HeaderContainer extends Component {
     this.props.dispatch(togglePanel());
   }
 
-  closeFeedback() {
+  closeFeedback () {
     this.props.dispatch(togglePanel());
   }
 
-  render() {
+  render () {
     const headerTopProps = {
       dispatch: this.props.dispatch,
       headerTitle: this.props.headerTitle,
@@ -46,7 +46,7 @@ class HeaderContainer extends Component {
     };
 
     const overlayProps = {
-      title: "Help us improve",
+      title: 'Help us improve',
       closeFn: this.closeFeedback
     };
 
@@ -65,9 +65,9 @@ class HeaderContainer extends Component {
   }
 }
 
-import { menuTypes } from "../../reducers/main-menu";
-import { headerTitleTypes } from "../../reducers/header-title";
-import { extraActionsTypes } from "../../reducers/extra-actions";
+import { menuTypes } from '../../reducers/main-menu';
+import { headerTitleTypes } from '../../reducers/header-title';
+import { extraActionsTypes } from '../../reducers/extra-actions';
 
 HeaderContainer.propTypes = {
   menu: PropTypes.shape(menuTypes).isRequired,
