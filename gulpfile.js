@@ -20,10 +20,20 @@ gulp.task('build', ['global-config'], function () {
     js: './main.js',
     sass: './style/main.scss',
     buildJs: 'bundle.js',
-    buildCss: 'bundle.css',
+    buildCss: 'kmt-header.css',
     buildFolder: 'public',
     scssLintPath: './.scss-lint.yml',
     esLintPath: './.eslintrc',
+    env: process.env.NODE_ENV
+  });
+});
+
+gulp.task('build-page', function () {
+  return obt.build(gulp, {
+    sass: './style/page.scss',
+    buildCss: 'page.css',
+    buildFolder: 'public',
+    scssLintPath: './.scss-lint.yml',
     env: process.env.NODE_ENV
   });
 });
@@ -39,7 +49,7 @@ gulp.task('test', function () {
   return obt.test.npmTest(gulp);
 });
 
-gulp.task('serve', ['dev-add-livereload', 'build'], function (){
+gulp.task('serve', ['dev-add-livereload', 'build', 'build-page'], function () {
   appServer = nodemon({
     'script': 'server.js',
     'verbose': true,
@@ -55,7 +65,7 @@ gulp.task('restart-server', function () {
   appServer.restart();
 });
 
-gulp.task('refresh-page', ['build'], function () {
+gulp.task('refresh-page', ['build', 'build-page'], function () {
   livereload.changed('src/index.js');
 });
 
@@ -84,5 +94,5 @@ gulp.task('dev-add-livereload', function () {
   process.env.DEV_ADD_LIVERELOAD = true;
 });
 
-gulp.task('default', ['build', 'img']);
+gulp.task('default', ['build', 'build-page', 'img']);
 gulp.task('dev', ['dev-verify']);
