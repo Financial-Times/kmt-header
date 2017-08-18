@@ -17,7 +17,7 @@ const verifyFn = function () {
 
 gulp.task('build', ['global-config'], function () {
   return obt.build(gulp, {
-    js: './main.js',
+    js: './src/index.js',
     sass: './style/main.scss',
     buildJs: 'bundle.js',
     buildCss: 'kmt-header.css',
