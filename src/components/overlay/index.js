@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react';
-import Delegate from 'ftdomdelegate';
-import viewport from 'o-viewport';
+// import Delegate from 'ftdomdelegate';
+// import viewport from 'o-viewport';
 
 class Overlay extends Component {
   constructor (props) {
@@ -13,10 +13,10 @@ class Overlay extends Component {
 
     this.dimensions = {width: undefined, height: undefined};
 
-    viewport.listenTo('resize');
-    this.theDoc = new Delegate();
-    this.theDoc.root(document.body);
-    this.theDoc.on('oViewport.resize', 'body', this.onWindowResize);
+    // viewport.listenTo('resize');
+    // this.theDoc = new Delegate();
+    // this.theDoc.root(document.body);
+    // this.theDoc.on('oViewport.resize', 'body', this.onWindowResize);
   }
 
   shouldComponentUpdate (nextProps) {
@@ -36,9 +36,9 @@ class Overlay extends Component {
   }
 
   positionOverlay () {
-    const size = viewport.getSize();
-    this.realignOverlay('width', size.width);
-    this.realignOverlay('height', size.height);
+    // const size = viewport.getSize();
+    // this.realignOverlay('width', size.width);
+    // this.realignOverlay('height', size.height);
   }
 
   realignOverlay (dimension, size) {
@@ -83,8 +83,8 @@ class Overlay extends Component {
 
   close (e) {
     e.preventDefault();
-    this.theDoc.destroy();
-    viewport.stopListeningTo('resize');
+    // this.theDoc.destroy();
+    // viewport.stopListeningTo('resize');
     this.props.closeFn();
   }
 
