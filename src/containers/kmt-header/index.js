@@ -1,6 +1,7 @@
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import Header from 'o-header';
+// import Header from 'o-header';
 import HeaderContainer from './../header';
 import HeaderDrawerContainer from './../header-drawer';
 
@@ -13,10 +14,10 @@ class KmtHeaderContainer extends Component {
     // only render if the props (state) have changed
     return JSON.stringify(nextProps) !== JSON.stringify(this.props);
   }
-
-  componentDidMount () {
-    Header.init();
-  }
+  //
+  // componentDidMount () {
+  //   Header.init();
+  // }
 
   render () {
     return (
