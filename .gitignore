@@ -29,3 +29,5 @@ docker-compose.yml
 *.env*
 
 .scss-lint.yml
+
+dist
