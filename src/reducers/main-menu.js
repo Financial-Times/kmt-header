@@ -22,7 +22,6 @@ const defaultState = {
     },
     {
       label: 'CONTENT DISTRIBUTION',
-      active: true,
       attrs: {
         'data-trackable': 'myFT',
         href: '#'
@@ -44,6 +43,7 @@ const defaultState = {
     },
     {
       label: 'GROUPS',
+      active: true,
       attrs: {
         'data-trackable': 'groups',
         href: '#'
@@ -67,7 +67,7 @@ const defaultState = {
       last: true
     }
   ],
-  enableMobile: true
+  enableMobile: false
 };
 
 const mainMenu = (state = defaultState) => {
