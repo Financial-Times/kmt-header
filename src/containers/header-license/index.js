@@ -2,6 +2,8 @@ import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 import LicenseDropdown from './../../components/license-dropdown';
 
+import { getCookieUserDetails } from './../../helpers/helpers';
+
 class HeaderLicense extends Component {
   constructor (props) {
     super(props);
@@ -15,7 +17,7 @@ class HeaderLicense extends Component {
   render () {
     const licenseProps = {
       dispatch: this.props.dispatch,
-      licenseData: this.props.licenseData,
+      licenseData: getCookieUserDetails(this.props.katConfig, this.props.licenceId),
       changeFn: this.props.changeFn,
       mobile: this.props.mobile
     };
@@ -30,14 +32,14 @@ import { licenseDropdownPropTypes } from '../../reducers/license-dropdown';
 
 HeaderLicense.propTypes = {
   changeFn: PropTypes.func,
-  mobile: PropTypes.bool,
-  licenseData: PropTypes.shape(licenseDropdownPropTypes).isRequired
+  mobile: PropTypes.bool
 };
 
 const mapStateToProps = (store) => {
   return {
-    licenseData: store.KmtHeaderNs.licenseDropdown,
-    changeFn: store.KmtHeaderNs.licenseChange.changeFn
+    changeFn: store.KmtHeaderNs.licenseChange.changeFn,
+    katConfig: store.katConfig,
+    licenceId: store.licenceId
   };
 };
 
