@@ -16,21 +16,55 @@ const defaultState = {
     {
       label: 'DASHBOARD',
       attrs: {
+        'data-trackable': 'dashboard',
         href: '#'
       }
     },
     {
-      label: 'MY FT',
+      label: 'CONTENT DISTRIBUTION',
       active: true,
       attrs: {
+        'data-trackable': 'myFT',
         href: '#'
       }
     },
     {
-      label: 'USERS',
+      label: 'REPORTS',
       attrs: {
+        'data-trackable': 'report',
         href: '#'
       }
+    },
+    {
+      label: 'USER MANAGEMENT',
+      attrs: {
+        'data-trackable': 'users',
+        href: '#'
+      }
+    },
+    {
+      label: 'GROUPS',
+      attrs: {
+        'data-trackable': 'groups',
+        href: '#'
+      }
+    },
+    {
+      label: 'Feedback',
+      attrs: {
+        'data-trackable': 'feedback',
+        href: '#'
+      },
+      cls: 'kat-feedback__btn',
+      last: true
+    },
+    {
+      label: 'My Account',
+      attrs: {
+        'data-trackable': 'my-account',
+        href: 'https://myaccount.ft.com/'
+      },
+      last: true
     }
   ],
   enableMobile: true
