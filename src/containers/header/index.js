@@ -4,7 +4,7 @@ import HeaderTop from './../../components/header-top';
 import HeaderNav from './../../components/header-nav';
 import Overlay from './../../components/overlay';
 import FeedbackForm from './../../components/feedback-form';
-import Delegate from 'ftdomdelegate';
+// import Delegate from 'ftdomdelegate';
 import { togglePanel } from './../../actions/feedback-form';
 
 class HeaderContainer extends Component {
@@ -23,9 +23,9 @@ class HeaderContainer extends Component {
   }
 
   addListeners () {
-    const bodyDelegate = new Delegate();
-    bodyDelegate.root(document.body);
-    bodyDelegate.on('click', '.kat-feedback__btn', this.handleFeedbackOpenClick);
+    // const bodyDelegate = new Delegate();
+    // bodyDelegate.root(document.body);
+    // bodyDelegate.on('click', '.kat-feedback__btn', this.handleFeedbackOpenClick);
   }
 
   handleFeedbackOpenClick (e) {
