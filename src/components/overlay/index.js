@@ -28,17 +28,27 @@ class Overlay extends Component {
   }
 
   componentDidMount () {
-    this.positionOverlay();
+    window.addEventListener('resize', this.onWindowResize);
+    this.onWindowResize();
   }
 
   onWindowResize () {
     this.positionOverlay();
   }
 
+  getHeight (ignoreScrollbars) {
+  	return ignoreScrollbars ? document.documentElement.clientHeight : Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
+  }
+
+  getWidth (ignoreScrollbars) {
+  	return ignoreScrollbars ? document.documentElement.clientWidth : Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+  }
+
   positionOverlay () {
-    // const size = viewport.getSize();
-    // this.realignOverlay('width', size.width);
-    // this.realignOverlay('height', size.height);
+    console.log(this.getWidth());
+    console.log(this.getHeight());
+    this.realignOverlay('width', this.getWidth());
+    this.realignOverlay('height', this.getHeight());
   }
 
   realignOverlay (dimension, size) {
