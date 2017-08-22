@@ -1,4 +1,4 @@
-// import nNotification from 'n-notification';
+import nNotification from '@financial-times/n-notification';
 
 /**
  * Toggles the panel
@@ -26,24 +26,24 @@ export function toggleFeedbackValid () {
  * @param {Object} data
  * @returns {Function}
  */
-export function submitFeedback (theUrl, data) {
+export function submitFeedback (data) {
   return (dispatch, getState) => {
-    const theStore = getState();
-    if (typeof theStore.KmtHeaderNs.helpers.doRequest === 'function') {
-      const options = {method: 'POST', body: JSON.stringify(data), headers: { 'Content-Type': 'application/json' }, 'mode': 'no-cors'};
-      theStore.KmtHeaderNs.helpers.doRequest(theUrl, options).then(() => {
+    // const theStore = getState();
+    // if (typeof theStore.KmtHeaderNs.helpers.doRequest === 'function') {
+      // const options = {method: 'POST', body: JSON.stringify(data), headers: { 'Content-Type': 'application/json' }, 'mode': 'no-cors'};
+      // theStore.KmtHeaderNs.helpers.doRequest(options).then(() => {
         dispatch(togglePanel());
-        //
-        // let theMessage = {
-        //   type: 'success',
-        //   title: 'Thank you for your feedback',
-        //   content: ''
-        // };
-        // nNotification.show(theMessage);
 
-      }, () => {
+        let theMessage = {
+          type: 'success',
+          title: 'Thank you for your feedback',
+          content: ''
+        };
+        nNotification.show(theMessage);
 
-      });
-    }
+      // }, () => {
+      //
+      // });
+    // }
   };
 }
