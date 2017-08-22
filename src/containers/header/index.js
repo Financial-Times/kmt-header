@@ -4,33 +4,17 @@ import HeaderTop from './../../components/header-top';
 import HeaderNav from './../../components/header-nav';
 import Overlay from './../../components/overlay';
 import FeedbackForm from './../../components/feedback-form';
-// import Delegate from 'ftdomdelegate';
 import { togglePanel } from './../../actions/feedback-form';
 
 class HeaderContainer extends Component {
   constructor (props) {
     super(props);
-
-    this.handleFeedbackOpenClick = this.handleFeedbackOpenClick.bind(this);
     this.closeFeedback = this.closeFeedback.bind(this);
-
-    this.addListeners();
   }
 
   shouldComponentUpdate (nextProps) {
     // only render if the props (state) have changed
     return JSON.stringify(nextProps) !== JSON.stringify(this.props);
-  }
-
-  addListeners () {
-    // const bodyDelegate = new Delegate();
-    // bodyDelegate.root(document.body);
-    // bodyDelegate.on('click', '.kat-feedback__btn', this.handleFeedbackOpenClick);
-  }
-
-  handleFeedbackOpenClick (e) {
-    e.preventDefault();
-    this.props.dispatch(togglePanel());
   }
 
   closeFeedback () {
