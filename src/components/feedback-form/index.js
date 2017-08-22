@@ -40,10 +40,8 @@ class FeedbackForm extends Component {
 
   submit (e) {
     e.preventDefault();
-    const theForm = e.target;
-    if (theForm) {
-      const theUrl = theForm.getAttribute('action');
-      this.props.dispatch(submitFeedback(theUrl, this.getFormData()));
+    if (e.target) {
+      this.props.dispatch(submitFeedback(this.getFormData()));
     }
   }
 
