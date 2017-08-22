@@ -26,6 +26,7 @@
   "devDependencies": {
     "@financial-times/n-express": "^19.2.3",
     "@financial-times/n-heroku-tools": "~6.19.4",
+    "@financial-times/n-notification": "^6.0.0",
     "babel-cli": "^6.9.0",
     "babel-core": "~6.2.1",
     "babel-loader": "~6.2.0",
