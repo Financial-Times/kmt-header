@@ -1,7 +1,4 @@
 import React, { Component, PropTypes } from 'react';
-// import Delegate from 'ftdomdelegate';
-// import viewport from 'o-viewport';
-// import oDom from 'o-dom';
 import { toggleDropdown, updateDropdownStyle, updateFilterStr } from '../../actions/license-dropdown';
 import { changeLicense } from '../../actions/license-change';
 let componentEventsBound = false;
@@ -21,12 +18,6 @@ class LicenseDropdown extends Component {
 
     // because this uses the same state (no matter how many times it's used) we need to bind the events only once
     if (componentEventsBound !== true) {
-      // this.theDoc = new Delegate();
-      // this.theDoc.root(document.body);
-      // this.theDoc.on('click', 'body', this.handleBodyClick);
-      // viewport.listenTo('resize');
-      // this.theDoc.on('oViewport.resize', 'body', this.onWindowResize);
-
       componentEventsBound = true;
     }
   }
@@ -59,9 +50,6 @@ class LicenseDropdown extends Component {
 
   handleBodyClick (e) {
     // if the dropdown is shown and if the click target is not in the dropdown container
-    // if (this.props.licenceData.show === true && !oDom.getClosestMatch(e.target, '.kmt-header__license-wrapper')) {
-    //   this.toggleDropdown(e);
-    // }
     if (this.props.licenceData.show === true) {
       this.toggleDropdown(e);
     }
@@ -95,11 +83,6 @@ class LicenseDropdown extends Component {
         // reset the position so we can calculate
         const oldRight = licenceDropdown.style.right;
         licenceDropdown.style.right = null;
-
-        // if the dropdown becomes offset
-        // if (licenceDropdown.getBoundingClientRect().right >= viewport.getSize().width) {
-        //   theStyle.right = 0;
-        // }
 
         // revert to the initial position
         licenceDropdown.style.right = oldRight;
