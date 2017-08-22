@@ -26,7 +26,11 @@ class HeaderNav extends Component {
     }
     return (
       <li className={liCls} key={index}>
-        <a className={aCls} {...item.attrs} onClick={(e) => this.handleClickOnFeedback(e, item.cls)}>{item.label}</a>
+        <a className={aCls} {...item.attrs}
+            onClick={(e) => this.handleClickOnFeedback(e, item.cls)}
+            data-trackable={(item.cls === 'kat-feedback__btn') ? 'feedback' : null} >
+              {item.label}
+        </a>
       </li>
     );
   }
