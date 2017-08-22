@@ -10,6 +10,8 @@ class Overlay extends Component {
     this.close = this.close.bind(this);
 
     this.dimensions = {width: undefined, height: undefined};
+    window.addEventListener('resize', this.onWindowResize);
+    this.onWindowResize();
   }
 
   shouldComponentUpdate (nextProps) {
@@ -21,8 +23,11 @@ class Overlay extends Component {
   }
 
   componentDidMount () {
-    window.addEventListener('resize', this.onWindowResize);
-    this.onWindowResize();
+    this.positionOverlay();
+  }
+
+  componentDidUpdate () {
+    this.positionOverlay();
   }
 
   onWindowResize () {
@@ -38,8 +43,6 @@ class Overlay extends Component {
   }
 
   positionOverlay () {
-    console.log(this.getWidth());
-    console.log(this.getHeight());
     this.realignOverlay('width', this.getWidth());
     this.realignOverlay('height', this.getHeight());
   }
@@ -86,6 +89,7 @@ class Overlay extends Component {
 
   close (e) {
     e.preventDefault();
+    window.removeEventListener('resize', this.onWindowResize);
     this.props.closeFn();
   }
 
