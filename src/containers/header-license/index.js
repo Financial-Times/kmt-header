@@ -17,7 +17,8 @@ class HeaderLicense extends Component {
   render () {
     const licenseProps = {
       dispatch: this.props.dispatch,
-      licenseData: getCookieUserDetails(this.props.katConfig, this.props.licenceId),
+      cookieUserDetails: getCookieUserDetails(this.props.katConfig, this.props.licenceId),
+      licenceData: this.props.licenceData,
       changeFn: this.props.changeFn,
       mobile: this.props.mobile
     };
@@ -32,12 +33,14 @@ import { licenseDropdownPropTypes } from '../../reducers/license-dropdown';
 
 HeaderLicense.propTypes = {
   changeFn: PropTypes.func,
-  mobile: PropTypes.bool
+  mobile: PropTypes.bool,
+  licenceData: PropTypes.shape(licenseDropdownPropTypes).isRequired
 };
 
 const mapStateToProps = (store) => {
   return {
     changeFn: store.KmtHeaderNs.licenseChange.changeFn,
+    licenceData: store.KmtHeaderNs.licenseDropdown,
     katConfig: store.katConfig,
     licenceId: store.licenceId
   };

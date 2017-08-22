@@ -51,9 +51,6 @@ export function getCookieUserDetails (katConfig, licenceId) {
         });
       }
     // }
-    licenceData.show = false;
-    licenceData.filterStr = '';
-    licenceData.style = {};
   }
   return licenceData;
 }
