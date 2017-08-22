@@ -26,14 +26,16 @@ class HeaderNav extends Component {
     }
     return (
       <li className={liCls} key={index}>
-        <a className={aCls} {...item.attrs} onClick={(e) => this.handleClickOnFeedback(e)}>{item.label}</a>
+        <a className={aCls} {...item.attrs} onClick={(e) => this.handleClickOnFeedback(e, item.cls)}>{item.label}</a>
       </li>
     );
   }
 
-  handleClickOnFeedback (e) {
-    e.preventDefault();
-    this.props.dispatch(togglePanel());
+  handleClickOnFeedback (e, cls) {
+    if (cls === 'kat-feedback__btn') {
+      e.preventDefault();
+      this.props.dispatch(togglePanel());
+    }
   }
 
   render () {
