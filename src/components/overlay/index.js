@@ -99,7 +99,8 @@ class Overlay extends Component {
         <div className='o-overlay-shadow'></div>
         <div className='o-overlay o-overlay--modal' role='dialog' tabIndex='0' ref='theOverlay' style={{left: 0, top: 0}}>
           <header className='o-overlay__heading' ref='theOverlayHeader'>
-            <a className='o-overlay__close' role='button' tabIndex='0' href='#void' aria-label='Close' title='Close' onClick={this.close}></a>
+            <a className='o-overlay__close' role='button' tabIndex='0' href='#void'
+                aria-label='Close' title='Close' onClick={this.close} data-trackable='close-feedback'></a>
             <span role='heading' className='o-overlay__title'>{this.props.title || ''}</span>
           </header>
           <section className='o-overlay__content' ref='theOverlayContent'>
