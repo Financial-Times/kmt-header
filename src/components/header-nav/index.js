@@ -1,5 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 
+import { togglePanel } from './../../actions/feedback-form';
+
 class HeaderNav extends Component {
   constructor (props) {
     super(props);
@@ -24,9 +26,14 @@ class HeaderNav extends Component {
     }
     return (
       <li className={liCls} key={index}>
-        <a className={aCls} {...item.attrs} >{item.label}</a>
+        <a className={aCls} {...item.attrs} onClick={(e) => this.handleClickOnFeedback(e)}>{item.label}</a>
       </li>
     );
+  }
+
+  handleClickOnFeedback (e) {
+    e.preventDefault();
+    this.props.dispatch(togglePanel());
   }
 
   render () {
