@@ -67,7 +67,7 @@ const defaultState = {
       last: true
     }
   ],
-  enableMobile: false
+  enableMobile: true
 };
 
 const mainMenu = (state = defaultState) => {
