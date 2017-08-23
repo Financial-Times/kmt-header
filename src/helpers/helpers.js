@@ -51,6 +51,9 @@ export function getCookieUserDetails (katConfig, licenceId) {
         });
       }
     // }
+  } else {
+    licenceData.items = [];
+    licenceData.username = 'Unknown User';
   }
   return licenceData;
 }
