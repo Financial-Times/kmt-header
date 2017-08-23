@@ -10,7 +10,7 @@ let appServer;
 
 const verifyFn = function () {
   return obt.verify(gulp, {
-    scssLintPath: './.scss-lint.yml',
+    // scssLintPath: './.scss-lint.yml',
     esLintPath: './.eslintrc'
   });
 };
@@ -22,7 +22,7 @@ gulp.task('build', ['global-config'], function () {
     buildJs: 'bundle.js',
     buildCss: 'kmt-header.css',
     buildFolder: 'public',
-    scssLintPath: './.scss-lint.yml',
+    // scssLintPath: './.scss-lint.yml',
     esLintPath: './.eslintrc',
     env: process.env.NODE_ENV
   });
@@ -33,7 +33,7 @@ gulp.task('build-page', function () {
     sass: './style/page.scss',
     buildCss: 'page.css',
     buildFolder: 'public',
-    scssLintPath: './.scss-lint.yml',
+    // scssLintPath: './.scss-lint.yml',
     env: process.env.NODE_ENV
   });
 });
