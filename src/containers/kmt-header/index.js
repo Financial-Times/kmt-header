@@ -14,14 +14,16 @@ class KmtHeaderContainer extends Component {
     return JSON.stringify(nextProps) !== JSON.stringify(this.props);
   }
 
-  // componentDidMount () {
-  //   const oHeader = require('o-header');
-  //   oHeader.init();
-  // }
+  componentDidMount () {
+    if(this.header) {
+      const OHeader = require('o-header');
+      new OHeader(this.header);
+    }
+  }
 
   render () {
     return (
-      <div>
+      <div ref={el => this.header = el}>
         <HeaderContainer />
         {this.props.enableMobileMenu === true
           ? <HeaderDrawerContainer />
