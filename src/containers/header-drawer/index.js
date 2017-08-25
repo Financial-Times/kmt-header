@@ -26,7 +26,7 @@ class HeaderDrawerContainer extends Component {
             </button>
           </div>
 
-          <HeaderNav mobile={true} menu={this.props.menu} />
+          <HeaderNav mobile={true} menu={this.props.menu} flags={this.props.flags} />
           <HeaderExtraActions mobile={true} extraActions={this.props.extraActions} />
 
         </div>
@@ -49,7 +49,8 @@ const mapStateToProps = (store) => {
   return {
     menu: store.KmtHeaderNs.mainMenu,
     headerTitle: store.KmtHeaderNs.headerTitle,
-    extraActions: store.KmtHeaderNs.extraActions
+    extraActions: store.KmtHeaderNs.extraActions,
+    flags: store.togglerFlags
   };
 };
 

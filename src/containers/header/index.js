@@ -38,7 +38,7 @@ class HeaderContainer extends Component {
     return (
       <header className='o-header-services o-header-services--b2b' data-o-component='o-header'>
         <HeaderTop {...headerTopProps} />
-        <HeaderNav menu={this.props.menu} dispatch={this.props.dispatch} />
+        <HeaderNav menu={this.props.menu} dispatch={this.props.dispatch} flags={this.props.flags} />
         {this.props.feedbackIsExpanded === true
           ? <Overlay {...overlayProps}>
               <FeedbackForm dispatch={this.props.dispatch} isValid={this.props.feedbackIsValid} />
@@ -68,7 +68,8 @@ const mapStateToProps = (store) => {
     headerTitle: store.KmtHeaderNs.headerTitle,
     extraActions: store.KmtHeaderNs.extraActions,
     feedbackIsExpanded: store.KmtHeaderNs.feedbackForm.isExpanded,
-    feedbackIsValid: store.KmtHeaderNs.feedbackForm.isValid
+    feedbackIsValid: store.KmtHeaderNs.feedbackForm.isValid,
+    flags: store.togglerFlags
   };
 };
 
