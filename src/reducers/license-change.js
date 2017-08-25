@@ -8,8 +8,9 @@ const defaultState = {
       pathArr.shift();
     }
     pathArr[1] = e.target.value;
+    const finalPath = pathArr.slice(0,2);
     // navigate to the same page but with the new license id
-    window.location.pathname = pathArr.join('/');
+    window.location.pathname = finalPath.join('/');
   }
 };
 
