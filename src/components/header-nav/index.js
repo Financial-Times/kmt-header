@@ -16,7 +16,7 @@ class HeaderNav extends Component {
   }
 
   createItem (item, index, liCls, aCls) {
-    if ((item.label === 'USER MANAGEMENT' && !this.props.flags.users) || (item.label === 'GROUPS' && !this.props.flags.groups)) {
+    if (this.props.flags && ((item.label === 'USER MANAGEMENT' && !this.props.flags.users) || (item.label === 'GROUPS' && !this.props.flags.groups))) {
       return null;
     } else {
       if (item.active === true) {
