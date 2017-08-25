@@ -16,24 +16,28 @@ class HeaderNav extends Component {
   }
 
   createItem (item, index, liCls, aCls) {
-    if (item.active === true) {
-      aCls += ` ${aCls}--selected`;
+    if ((item.label === 'USER MANAGEMENT' && !this.props.flags.users) || (item.label === 'GROUPS' && !this.props.flags.groups)) {
+      return null;
+    } else {
+      if (item.active === true) {
+        aCls += ` ${aCls}--selected`;
+      }
+      if (item.last === true) {
+        liCls += ` ${liCls}--last`;
+      }
+      if (item.cls !== undefined) {
+        aCls += ` ${item.cls}`;
+      }
+      return (
+        <li className={liCls} key={index}>
+          <a className={aCls} {...item.attrs}
+              onClick={(e) => this.handleClickOnFeedback(e, item.cls)}
+              data-trackable={(item.cls === 'kat-feedback__btn') ? 'feedback' : null} >
+                {item.label}
+          </a>
+        </li>
+      );
     }
-    if (item.last === true) {
-      liCls += ` ${liCls}--last`;
-    }
-    if (item.cls !== undefined) {
-      aCls += ` ${item.cls}`;
-    }
-    return (
-      <li className={liCls} key={index}>
-        <a className={aCls} {...item.attrs}
-            onClick={(e) => this.handleClickOnFeedback(e, item.cls)}
-            data-trackable={(item.cls === 'kat-feedback__btn') ? 'feedback' : null} >
-              {item.label}
-        </a>
-      </li>
-    );
   }
 
   handleClickOnFeedback (e, cls) {
