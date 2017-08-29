@@ -26,7 +26,6 @@
   "devDependencies": {
     "@financial-times/n-ui": "^6.14.0",
     "@financial-times/n-heroku-tools": "^6.19.4",
-    "@financial-times/n-notification": "^6.0.0",
     "babel-cli": "^6.9.0",
     "babel-core": "^6.2.1",
     "babel-loader": "^6.2.0",
@@ -51,6 +50,7 @@
   },
   "dependencies": {
     "babel-preset-stage-1": "^6.1.18",
+    "@financial-times/n-notification": "^6.0.0",
     "dotenv": "^2.0.0",
     "es6-promise": "^3.2.1",
     "gulp": "^3.9.1",
