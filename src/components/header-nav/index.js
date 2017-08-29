@@ -16,8 +16,16 @@ class HeaderNav extends Component {
   }
 
   createItem (item, index, liCls, aCls) {
-    if (this.props.flags && ((item.label === 'USER MANAGEMENT' && !this.props.flags.users) || (item.label === 'GROUPS' && !this.props.flags.groups))) {
+    if (this.props.flags && (item.label === 'GROUPS' && !this.props.flags.groups)) {
       return null;
+    } else if (this.props.flags && (item.label === 'USER MANAGEMENT' && !this.props.flags.users)) {
+      return (
+        <li className={liCls} key={index}>
+          <a className={aCls} href='https://licence-admin.ft.com/licences/8eb26ed7-68c8-44c6-b6ce-52d61500f301/users' >
+            LICENCE ADMINISTRATION
+          </a>
+        </li>
+      );
     } else {
       if (item.active === true) {
         aCls += ` ${aCls}--selected`;
