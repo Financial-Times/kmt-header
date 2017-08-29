@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import HeaderContainer from './../header';
 import HeaderDrawerContainer from './../header-drawer';
-import OHeader from 'o-header';
 
 class KmtHeaderContainer extends Component {
   constructor (props) {
@@ -17,6 +16,7 @@ class KmtHeaderContainer extends Component {
 
   componentDidMount () {
     if(this.header) {
+      const OHeader = require('o-header');
       new OHeader(this.header);
     }
   }

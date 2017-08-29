@@ -21,7 +21,7 @@ class HeaderNav extends Component {
     } else if (this.props.flags && (item.label === 'USER MANAGEMENT' && !this.props.flags.users)) {
       return (
         <li className={liCls} key={index}>
-          <a className={aCls} href='https://licence-admin.ft.com/licences/8eb26ed7-68c8-44c6-b6ce-52d61500f301/users' >
+          <a className={aCls} href='https://licence-admin.ft.com/licences/' >
             LICENCE ADMINISTRATION
           </a>
         </li>

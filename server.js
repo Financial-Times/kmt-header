@@ -1,7 +1,7 @@
 /*global __dirname, process*/
 require('path');
 require('hbs');
-const express = require('@financial-times/n-express');
+const express = require('@financial-times/n-ui');
 const bodyParser = require('body-parser');
 const http = require('http');
 
