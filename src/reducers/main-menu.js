@@ -16,28 +16,28 @@ const defaultState = {
     {
       label: 'DASHBOARD',
       attrs: {
-        'data-trackable': 'dashboard',
+        tracking: 'dashboard',
         href: 'https://kat.ft.com/overview'
       }
     },
     {
       label: 'CONTENT DISTRIBUTION',
       attrs: {
-        'data-trackable': 'myFT',
+        tracking: 'myFT',
         href: 'https://kat.ft.com/myft'
       }
     },
     {
       label: 'REPORTS',
       attrs: {
-        'data-trackable': 'report',
+        tracking: 'report',
         href: 'https://kat.ft.com/usage'
       }
     },
     {
       label: 'USER MANAGEMENT',
       attrs: {
-        'data-trackable': 'users',
+        tracking: 'users',
         href: 'https://kat.ft.com/users'
       }
     },
@@ -45,14 +45,14 @@ const defaultState = {
       label: 'GROUPS',
       active: true,
       attrs: {
-        'data-trackable': 'groups',
+        tracking: 'groups',
         href: 'https://kat.ft.com/groups'
       }
     },
     {
       label: 'Feedback',
       attrs: {
-        'data-trackable': 'feedback',
+        tracking: 'feedback',
         href: '#'
       },
       cls: 'kat-feedback__btn',
@@ -61,7 +61,7 @@ const defaultState = {
     {
       label: 'My Account',
       attrs: {
-        'data-trackable': 'my-account',
+        tracking: 'my-account',
         href: 'https://myaccount.ft.com/'
       },
       last: true
