@@ -28,7 +28,7 @@ const defaultState = {
       }
     },
     {
-      label: 'REPORTS',
+      label: 'USAGE REPORTS',
       attrs: {
         tracking: 'report',
         href: 'https://kat.ft.com/usage'
