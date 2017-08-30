@@ -14,7 +14,7 @@ export const itemsTypes ={
 const defaultState = {
   items: [
     {
-      label: 'DASHBOARD',
+      label: 'OVERVIEW',
       attrs: {
         tracking: 'dashboard',
         href: 'https://kat.ft.com/overview'
