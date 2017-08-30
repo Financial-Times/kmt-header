@@ -21,8 +21,7 @@ app.get('/', function (req, res) {
   res.render(__dirname + '/index', {'BASE_PATH_URL': process.env['BASE_PATH_URL']});
 });
 
-// let port = process.env.PORT || 5000;
-let port = 5000;
+let port = process.env.PORT || 5000;
 let server = http.createServer(app);
 server.listen(port, () => {
   /* eslint no-console: ['error', { allow: ['warn', 'log'] }] */
