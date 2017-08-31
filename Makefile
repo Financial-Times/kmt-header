@@ -5,10 +5,10 @@ node_modules/@financial-times/n-gage/index.mk:
 -include node_modules/@financial-times/n-gage/index.mk
 
 unit-test:
-	# skip
+	# jest src/*
 
 test:
-	# skip
+	verify unit-test
 
 build:
 	./node_modules/.bin/gulp
