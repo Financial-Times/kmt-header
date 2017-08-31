@@ -91,5 +91,5 @@ gulp.task('dev-add-livereload', function () {
   process.env.DEV_ADD_LIVERELOAD = true;
 });
 
-gulp.task('default', ['build', 'build-page', 'img']);
+gulp.task('default', ['build', 'img']);
 gulp.task('dev', ['dev-verify']);
