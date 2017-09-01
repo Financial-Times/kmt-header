@@ -8,12 +8,6 @@ const size = require('gulp-size');
 const livereload = require('gulp-livereload');
 let appServer;
 
-const verifyFn = function () {
-  return obt.verify(gulp, {
-    esLintPath: './.eslintrc'
-  });
-};
-
 gulp.task('build', ['global-config'], function () {
   return obt.build(gulp, {
     js: './src/index.js',
@@ -21,7 +15,6 @@ gulp.task('build', ['global-config'], function () {
     buildJs: 'bundle.js',
     buildCss: 'kmt-header.css',
     buildFolder: 'public',
-    esLintPath: './.eslintrc',
     env: process.env.NODE_ENV
   });
 });
@@ -39,8 +32,6 @@ gulp.task('install', function () {
   return obt.install();
 });
 
-gulp.task('verify', verifyFn);
-gulp.task('dev-verify', ['img', 'watch'], verifyFn);
 
 gulp.task('test', function () {
   return obt.test.npmTest(gulp);
@@ -92,4 +83,4 @@ gulp.task('dev-add-livereload', function () {
 });
 
 gulp.task('default', ['build', 'img']);
-gulp.task('dev', ['dev-verify']);
+gulp.task('dev');
