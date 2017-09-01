@@ -39,7 +39,7 @@ class LicenseDropdown extends Component {
     }
   }
 
-  componentDidMount() {
+  componentDidMount () {
 		window.addEventListener('resize', this.onWindowResize);
 		this.onWindowResize();
 	}
