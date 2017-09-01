@@ -97,7 +97,7 @@ class FeedbackForm extends Component {
             <textarea className='o-forms__textarea kat-feedback__textarea' name='improvefeedback' id='improvefeedback' ref='improvefeedback' onChange={this.toggleValidState}></textarea>
           </div>
           <div className='kat-feedback__row'>
-            <button className='kat-feedback__submit' {...submitAttr} data-trackable='submit-feedback' >Submit</button>
+            <button className='kat-feedback__submit' {...submitAttr} data-trackable='submit-feedback'>Submit</button>
           </div>
         </form>
       </div>
