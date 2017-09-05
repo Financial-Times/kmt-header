@@ -22,8 +22,6 @@ export function toggleFeedbackValid () {
 
 /**
  * Submit the user feedback
- * @param {String} theUrl
- * @param {Object}
  * @returns {Function}
  */
 export function submitFeedback () {
