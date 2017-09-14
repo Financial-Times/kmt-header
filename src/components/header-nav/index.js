@@ -36,9 +36,16 @@ class HeaderNav extends Component {
       if (item.cls !== undefined) {
         aCls += ` ${item.cls}`;
       }
+      const link = ((item.label === 'OVERVIEW')||
+                    (item.label === 'CONTENT DISTRIBUTION')||
+                    (item.label === 'USAGE REPORTS')||
+                    (item.label === 'USER MANAGEMENT')||
+                    (item.label === 'GROUPS')) ?
+                    `${item.attrs.href}/${this.props.licenceId}` : `${item.attrs.href}`;
       return (
         <li className={liCls} key={index}>
-          <a className={aCls} {...item.attrs}
+          <a className={aCls}
+              href={link}
               onClick={(e) => this.handleClickOnFeedback(e, item.cls)}
               data-trackable={item.attrs.tracking} >
                 {item.label}
