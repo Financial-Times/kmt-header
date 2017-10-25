@@ -1,6 +1,5 @@
-import React, { Component, PropTypes } from 'react';
-import Delegate from 'ftdomdelegate';
-import viewport from 'o-viewport';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 class Overlay extends Component {
   constructor (props) {
@@ -12,11 +11,8 @@ class Overlay extends Component {
     this.close = this.close.bind(this);
 
     this.dimensions = {width: undefined, height: undefined};
-
-    viewport.listenTo('resize');
-    this.theDoc = new Delegate();
-    this.theDoc.root(document.body);
-    this.theDoc.on('oViewport.resize', 'body', this.onWindowResize);
+    window.addEventListener('resize', this.onWindowResize);
+    this.onWindowResize();
   }
 
   shouldComponentUpdate (nextProps) {
@@ -31,14 +27,25 @@ class Overlay extends Component {
     this.positionOverlay();
   }
 
+  componentDidUpdate () {
+    this.positionOverlay();
+  }
+
   onWindowResize () {
     this.positionOverlay();
   }
 
+  getHeight (ignoreScrollbars) {
+  	return ignoreScrollbars ? document.documentElement.clientHeight : Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
+  }
+
+  getWidth (ignoreScrollbars) {
+  	return ignoreScrollbars ? document.documentElement.clientWidth : Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+  }
+
   positionOverlay () {
-    const size = viewport.getSize();
-    this.realignOverlay('width', size.width);
-    this.realignOverlay('height', size.height);
+    this.realignOverlay('width', this.getWidth());
+    this.realignOverlay('height', this.getHeight());
   }
 
   realignOverlay (dimension, size) {
@@ -83,8 +90,7 @@ class Overlay extends Component {
 
   close (e) {
     e.preventDefault();
-    this.theDoc.destroy();
-    viewport.stopListeningTo('resize');
+    window.removeEventListener('resize', this.onWindowResize);
     this.props.closeFn();
   }
 
@@ -94,7 +100,8 @@ class Overlay extends Component {
         <div className='o-overlay-shadow'></div>
         <div className='o-overlay o-overlay--modal' role='dialog' tabIndex='0' ref='theOverlay' style={{left: 0, top: 0}}>
           <header className='o-overlay__heading' ref='theOverlayHeader'>
-            <a className='o-overlay__close' role='button' tabIndex='0' href='#void' aria-label='Close' title='Close' onClick={this.close}></a>
+            <a className='o-overlay__close' role='button' tabIndex='0' href='#void'
+                aria-label='Close' title='Close' onClick={this.close} data-trackable='close-feedback'></a>
             <span role='heading' className='o-overlay__title'>{this.props.title || ''}</span>
           </header>
           <section className='o-overlay__content' ref='theOverlayContent'>

@@ -1,0 +1,17 @@
+// This file is only to be used for brining in styles that allow us ot test
+// this component during development. Any styles that should be exported
+// along with the component go in style/main.scss.
+
+@import '../bower_components/o-colors/main';
+
+html {
+  @include oColorsFor(page, background);
+  height: 100%;
+}
+
+body {
+  // Remove space around the document
+  @include oColorsFor(page, background);
+  margin: 0;
+  height: 100%;
+}

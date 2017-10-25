@@ -1,6 +1,6 @@
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import Header from 'o-header';
 import HeaderContainer from './../header';
 import HeaderDrawerContainer from './../header-drawer';
 
@@ -15,12 +15,15 @@ class KmtHeaderContainer extends Component {
   }
 
   componentDidMount () {
-    Header.init();
+    if(this.header) {
+      const OHeader = require('o-header');
+      new OHeader(this.header);
+    }
   }
 
   render () {
     return (
-      <div>
+      <div ref={el => this.header = el}>
         <HeaderContainer />
         {this.props.enableMobileMenu === true
           ? <HeaderDrawerContainer />

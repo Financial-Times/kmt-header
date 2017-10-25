@@ -33,24 +33,27 @@ function _sortAndNameLicenses (licenses) {
  * Gets the user details from the cookie
  * @returns {{}}
  */
-export function getCookieUserDetails () {
+export function getCookieUserDetails (katConfig, licenceId) {
   // if the data has not been retrieved
-  if (licenceData === undefined) {
+  // if (licenceData === undefined) { - not sure why we needed it here
     licenceData = {};
-    if (window.KMT_CONFIG) {
-      licenceData.items = _sortAndNameLicenses(window.KMT_CONFIG.licenceList || []);
-      licenceData.username = window.KMT_CONFIG.displayName || 'Unknown User';
+    if (katConfig) {
+      licenceData.items = _sortAndNameLicenses(katConfig.licenceList || []);
+      licenceData.username = katConfig.displayName || 'Unknown User';
 
-      if (window.LICENCE_ID) {
+      if (licenceId) {
         licenceData.items.every((item) => {
-          if (item.licenceId === window.LICENCE_ID) {
+          if (item.licenceId === licenceId) {
             licenceData.selected = item;
             return false;
           }
           return true;
         });
       }
-    }
+    // }
+  } else {
+    licenceData.items = [];
+    licenceData.username = 'Unknown User';
   }
   return licenceData;
 }

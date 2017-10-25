@@ -5,12 +5,12 @@ $o-overlay-is-silent: false;
 $n-notification-is-silent: false;
 $o-card-is-silent: false;
 
-@import '../bower_components/o-colors/main';
-@import '../bower_components/o-header-services/main';
-@import '../bower_components/o-forms/main';
-@import '../bower_components/o-overlay/main';
-@import '../bower_components/n-notification/main';
-@import '../bower_components/o-card/main';
+@import 'o-colors/main';
+@import 'o-header-services/main';
+@import 'o-forms/main';
+@import 'o-overlay/main';
+@import 'n-notification/main';
+@import 'o-card/main';
 @import './legacy-section-card';
 
 $sans-serif: oFontsGetFontFamilyWithFallbacks(MetricWeb);

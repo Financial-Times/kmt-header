@@ -4,7 +4,10 @@ require('hbs');
 const express = require('@financial-times/n-express');
 const bodyParser = require('body-parser');
 const http = require('http');
-const app = express();
+
+const app = express({
+  systemCode: 'ft-kmt-header'
+});
 
 require('dotenv').config({silent: true});
 

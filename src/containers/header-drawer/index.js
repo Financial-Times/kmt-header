@@ -1,4 +1,5 @@
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import HeaderNav from './../../components/header-nav';
 import HeaderExtraActions from './../../components/header-extra-actions';
@@ -25,7 +26,7 @@ class HeaderDrawerContainer extends Component {
             </button>
           </div>
 
-          <HeaderNav mobile={true} menu={this.props.menu} />
+          <HeaderNav mobile={true} menu={this.props.menu} flags={this.props.flags} licenceId={this.props.licenceId} />
           <HeaderExtraActions mobile={true} extraActions={this.props.extraActions} />
 
         </div>
@@ -48,7 +49,9 @@ const mapStateToProps = (store) => {
   return {
     menu: store.KmtHeaderNs.mainMenu,
     headerTitle: store.KmtHeaderNs.headerTitle,
-    extraActions: store.KmtHeaderNs.extraActions
+    extraActions: store.KmtHeaderNs.extraActions,
+    flags: store.togglerFlags,
+    licenceId: store.licenceId
   };
 };
 

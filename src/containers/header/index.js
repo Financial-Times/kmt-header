@@ -1,36 +1,21 @@
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import HeaderTop from './../../components/header-top';
 import HeaderNav from './../../components/header-nav';
 import Overlay from './../../components/overlay';
 import FeedbackForm from './../../components/feedback-form';
-import Delegate from 'ftdomdelegate';
 import { togglePanel } from './../../actions/feedback-form';
 
 class HeaderContainer extends Component {
   constructor (props) {
     super(props);
-
-    this.handleFeedbackOpenClick = this.handleFeedbackOpenClick.bind(this);
     this.closeFeedback = this.closeFeedback.bind(this);
-
-    this.addListeners();
   }
 
   shouldComponentUpdate (nextProps) {
     // only render if the props (state) have changed
     return JSON.stringify(nextProps) !== JSON.stringify(this.props);
-  }
-
-  addListeners () {
-    const bodyDelegate = new Delegate();
-    bodyDelegate.root(document.body);
-    bodyDelegate.on('click', '.kat-feedback__btn', this.handleFeedbackOpenClick);
-  }
-
-  handleFeedbackOpenClick (e) {
-    e.preventDefault();
-    this.props.dispatch(togglePanel());
   }
 
   closeFeedback () {
@@ -53,7 +38,7 @@ class HeaderContainer extends Component {
     return (
       <header className='o-header-services o-header-services--b2b' data-o-component='o-header'>
         <HeaderTop {...headerTopProps} />
-        <HeaderNav menu={this.props.menu}/>
+        <HeaderNav menu={this.props.menu} dispatch={this.props.dispatch} flags={this.props.flags} licenceId={this.props.licenceId}/>
         {this.props.feedbackIsExpanded === true
           ? <Overlay {...overlayProps}>
               <FeedbackForm dispatch={this.props.dispatch} isValid={this.props.feedbackIsValid} />
@@ -83,7 +68,9 @@ const mapStateToProps = (store) => {
     headerTitle: store.KmtHeaderNs.headerTitle,
     extraActions: store.KmtHeaderNs.extraActions,
     feedbackIsExpanded: store.KmtHeaderNs.feedbackForm.isExpanded,
-    feedbackIsValid: store.KmtHeaderNs.feedbackForm.isValid
+    feedbackIsValid: store.KmtHeaderNs.feedbackForm.isValid,
+    flags: store.togglerFlags,
+    licenceId: store.licenceId
   };
 };
 

@@ -1,7 +1,5 @@
-import React, { Component, PropTypes } from 'react';
-import Delegate from 'ftdomdelegate';
-import viewport from 'o-viewport';
-import oDom from 'o-dom';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { toggleDropdown, updateDropdownStyle, updateFilterStr } from '../../actions/license-dropdown';
 import { changeLicense } from '../../actions/license-change';
 let componentEventsBound = false;
@@ -21,12 +19,6 @@ class LicenseDropdown extends Component {
 
     // because this uses the same state (no matter how many times it's used) we need to bind the events only once
     if (componentEventsBound !== true) {
-      this.theDoc = new Delegate();
-      this.theDoc.root(document.body);
-      this.theDoc.on('click', 'body', this.handleBodyClick);
-      viewport.listenTo('resize');
-      this.theDoc.on('oViewport.resize', 'body', this.onWindowResize);
-
       componentEventsBound = true;
     }
   }
@@ -37,7 +29,7 @@ class LicenseDropdown extends Component {
   }
 
   componentDidUpdate () {
-    if (this.props.licenseData.show === true) {
+    if (this.props.licenceData.show === true) {
       const filter = this.refs.licenceFilter;
       // if the filter field is visible
       if (filter && filter.getBoundingClientRect().left > 0) {
@@ -47,6 +39,11 @@ class LicenseDropdown extends Component {
     }
   }
 
+  componentDidMount () {
+		window.addEventListener('resize', this.onWindowResize);
+		this.onWindowResize();
+	}
+
   toggleDropdown () {
     // toggle the dropdown
     this.props.dispatch(toggleDropdown());
@@ -54,7 +51,7 @@ class LicenseDropdown extends Component {
 
   handleBodyClick (e) {
     // if the dropdown is shown and if the click target is not in the dropdown container
-    if (this.props.licenseData.show === true && !oDom.getClosestMatch(e.target, '.kmt-header__license-wrapper')) {
+    if (this.props.licenceData.show === true) {
       this.toggleDropdown(e);
     }
   }
@@ -79,7 +76,7 @@ class LicenseDropdown extends Component {
   }
 
   positionDropdown () {
-    if (this.props.licenseData.show === true) {
+    if (this.props.licenceData.show === true) {
       const theStyle = {};
       const licenceDropdown = this.refs.licenceDropdown;
 
@@ -88,17 +85,12 @@ class LicenseDropdown extends Component {
         const oldRight = licenceDropdown.style.right;
         licenceDropdown.style.right = null;
 
-        // if the dropdown becomes offset
-        if (licenceDropdown.getBoundingClientRect().right >= viewport.getSize().width) {
-          theStyle.right = 0;
-        }
-
         // revert to the initial position
         licenceDropdown.style.right = oldRight;
       }
 
       // if the right position has changed
-      if (this.props.licenseData.style.right !== theStyle.right) {
+      if (this.props.licenceData.style.right !== theStyle.right) {
         this.props.dispatch(updateDropdownStyle(theStyle));
       }
     }
@@ -111,13 +103,13 @@ class LicenseDropdown extends Component {
   }
 
   filterLicences () {
-    const { licenseData } = this.props;
+    const { cookieUserDetails, licenceData } = this.props;
 
-    let licenceItems = [...licenseData.items];
-    if (licenseData.filterStr !== '') {
+    let licenceItems = [...cookieUserDetails.items];
+    if (licenceData.filterStr !== '') {
       licenceItems = licenceItems.filter(item => {
         // escape the regex chars
-        const searchStr = licenseData.filterStr.replace(/[\-\[\]\/\{\}\(\)\*\+\?\.\\\^\$\|]/g, '\\$&');
+        const searchStr = licenceData.filterStr.replace(/[\-\[\]\/\{\}\(\)\*\+\?\.\\\^\$\|]/g, '\\$&');
         return item.label.toLowerCase().search(searchStr) !== -1;
       });
     }
@@ -125,19 +117,19 @@ class LicenseDropdown extends Component {
   }
 
   render () {
-    const { licenseData } = this.props;
+    const { cookieUserDetails, licenceData } = this.props;
 
     const licenceItems = this.filterLicences();
-    const licenseDataLength = licenseData.items.length;
+    const licenceDataLength = cookieUserDetails.items.length;
     const remainingNr = licenceItems.length;
 
     // if there are no licenses
-    if (licenseDataLength === 0) {
+    if (licenceDataLength === 0) {
       return null;
     }
 
     let dropdownCls = 'kmt-header__license-dropdown';
-    if (licenseData.show === true) {
+    if (licenceData.show === true) {
       dropdownCls += ` ${dropdownCls}--expanded`;
     }
 
@@ -145,27 +137,27 @@ class LicenseDropdown extends Component {
     if (this.props.mobile === true) {
       wrapperCls += ` ${wrapperCls}--mobile`;
     }
-    const kmtHeaderLicenseLabel = `kmt-header__license-label${licenseDataLength === 1 ? '--no-icon' : ''}`;
+    const kmtHeaderLicenseLabel = `kmt-header__license-label${licenceDataLength === 1 ? '--no-icon' : ''}`;
     const selectSize = remainingNr > 4 ? 4 : (remainingNr < 2 ? 2 : remainingNr);
 
     return (
       <div className={wrapperCls} ref='theWrapper'>
         <div className={kmtHeaderLicenseLabel} onClick={this.toggleDropdown}>
-          <span className='kmt-header__license-used'>{licenseData.selected.label}</span>
+          <span className='kmt-header__license-used'>{cookieUserDetails.selected.label}</span>
         </div>
         {
-        (licenseDataLength > 1) ?
-          <div ref='licenceDropdown' className={dropdownCls} style={this.props.mobile !== true ? licenseData.style : {}}>
-            {(licenseDataLength > 5)
+        (licenceDataLength > 1) ?
+          <div ref='licenceDropdown' className={dropdownCls} style={this.props.mobile !== true ? licenceData.style : {}}>
+            {(licenceDataLength > 5)
               ? <div className='kmt-header__license-filter-wrapper'>
-                  <input value={licenseData.filterStr} ref='licenceFilter' className='kmt-header__license-filter' type='text' placeholder='Filter licences' onChange={this.updateSearch} />
+                  <input value={licenceData.filterStr} ref='licenceFilter' className='kmt-header__license-filter' type='text' placeholder='Filter licences' onChange={this.updateSearch} />
                 </div>
               : null
             }
             <select size={selectSize} className='o-forms__select kmt-forms__select' onChange={this.licenseChanged} >
               {
                 licenceItems.map((item, index) => {
-                  const className = licenseData.selected.licenceId === item.licenceId ? 'kmt-forms-option--selected' : '';
+                  const className = cookieUserDetails.selected.licenceId === item.licenceId ? 'kmt-forms-option--selected' : '';
                   return <option value={item.licenceId} key={index} className={className}>{item.label}</option>;
                 })
               }
@@ -184,7 +176,7 @@ import { licenseDropdownPropTypes } from '../../reducers/license-dropdown';
 LicenseDropdown.propTypes = {
   dispatch: PropTypes.func.isRequired,
   changeFn: PropTypes.func,
-  licenseData: PropTypes.shape(licenseDropdownPropTypes).isRequired,
+  licenceData: PropTypes.shape(licenseDropdownPropTypes).isRequired,
   mobile: PropTypes.bool
 };
 

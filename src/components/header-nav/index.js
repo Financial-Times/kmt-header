@@ -1,4 +1,7 @@
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+
+import { togglePanel } from './../../actions/feedback-form';
 
 class HeaderNav extends Component {
   constructor (props) {
@@ -13,20 +16,50 @@ class HeaderNav extends Component {
   }
 
   createItem (item, index, liCls, aCls) {
-    if (item.active === true) {
-      aCls += ` ${aCls}--selected`;
+    if (this.props.flags && (item.label === 'GROUPS' && !this.props.flags.groups)) {
+      return null;
+    } else if (this.props.flags && (item.label === 'USER MANAGEMENT' && !this.props.flags.users)) {
+      return (
+        <li className={liCls} key={index}>
+          <a className={aCls} href='https://licence-admin.ft.com/licences/' >
+            LICENCE ADMINISTRATION
+          </a>
+        </li>
+      );
+    } else {
+      if (item.active === true) {
+        aCls += ` ${aCls}--selected`;
+      }
+      if (item.last === true) {
+        liCls += ` ${liCls}--last`;
+      }
+      if (item.cls !== undefined) {
+        aCls += ` ${item.cls}`;
+      }
+      const link = ((item.label === 'OVERVIEW')||
+                    (item.label === 'CONTENT DISTRIBUTION')||
+                    (item.label === 'USAGE REPORTS')||
+                    (item.label === 'USER MANAGEMENT')||
+                    (item.label === 'GROUPS')) ?
+                    `${item.attrs.href}/${this.props.licenceId}` : `${item.attrs.href}`;
+      return (
+        <li className={liCls} key={index}>
+          <a className={aCls}
+              href={link}
+              onClick={(e) => this.handleClickOnFeedback(e, item.cls)}
+              data-trackable={item.attrs.tracking} >
+                {item.label}
+          </a>
+        </li>
+      );
     }
-    if (item.last === true) {
-      liCls += ` ${liCls}--last`;
+  }
+
+  handleClickOnFeedback (e, cls) {
+    if (cls === 'kat-feedback__btn') {
+      e.preventDefault();
+      this.props.dispatch(togglePanel());
     }
-    if (item.cls !== undefined) {
-      aCls += ` ${item.cls}`;
-    }
-    return (
-      <li className={liCls} key={index}>
-        <a className={aCls} {...item.attrs} >{item.label}</a>
-      </li>
-    );
   }
 
   render () {

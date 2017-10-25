@@ -55,15 +55,14 @@ describe('<FeedbackForm />', () => {
 		it('contains feedback intro', () => {
 			const feedbackIntro =
 			<div className='kat-feedback__row'>
-				<p className='kat-feedback__intro-text'>Please share your feedback on the new Knowledge and Administration Tool (KAT) so that we can continue to develop it in line with customer requirements.</p>
+				<p className='kat-feedback__intro-text'>Please share your feedback on the new Knowledge & administration tools (KAT) so that we can continue to develop it in line with customer requirements.</p>
 			</div>;
 
 			expect(feedbackFormComponentMounted.contains(feedbackIntro)).toEqual(true);
 		});
 
 		it('contains form label', () => {
-			const formLabel =
-			<label className='o-forms__label'>How satisfied are you with FT KAT?</label>;
+			const formLabel = <label className='o-forms__label'>How satisfied are you with FT KAT?</label>;
 
 			expect(feedbackFormComponentMounted.contains(formLabel)).toEqual(true);
 		});

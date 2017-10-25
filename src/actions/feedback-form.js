@@ -1,4 +1,4 @@
-import nNotification from 'n-notification';
+import nNotification from '@financial-times/n-notification';
 
 /**
  * Toggles the panel
@@ -22,28 +22,17 @@ export function toggleFeedbackValid () {
 
 /**
  * Submit the user feedback
- * @param {String} theUrl
- * @param {Object} data
  * @returns {Function}
  */
-export function submitFeedback (theUrl, data) {
-  return (dispatch, getState) => {
-    const theStore = getState();
-    if (typeof theStore.KmtHeaderNs.helpers.doRequest === 'function') {
-      const options = {method: 'POST', body: JSON.stringify(data), headers: { 'Content-Type': 'application/json' }, 'mode': 'no-cors'};
-      theStore.KmtHeaderNs.helpers.doRequest(theUrl, options).then(() => {
-        dispatch(togglePanel());
+export function submitFeedback () {
+  return (dispatch) => {
+    dispatch(togglePanel());
 
-        let theMessage = {
-          type: 'success',
-          title: 'Thank you for your feedback',
-          content: ''
-        };
-        nNotification.show(theMessage);
-
-      }, () => {
-
-      });
-    }
+    let theMessage = {
+      type: 'success',
+      title: 'Thank you for your feedback',
+      content: ''
+    };
+    nNotification.show(theMessage);
   };
 }

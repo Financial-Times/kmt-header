@@ -5,3 +5,7 @@ machine:
 dependencies:
   override:
     - npm prune && npm install && ./node_modules/.bin/bower install
+
+test:
+  override:
+    - echo "test"

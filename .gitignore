@@ -25,7 +25,12 @@ docker-compose.yml
 .eslintrc.js
 .editorconfig
 .pa11yci.js
+.eslintrc
 
 *.env*
 
 .scss-lint.yml
+
+dist
+
+package-lock.json

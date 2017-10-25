@@ -1,4 +1,5 @@
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { submitFeedback, toggleFeedbackValid } from '../../actions/feedback-form';
 
 class FeedbackForm extends Component {
@@ -40,10 +41,8 @@ class FeedbackForm extends Component {
 
   submit (e) {
     e.preventDefault();
-    const theForm = e.target;
-    if (theForm) {
-      const theUrl = theForm.getAttribute('action');
-      this.props.dispatch(submitFeedback(theUrl, this.getFormData()));
+    if (e.target) {
+      this.props.dispatch(submitFeedback(this.getFormData()));
     }
   }
 
@@ -98,7 +97,7 @@ class FeedbackForm extends Component {
             <textarea className='o-forms__textarea kat-feedback__textarea' name='improvefeedback' id='improvefeedback' ref='improvefeedback' onChange={this.toggleValidState}></textarea>
           </div>
           <div className='kat-feedback__row'>
-            <button className='kat-feedback__submit' {...submitAttr}>Submit</button>
+            <button className='kat-feedback__submit' {...submitAttr} data-trackable='submit-feedback'>Submit</button>
           </div>
         </form>
       </div>

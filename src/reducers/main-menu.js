@@ -14,23 +14,57 @@ export const itemsTypes ={
 const defaultState = {
   items: [
     {
-      label: 'DASHBOARD',
+      label: 'OVERVIEW',
       attrs: {
-        href: '#'
+        tracking: 'dashboard',
+        href: 'https://kat.ft.com/overview'
       }
     },
     {
-      label: 'MY FT',
+      label: 'CONTENT DISTRIBUTION',
+      attrs: {
+        tracking: 'myFT',
+        href: 'https://kat.ft.com/myft'
+      }
+    },
+    {
+      label: 'USAGE REPORTS',
+      attrs: {
+        tracking: 'report',
+        href: 'https://kat.ft.com/usage'
+      }
+    },
+    {
+      label: 'USER MANAGEMENT',
+      attrs: {
+        tracking: 'users',
+        href: 'https://kat.ft.com/users'
+      }
+    },
+    {
+      label: 'GROUPS',
       active: true,
       attrs: {
-        href: '#'
+        tracking: 'groups',
+        href: 'https://kat.ft.com/groups'
       }
     },
     {
-      label: 'USERS',
+      label: 'Feedback',
       attrs: {
+        tracking: 'feedback',
         href: '#'
-      }
+      },
+      cls: 'kat-feedback__btn',
+      last: true
+    },
+    {
+      label: 'My Account',
+      attrs: {
+        tracking: 'my-account',
+        href: 'https://myaccount.ft.com/'
+      },
+      last: true
     }
   ],
   enableMobile: true
