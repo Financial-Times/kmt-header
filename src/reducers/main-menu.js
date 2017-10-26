@@ -17,28 +17,28 @@ const defaultState = {
       label: 'OVERVIEW',
       attrs: {
         tracking: 'dashboard',
-        href: 'https://kat.ft.com/overview'
+        href: '/overview'
       }
     },
     {
       label: 'CONTENT DISTRIBUTION',
       attrs: {
         tracking: 'myFT',
-        href: 'https://kat.ft.com/myft'
+        href: '/myft'
       }
     },
     {
       label: 'USAGE REPORTS',
       attrs: {
         tracking: 'report',
-        href: 'https://kat.ft.com/usage'
+        href: '/usage'
       }
     },
     {
       label: 'USER MANAGEMENT',
       attrs: {
         tracking: 'users',
-        href: 'https://kat.ft.com/users'
+        href: '/users'
       }
     },
     {
@@ -46,7 +46,7 @@ const defaultState = {
       active: true,
       attrs: {
         tracking: 'groups',
-        href: 'https://kat.ft.com/groups'
+        href: '/groups'
       }
     },
     {
