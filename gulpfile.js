@@ -11,9 +11,9 @@ let appServer;
 gulp.task('build', ['global-config'], function () {
   return obt.build(gulp, {
     js: './src/index.js',
-    sass: './style/main.scss',
+    sass: './main.scss',
     buildJs: 'bundle.js',
-    buildCss: 'kmt-header.css',
+    buildCss: 'main.css',
     buildFolder: 'public',
     env: process.env.NODE_ENV
   });
@@ -21,8 +21,8 @@ gulp.task('build', ['global-config'], function () {
 
 gulp.task('build-page', function () {
   return obt.build(gulp, {
-    sass: './style/page.scss',
-    buildCss: 'page.css',
+    sass: './main.scss',
+    buildCss: 'main.css',
     buildFolder: 'public',
     env: process.env.NODE_ENV
   });
@@ -39,8 +39,8 @@ gulp.task('test', function () {
 
 gulp.task('serve', ['dev-add-livereload', 'build', 'build-page'], function () {
   appServer = nodemon({
-    'script': 'server.js',
-    'verbose': true,
+    'script': 'demos/app.js',
+    'verbose': false,
     'watch': false,
     'ignore': ['*.*']
   }).on('restart', function () {

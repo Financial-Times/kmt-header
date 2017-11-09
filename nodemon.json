@@ -1,0 +1,10 @@
+{
+  "ignoreRoot": [],
+  "watch": [
+    ".",
+    "node_modules",
+    "public/*.css",
+    "demos"
+  ],
+  "ext": "js json html"
+}
