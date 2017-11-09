@@ -13,12 +13,20 @@
     "@financial-times/n-heroku-tools": "^6.19.4",
     "@financial-times/n-internal-tool": "^2.2.1",
     "bower": "^1.7.9",
+    "eslint": "^4.10.0",
     "gulp": "^3.9.1",
     "gulp-imagemin": "^2.2.1",
     "gulp-livereload": "^3.8.1",
     "gulp-nodemon": "^2.2.1",
     "gulp-size": "^1.2.1",
+    "lintspaces-cli": "^0.6.0",
     "nodemon": "^1.12.1",
-    "npm-prepublish": "^1.2.3"
+    "npm-prepublish": "^1.2.3",
+    "sass-lint": "^1.12.1"
+  },
+  "scripts": {
+    "precommit": "node_modules/.bin/secret-squirrel",
+    "commitmsg": "node_modules/.bin/secret-squirrel-commitmsg",
+    "prepush": "make verify -j3"
   }
 }

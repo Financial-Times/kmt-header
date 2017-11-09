@@ -10,7 +10,7 @@ $o-buttons-is-silent: false; // TODO: make this silent ad only include mixins fo
 @import 'o-buttons/main';
 
 .licence-switcher__container {
-	padding: 5px 0 0 0;
+	padding: 5px 0 0;
 	margin-bottom: -7px; // To provide consistent height when switcher doesn't exist
 }
 
