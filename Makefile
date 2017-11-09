@@ -4,6 +4,8 @@ node_modules/@financial-times/n-gage/index.mk:
 
 -include node_modules/@financial-times/n-gage/index.mk
 
+export IGNORE_A11Y=true
+
 test: verify
 
 build:
