@@ -4,7 +4,6 @@ node_modules/@financial-times/n-gage/index.mk:
 
 -include node_modules/@financial-times/n-gage/index.mk
 
-export IGNORE_A11Y=true
 
 test: verify
 
@@ -14,3 +13,8 @@ build:
 
 run:
 	./node_modules/.bin/nodemon demos/app.js
+
+a11y: build
+	@node .pa11yci.js
+	@PA11Y=true node demos/app
+	@$(DONE)

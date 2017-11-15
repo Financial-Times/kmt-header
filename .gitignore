@@ -24,7 +24,7 @@ docker-compose.yml
 
 .eslintrc.js
 .editorconfig
-.pa11yci.js
+pa11y_screenCapture
 .eslintrc
 
 *.env*
