@@ -6,7 +6,7 @@ module.exports = {
 			event.preventDefault();
 			const currentPath = location.pathname;
 			const newLicenceSelection = event.target.value;
-			const newPath = currentPath.split('/');
+			let newPath = currentPath.split('/');
 			newPath[2] = newLicenceSelection;
 			newPath = newPath.join('/');
 
