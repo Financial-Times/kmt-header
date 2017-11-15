@@ -36,7 +36,15 @@ const data = {
 app.get('/', (req, res) => {
 	res.render('demo', Object.assign({
 		title: 'Test App'
-	}, data));
+	},
+	Object.assign({}, data, { enableJS: true })));
+});
+
+app.get('/core', (req, res) => {
+	res.render('demo', Object.assign({
+		title: 'Test App'
+	},
+	Object.assign({}, data, { enableJS: false })));
 });
 
 function runPa11yTests () {

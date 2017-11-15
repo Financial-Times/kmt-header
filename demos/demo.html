@@ -8,12 +8,7 @@
 </head>
 
 <body>
-	<div class="js">
-		{{> header withLicences }}
-	</div>
-	<h2> ↑ Javascript</h2>
-	<h2> ↓ No Javascript</h2>
-	<div class="no-js">
+	<div class="{{#if enableJS}}js{{else}}no-js{{/if}}">
 		{{> header withLicences }}
 	</div>
 </body>
