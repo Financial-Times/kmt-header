@@ -1,10 +1,7 @@
-require('dotenv').config({silent: true});
 const gulp = require('gulp');
 const obt = require('origami-build-tools');
 const nodemon = require('gulp-nodemon');
 const exec = require('child_process').exec;
-const imagemin = require('gulp-imagemin');
-const size = require('gulp-size');
 const livereload = require('gulp-livereload');
 let appServer;
 
@@ -67,20 +64,9 @@ gulp.task('watch', ['serve'], function () {
 	gulp.watch('./*.*', ['restart-server']);
 });
 
-gulp.task('img', function () {
-	return gulp.src('./style/images/*')
-		.pipe(imagemin({
-			progressive: true,
-			interlaced: true,
-			svgoPlugins: []
-		}))
-		.pipe(size({ showFiles: true, title: 'images compressed:' }))
-		.pipe(gulp.dest('./public/images'));
-});
-
 gulp.task('dev-add-livereload', function () {
 	process.env.DEV_ADD_LIVERELOAD = true;
 });
 
-gulp.task('default', ['build', 'img']);
+gulp.task('default', ['build']);
 gulp.task('dev');
