@@ -1,10 +1,8 @@
 // @import './style/main';
 
 $o-header-services-is-silent: false;
-$o-forms-is-silent: false; // TODO: make this silent ad only include mixins for the relevant form
-$o-buttons-is-silent: false; // TODO: make this silent ad only include mixins for the relevant button
+$o-forms-is-silent: false; // TODO: make this silent and only include mixins for the relevant form
 
-@import 'n-ui-foundations/main';
 @import 'o-header-services/main';
 @import 'o-forms/main';
 @import 'o-buttons/main';
@@ -16,4 +14,17 @@ $o-buttons-is-silent: false; // TODO: make this silent ad only include mixins fo
 
 .licence-switcher__form {
 	margin: 0;
+}
+
+.licence-switcher__submit {
+	@include oButtons();
+}
+
+.o-header-services__nav-item--last {
+	float: right;
+
+	.o-header-services__nav-link {
+		text-transform: none;
+		font-weight: 400;
+	}
 }
