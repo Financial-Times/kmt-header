@@ -26,5 +26,8 @@
     "o-forms": "^4.0.3",
     "n-notification": "^6.0.0",
     "o-card": "^3.0.0"
+  },
+  "resolutions": {
+    "n-ui-foundations": "^2.4.3"
   }
 }
