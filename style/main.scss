@@ -16,109 +16,109 @@ $o-card-is-silent: false;
 $sans-serif: oFontsGetFontFamilyWithFallbacks(MetricWeb);
 
 html {
-  // The iconic pink background
-  @include oColorsFor(page, background);
+	// The iconic pink background
+	@include oColorsFor(page, background);
 
-  // Set a font family on the whole document
-  font-family: $sans-serif;
+	// Set a font family on the whole document
+	font-family: $sans-serif;
 
-  // Prevent navigation menus from creating
-  // extra space on sides of the page
-  overflow-x: hidden;
-  height: 100%;
+	// Prevent navigation menus from creating
+	// extra space on sides of the page
+	overflow-x: hidden;
+	height: 100%;
 }
 
 body {
-  // Remove space around the document
-  margin: 0;
-  height: 100%;
+	// Remove space around the document
+	margin: 0;
+	height: 100%;
 }
 
 input::-ms-clear {
-  display: none;
+	display: none;
 }
 
 .o-tabs {
-  [role="tab"] {
-    a {
-      border: 0;
-    }
-  }
+	[role="tab"] {
+		a {
+			border: 0;
+		}
+	}
 }
 
 .o-link-list__item--hover {
-  @include oColorsFor(o-link-list__item--hover);
+	@include oColorsFor(o-link-list__item--hover);
 }
 
 :focus {
-  outline: none;
+	outline: none;
 }
 
 .o-header-services__nav-link,
 .o-header-services__related-content-link,
 .kmt-header__license-user {
-  border-bottom: 0;
+	border-bottom: 0;
 }
 
 .kmt-header__license-user {
-  &:focus,
-  &:active,
-  &:hover {
-    color: inherit;
-  }
+	&:focus,
+	&:active,
+	&:hover {
+		color: inherit;
+	}
 }
 
 .kmt-text--transform-none {
-  text-transform: none;
+	text-transform: none;
 }
 
 .pull-right {
-  float: right;
+	float: right;
 }
 
 .kat-text-right {
-  text-align: right;
+	text-align: right;
 }
 
 .kat-text-left {
-  text-align: left;
+	text-align: left;
 }
 
 .kat-text-center {
-  text-align: center;
+	text-align: center;
 }
 
 // styles copied from .o-header-services__related-content > a
 .o-header-services__related-content-link {
-  text-decoration: none;
-  display: inline-block;
-  color: oColorsGetColorFor('o-header-services-top', text);
-  margin: 0 $_o-header-services-padding-x;
-  font-weight: 600;
+	text-decoration: none;
+	display: inline-block;
+	color: oColorsGetColorFor('o-header-services-top', text);
+	margin: 0 $_o-header-services-padding-x;
+	font-weight: 600;
 
-  &:visited {
-    color: oColorsGetColorFor('o-header-services-top', text);
-  }
+	&:visited {
+		color: oColorsGetColorFor('o-header-services-top', text);
+	}
 }
 .o-header-services__product-name--drawer {
-  color: oColorsGetPaletteColor('black');
-  padding-right: 32px;
-  display: inline-block;
+	color: oColorsGetPaletteColor('black');
+	padding-right: 32px;
+	display: inline-block;
 }
 
 .o-header__drawer-tools-close {
-  position: absolute;
-  right: 0;
-  top: 20px;
+	position: absolute;
+	right: 0;
+	top: 20px;
 }
 
 .o-overlay__title {
-  font-size: 18px;
-  line-height: 22px;
+	font-size: 18px;
+	line-height: 22px;
 }
 
 .o-overlay__close {
-  border: 0;
+	border: 0;
 }
 
 @import '../src/components/license-dropdown/style';

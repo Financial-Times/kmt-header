@@ -1,80 +1,80 @@
 .kat-feedback {
-  display: flex;
-  //padding: 20px 10px;
-  flex-direction: column;
-  align-items: center;
-  font-size: 16px;
-  line-height: 20px;
+	display: flex;
+	//padding: 20px 10px;
+	flex-direction: column;
+	align-items: center;
+	font-size: 16px;
+	line-height: 20px;
 
-  > div {
-    width: 475px;
-  }
-  .nps-label {
-    padding-right: 18px;
-    margin-right: 0;
+	> div {
+		width: 475px;
+	}
+	.nps-label {
+		padding-right: 18px;
+		margin-right: 0;
 
-    @include oGridRespondTo($until: M) {
-      padding-bottom: 6px;
-    }
-  }
+		@include oGridRespondTo($until: M) {
+			padding-bottom: 6px;
+		}
+	}
 
-  // scss-lint:disable DeclarationOrder
-  @include oGridRespondTo($until: M) {
-    > div {
-      width: 100%;
-    }
+	// scss-lint:disable DeclarationOrder
+	@include oGridRespondTo($until: M) {
+		> div {
+			width: 100%;
+		}
 
-    .nps-label {
-      display: block;
-    }
-  }
+		.nps-label {
+			display: block;
+		}
+	}
 }
 
 .kat-feedback__intro-text {
-  margin: 0;
+	margin: 0;
 }
 
 .kat-feedback__row {
-  padding-bottom: 20px;
-  position: relative;
+	padding-bottom: 20px;
+	position: relative;
 }
 
 .kat-feedback__score {
-  clear: both;
+	clear: both;
 
-  @include oGridRespondTo(M) {
-    margin: 0px -20px;
-    padding-left: 20px;
-  }
+	@include oGridRespondTo(M) {
+		margin: 0px -20px;
+		padding-left: 20px;
+	}
 }
 
 .kat-feedback__less {
-  float: left;
+	float: left;
 
-  @include oGridRespondTo($until: M) {
-    float: none;
-    position: absolute;
-    top: 2px;
-    margin-left: 45px;
-    margin-top: 0;
-  }
+	@include oGridRespondTo($until: M) {
+		float: none;
+		position: absolute;
+		top: 2px;
+		margin-left: 45px;
+		margin-top: 0;
+	}
 }
 
 .kat-feedback__more {
-  float: right;
+	float: right;
 
-  @include oGridRespondTo($until: M) {
-    float: none;
-    position: absolute;
-    bottom: 25px;
-    margin-left: 45px;
-  }
+	@include oGridRespondTo($until: M) {
+		float: none;
+		position: absolute;
+		bottom: 25px;
+		margin-left: 45px;
+	}
 }
 
 .kat-feedback__textarea {
-  max-width: 100%;
+	max-width: 100%;
 }
 
 .kat-feedback__submit {
-  @include oButtons;
+	@include oButtons;
 }

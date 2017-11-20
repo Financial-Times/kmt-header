@@ -1,8 +1,8 @@
 const defaultState = {
-  doRequest : () => {}
+	doRequest : () => {}
 };
 const helpers = (state = defaultState) => {
-  return state;
+	return state;
 };
 
 export default helpers;

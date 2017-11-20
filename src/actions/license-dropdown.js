@@ -3,9 +3,9 @@
  * @returns {{type: String}}
  */
 export function toggleDropdown () {
-  return {
-    type: 'KMT_LD_TOGGLE'
-  };
+	return {
+		type: 'KMT_LD_TOGGLE'
+	};
 }
 
 /**
@@ -14,10 +14,10 @@ export function toggleDropdown () {
  * @returns {{type: String, style: Object}}
  */
 export function updateDropdownStyle (style) {
-  return {
-    type: 'KMT_LD_UPDATE_STYLE',
-    style
-  };
+	return {
+		type: 'KMT_LD_UPDATE_STYLE',
+		style
+	};
 }
 
 /**
@@ -26,8 +26,8 @@ export function updateDropdownStyle (style) {
  * @returns {{type: String, filterStr: String}}
  */
 export function updateFilterStr (filterStr) {
-  return {
-    type: 'KMT_LD_UPDATE_FILTER',
-    filterStr
-  };
+	return {
+		type: 'KMT_LD_UPDATE_FILTER',
+		filterStr
+	};
 }

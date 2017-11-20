@@ -72,7 +72,7 @@ $rule-size: 1px;
 	margin-top: oGridGutter();
 	padding-bottom: oGridGutter();
 	flex: 1 1 auto;
-  // scss-lint:disable ImportantRule
+	//scss-lint:disable ImportantRule
 	-ms-flex-preferred-size: 100% !important; //IE9
 	overflow: visible;
 
@@ -154,15 +154,15 @@ $rule-size: 1px;
 
 //this is down here because specificity >_<
 @media all and (-ms-high-contrast:none) {
-  // scss-lint:disable ImportantRule
+	// scss-lint:disable ImportantRule
 	.card { -ms-flex-preferred-size: 100% !important; } //IE10
 	.card--myft {
 		.column & { // select under column because that's how the explore page works
-      // scss-lint:disable ImportantRule
+		// scss-lint:disable ImportantRule
 			-ms-flex-preferred-size: auto !important; //IE10 fix
 		}
 	}
-  // scss-lint:disable ImportantRule, PseudoElement
+	// scss-lint:disable ImportantRule, PseudoElement
 	*::-ms-backdrop,
 	.card { -ms-flex-preferred-size: auto !important; } //IE11
 }
@@ -172,13 +172,13 @@ $rule-size: 1px;
 }
 
 .card__content {
-  @include oCardContent;
+	@include oCardContent;
 
-  .core .card--lazy-loading-images & {
-    width: 100%;
-    margin-left: 0;
-    padding-left: 0;
-  }
+	.core .card--lazy-loading-images & {
+		width: 100%;
+		margin-left: 0;
+		padding-left: 0;
+	}
 }
 
 .card__content--grow {
@@ -222,11 +222,11 @@ $rule-size: 1px;
 }
 
 .card__concept-article-link {
-  font-family: oFontsGetFontFamilyWithFallbacks(FinancierDisplayWeb);
-  color: oColorsGetPaletteColor('black-70');
-  border-bottom-width: 0;
-  font-size: 18px;
-  line-height: 22px;
+	font-family: oFontsGetFontFamilyWithFallbacks(FinancierDisplayWeb);
+	color: oColorsGetPaletteColor('black-70');
+	border-bottom-width: 0;
+	font-size: 18px;
+	line-height: 22px;
 }
 
 .card__concept-article-text {
@@ -251,41 +251,41 @@ $rule-size: 1px;
 }
 
 .card__myft-header {
-  min-height: 51px;
-  padding: 0 0 10px 90px;
+	min-height: 51px;
+	padding: 0 0 10px 90px;
 
-  @include oGridRespondTo($from: XL) {
-    padding-left: 120px;
-    min-height: 67px;
-  }
+	@include oGridRespondTo($from: XL) {
+		padding-left: 120px;
+		min-height: 67px;
+	}
 
-  .card--empty &,
-  .core .card--lazy-loading-images & {
-    padding-left: 0;
-    min-height: 0;
-  }
+	.card--empty &,
+	.core .card--lazy-loading-images & {
+		padding-left: 0;
+		min-height: 0;
+	}
 }
 
 .card__myft-image-container {
-  left: 10px;
-  position: absolute;
-  top: 10px;
-  width: 90px;
-  height: 51px;
-  overflow-y: hidden;
-  padding-bottom: 10px;
-  text-align: center;
+	left: 10px;
+	position: absolute;
+	top: 10px;
+	width: 90px;
+	height: 51px;
+	overflow-y: hidden;
+	padding-bottom: 10px;
+	text-align: center;
 
-  @include oGridRespondTo($from: XL) {
-    width: 120px;
-    height: 67px;
-    padding-bottom: 10px;
-    text-align: center;
-  }
+	@include oGridRespondTo($from: XL) {
+		width: 120px;
+		height: 67px;
+		padding-bottom: 10px;
+		text-align: center;
+	}
 
-  &.n-image {
-    max-height: 100%;
-  }
+	&.n-image {
+		max-height: 100%;
+	}
 }
 
 .card__myft-image {
@@ -322,7 +322,7 @@ $rule-size: 1px;
 }
 
 .section__column {
-  align-items: stretch;
+	align-items: stretch;
 }
 
 .column {
