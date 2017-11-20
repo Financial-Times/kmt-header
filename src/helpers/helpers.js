@@ -22,7 +22,7 @@ function _sortAndNameLicenses(licenses) {
 
   return licenses.map((license, index) => {
     let theLabel = `License #${index + 1}`;
-    if (license.name.trim() !== "") {
+    if (license.name && license.name.trim() !== "") {
       theLabel = `${license.contractId} - ${license.name}`;
     }
     return Object.assign({}, license, {label: theLabel});
