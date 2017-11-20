@@ -1,86 +1,86 @@
 import React, { Component, PropTypes } from 'react';
 
 class HeaderNav extends Component {
-  constructor(props) {
-    super(props);
+	constructor (props) {
+		super(props);
 
-    this.createItem = this.createItem.bind(this);
-  }
+		this.createItem = this.createItem.bind(this);
+	}
 
-  shouldComponentUpdate(nextProps, nextState) {
-    // only render if the props (state) have changed
-    return JSON.stringify(nextProps) !== JSON.stringify(this.props);
-  }
+	shouldComponentUpdate (nextProps) {
+		// only render if the props (state) have changed
+		return JSON.stringify(nextProps) !== JSON.stringify(this.props);
+	}
 
-  createItem(item, index, liCls, aCls) {
-    if (item.active === true) {
-      aCls += ` ${aCls}--selected`;
-    }
-    if (item.last === true) {
-      liCls += ` ${liCls}--last`;
-    }
-    if (item.cls !== undefined) {
-      aCls += ` ${item.cls}`;
-    }
-    return (
-      <li className={liCls} key={index}>
-        <a className={aCls} {...item.attrs} >{item.label}</a>
-      </li>
-    );
-  }
+	createItem (item, index, liCls, aCls) {
+		if (item.active === true) {
+			aCls += ` ${aCls}--selected`;
+		}
+		if (item.last === true) {
+			liCls += ` ${liCls}--last`;
+		}
+		if (item.cls !== undefined) {
+			aCls += ` ${item.cls}`;
+		}
+		return (
+			<li className={liCls} key={index}>
+				<a className={aCls} {...item.attrs} >{item.label}</a>
+			</li>
+		);
+	}
 
-  render() {
-    const { menu } = this.props;
-    // if there are no items
-    if (menu.items === undefined) {
-      return null;
-    }
+	render () {
+		const { menu } = this.props;
+		// if there are no items
+		if (menu.items === undefined) {
+			return null;
+		}
 
-    let liCls = "o-header-services__nav-item";
-    let aCls = "o-header-services__nav-link";
+		let liCls = 'o-header-services__nav-item';
+		let aCls = 'o-header-services__nav-link';
 
-    const lastItems = [];
-    let allItems = menu.items.filter(item => {
-      if (item.last === true) {
-        lastItems.push(item);
-        return false;
-      }
-      return true;
-    });
+		const lastItems = [];
+		let allItems = menu.items.filter(item => {
+			if (item.last === true) {
+				lastItems.push(item);
+				return false;
+			}
+			return true;
+		});
 
-    allItems = allItems.concat(lastItems.reverse());
+		allItems = allItems.concat(lastItems.reverse());
 
-    // if not for the mobile version
-    if (this.props.mobile !== true) {
-      return (
-        <nav className='o-header-services__primary-nav'>
-          <div className='o-header-services__container'>
-            <ul className='o-header-services__nav-list kmt-text--transform-none'>
-              {allItems.map((item, index) => this.createItem(item, index, liCls, aCls))}
-            </ul>
-          </div>
-        </nav>
-      );
-    }
+		// if not for the mobile version
+		if (this.props.mobile !== true) {
+			return (
+				<nav className='o-header-services__primary-nav'>
+					<div className='o-header-services__container'>
+						<ul className='o-header-services__nav-list kmt-text--transform-none'>
+							{allItems.map((item, index) => this.createItem(item, index, liCls, aCls))}
+						</ul>
+					</div>
+				</nav>
+			);
+		}
 
-    // for the mobile version
-    liCls = "o-header__drawer-menu-item";
-    aCls = "o-header__drawer-menu-link";
-    return (
-      <nav className="o-header__drawer-menu o-header__drawer-menu--primary" role="navigation" aria-label="Primary navigation">
-        <ul className="o-header__drawer-menu-list">
-          {menu.items.map((item, index) => this.createItem(item, index, liCls, aCls))}
-        </ul>
-      </nav>
-    );
-  }
+		// for the mobile version
+		liCls = 'o-header__drawer-menu-item';
+		aCls = 'o-header__drawer-menu-link';
+		return (
+			<nav className="o-header__drawer-menu o-header__drawer-menu--primary" role="navigation" aria-label="Primary navigation">
+				<ul className="o-header__drawer-menu-list">
+					{menu.items.map((item, index) => this.createItem(item, index, liCls, aCls))}
+				</ul>
+			</nav>
+		);
+	}
 };
 
-import { menuTypes } from "../../reducers/main-menu";
+import { menuTypes } from '../../reducers/main-menu';
 
 HeaderNav.propTypes = {
-  mobile: PropTypes.bool,
-  menu: PropTypes.shape(menuTypes).isRequired
+	mobile: PropTypes.bool,
+	menu: PropTypes.shape(menuTypes).isRequired
 };
 
 HeaderNav.defaultProps = {

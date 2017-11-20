@@ -1,8 +1,10 @@
+/* eslint-disable no-undef */
+
 import React from 'react';
 import { mount, shallow } from 'enzyme';
 import FeedbackForm from './index.js';
 
-describe("<FeedbackForm />", () => {
+describe('<FeedbackForm />', () => {
 	const mockDispatch = jest.fn();
 
 	const feedbackFormComponent = mount(
@@ -16,7 +18,7 @@ describe("<FeedbackForm />", () => {
 		const feedbackFormShallow = shallow(<FeedbackForm dispatch={mockDispatch} isValid={false} />);
 		expect(feedbackFormShallow.debug()).toMatchSnapshot();
 	});
-	
+
 	describe('improvement field', () => {
 		const textareaFields = feedbackFormComponent.find('textarea');
 

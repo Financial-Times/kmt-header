@@ -15,13 +15,13 @@ app.use(bodyParser.urlencoded({extended: true}));
 
 app.set('view engine', 'hbs');
 app.get('/', function (req, res) {
-  res.render(__dirname + "/index", {"BASE_PATH_URL": process.env["BASE_PATH_URL"]});
+	res.render(__dirname + '/index', {'BASE_PATH_URL': process.env['BASE_PATH_URL']});
 });
 
-let port = process.env.PORT || 5000;
-let server = http.createServer(app);
+const port = process.env.PORT || 5000;
+const server = http.createServer(app);
 server.listen(port, () => {
-  console.log('Express server listening on %d, in %s mode', port, app.get('env'));
+	console.log('Express server listening on %d, in %s mode', port, app.get('env')); // eslint-disable-line no-console
 });
 
 module.exports = server;

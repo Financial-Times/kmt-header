@@ -38,25 +38,25 @@ We are using [Jest](https://facebook.github.io/jest/) for testing React componen
 Tests for React components should be saved as `test.js` inside the folder for that component.
 
 ### Running tests
- - To run a one-time test: `$ npm test`;
- - To run tests and watch for changes: `$ npm run testWatch`;
- - `$ npm test -- --coverage` to see the coverage of tested files.
+- To run a one-time test: `$ npm test`;
+- To run tests and watch for changes: `$ npm run testWatch`;
+- `$ npm test -- --coverage` to see the coverage of tested files.
 
 ## Deployment
 This component has been created to be included throughout other KAT components.
 
 ### How to update a repo that uses the component to the new version
 If you want to update connected components with the latest version, you need to follow the following steps:
- 1. Create a new repository release on GitHub. Please follow naming convention of previous releases.
- 2. Go to `bower.json` file of the component you want to update, and change `"kmt-header"` dependency version to the [newly released one](https://github.com/Financial-Times/kmt-header/releases).
- 3. Run `$ bower install` in the component repository.
+1. Create a new repository release on GitHub. Please follow naming convention of previous releases.
+2. Go to `bower.json` file of the component you want to update, and change `"kmt-header"` dependency version to the [newly released one](https://github.com/Financial-Times/kmt-header/releases).
+3. Run `$ bower install` in the component repository.
 
- The following KAT components are currently using `kmt-header`:
-  - [kmt-overview](https://github.com/Financial-Times/kmt-overview)
-  - [kmt-myft](https://github.com/Financial-Times/kmt-myft)
-  - [kat-usage-report](https://github.com/Financial-Times/kat-usage-report)
+The following KAT components are currently using `kmt-header`:
+	- [kmt-overview](https://github.com/Financial-Times/kmt-overview)
+	- [kmt-myft](https://github.com/Financial-Times/kmt-myft)
+	- [kat-usage-report](https://github.com/Financial-Times/kat-usage-report)
 
- ### How to use the component
+### How to use the component
 
 ## Installation:
 ```
@@ -96,27 +96,27 @@ KmtHeader.init(options);
 * React Redux store data (both for when **Inside** and **Outside** React Redux app):
 ```js
 KmtHeaderNs: { // {Object} - optional - Namespace for the KMT header React Redux store - if store data is provided it needs to be wrapped inside this object
-  mainMenu: { // {Object} - optional - Menu data. If provided, all the child elements are required
-    items: [ // {Array} Links to be shown
-      { // {Object} Link data
-        label: "DASHBOARD", // {String} Link label
-        href: "#" // {String} Link href
-      }
-    ],
-    enableMobile: true // {Bool} Enable/disable mobile menu
-  },
-  headerTitle: { // {Object} - optional -  Header text data. If provided, all the child elements are required
-    label: "KMT", // {String} Header main title
-    summary: "KNOWLEDGE MANAGER TOOLS" // {String} - optional - Header summary
-  },
-  extraActions: { // {Object} - optional -  Header extra action data. If provided, all the child elements are required
-    items: [ // {Object} links to be shown
-      { // {Object} Link data
-        label: "Logout", // {String} Link label
-        href: "#" // {String} Link href
-      }
-    ]
-  }
+	mainMenu: { // {Object} - optional - Menu data. If provided, all the child elements are required
+		items: [ // {Array} Links to be shown
+			{ // {Object} Link data
+				label: "DASHBOARD", // {String} Link label
+				href: "#" // {String} Link href
+			}
+		],
+		enableMobile: true // {Bool} Enable/disable mobile menu
+	},
+	headerTitle: { // {Object} - optional -  Header text data. If provided, all the child elements are required
+		label: "KMT", // {String} Header main title
+		summary: "KNOWLEDGE MANAGER TOOLS" // {String} - optional - Header summary
+	},
+	extraActions: { // {Object} - optional -  Header extra action data. If provided, all the child elements are required
+		items: [ // {Object} links to be shown
+			{ // {Object} Link data
+				label: "Logout", // {String} Link label
+				href: "#" // {String} Link href
+			}
+		]
+	}
 }
 ```
 
@@ -130,15 +130,15 @@ rootEl: "#root"
 ```js
 // Example
 const options = {
-  rootEl: "#root",
-  data: {
-    KmtHeaderNs: {
-      headerTitle: {
-        label: "KMT",
-        summary: "KNOWLEDGE MANAGER TOOLS"
-      }
-    }
-  }
+	rootEl: "#root",
+	data: {
+		KmtHeaderNs: {
+			headerTitle: {
+				label: "KMT",
+				summary: "KNOWLEDGE MANAGER TOOLS"
+			}
+		}
+	}
 };
 
 KmtHeader.init(options);

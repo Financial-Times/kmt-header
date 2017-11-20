@@ -1,12 +1,11 @@
 /* OLD n-section and n-card styles used in both kat-overview and kat-myft */
+
 @function to-px($number) {
-	@return $number + 0px;
+	@return $number+0px;
 }
 
 @mixin displayFlex() {
-	display: block;
-
-	// Prevents autoprefixer from outputting display: -webkit-box;, which is buggy
+	display: block; // Prevents autoprefixer from outputting display: -webkit-box;, which is buggy
 	& {
 		// scss-lint:disable VendorPrefix
 		/*autoprefixer: off*/
@@ -17,9 +16,10 @@
 }
 
 @mixin respondTo($from: false, $until: false) {
-	@if $from == default and $until == false {
+	@if $from==default and $until==false {
 		@content;
-	} @else {
+	}
+	@else {
 		@include oGridRespondTo($from, $until) {
 			@content;
 		}
@@ -27,43 +27,8 @@
 }
 
 // font-size/line-height pairs
-$card-title-sizes: (
-	tiny: (
-		default: 18 20,
-		S: 16 16,
-		M: 16 18
-	),
-	small: (
-		default: 20 22,
-		M: 18 20,
-		L: 20 24,
-	),
-	medium: (
-		default: 22 24,
-		S: 24 26
-	),
-	large: (
-		default: 26 28,
-		S: 28 30,
-		M: 28 30,
-		L: 32 32
-	),
-	large-top-story: (
-		default: 28 30,
-		S: 34 34,
-		M: 42 40
-	),
-	large-no-image: (
-		default: 34 34,
-		M: 42 40,
-		L: 36 38,
-		XL: 44 44
-	)
-);
-
-
+$card-title-sizes: ( tiny: ( default: 18 20, S: 16 16, M: 16 18), small: ( default: 20 22, M: 18 20, L: 20 24, ), medium: ( default: 22 24, S: 24 26), large: ( default: 26 28, S: 28 30, M: 28 30, L: 32 32), large-top-story: ( default: 28 30, S: 34 34, M: 42 40), large-no-image: ( default: 34 34, M: 42 40, L: 36 38, XL: 44 44));
 $rule-size: 1px;
-
 .card {
 	@include oCard;
 	position: relative;
@@ -71,79 +36,62 @@ $rule-size: 1px;
 	width: auto;
 	margin-top: oGridGutter();
 	padding-bottom: oGridGutter();
-	flex: 1 1 auto;
-  // scss-lint:disable ImportantRule
+	flex: 1 1 auto; // scss-lint:disable ImportantRule
 	-ms-flex-preferred-size: 100% !important; //IE9
 	overflow: visible;
-
 	@include oGridRespondTo(M) {
 		margin-top: oGridGutter(M);
 	}
-
 	&[data-show~="false"] {
 		display: none;
 	}
-
 	&[data-o-grid-colspan^="0"] {
 		@include oGridRespondTo($until: S) {
 			display: none;
 		}
 	}
-
 	&[data-o-grid-colspan~="S0"] {
 		@include oGridRespondTo(S, $until: M) {
 			display: none;
 		}
 	}
-
 	&[data-o-grid-colspan~="M0"] {
 		@include oGridRespondTo(M, $until: L) {
 			display: none;
 		}
 	}
-
 	&[data-o-grid-colspan~="L0"] {
 		@include oGridRespondTo(L, $until: XL) {
 			display: none;
 		}
 	}
-
 	&[data-o-grid-colspan~="XL0"] {
 		@include oGridRespondTo(XL) {
 			display: none;
 		}
 	}
-
 	&[data-image~="left"],
 	&[data-image~="right"] {
-		@include oCardThemeLandscape;
-
-		// IE9 hack to prevent articles not clearing floated content
+		@include oCardThemeLandscape; // IE9 hack to prevent articles not clearing floated content
 		.card__content--clear-floats {
 			clear: both;
 		}
 	}
-
 	@each $layout-name in $_o-grid-layout-names {
 		@include oGridRespondTo($layout-name) {
 			&[data-show~="#{$layout-name}--true"] {
 				@include displayFlex;
 			}
-
 			&[data-show~="#{$layout-name}--false"] {
 				display: none;
 			}
-
 			&[data-image~="#{$layout-name}--left"],
 			&[data-image~="#{$layout-name}--right"] {
-				@include oCardThemeLandscape;
-
-				// IE9 hack to prevent articles not clearing floated content
+				@include oCardThemeLandscape; // IE9 hack to prevent articles not clearing floated content
 				.card__content--clear-floats {
 					clear: both;
 				}
 			}
-
 			&[data-image~="#{$layout-name}--top"],
 			&[data-image~="#{$layout-name}--bottom"] {
 				@include oCardThemePortrait;
@@ -154,17 +102,23 @@ $rule-size: 1px;
 
 //this is down here because specificity >_<
 @media all and (-ms-high-contrast:none) {
-  // scss-lint:disable ImportantRule
-	.card { -ms-flex-preferred-size: 100% !important; } //IE10
+	// scss-lint:disable ImportantRule
+	.card {
+		-ms-flex-preferred-size: 100% !important;
+	}
+	//IE10
 	.card--myft {
-		.column & { // select under column because that's how the explore page works
-      // scss-lint:disable ImportantRule
+		.column & {
+			// select under column because that's how the explore page works
+			// scss-lint:disable ImportantRule
 			-ms-flex-preferred-size: auto !important; //IE10 fix
 		}
 	}
-  // scss-lint:disable ImportantRule, PseudoElement
+	// scss-lint:disable ImportantRule, PseudoElement
 	*::-ms-backdrop,
-	.card { -ms-flex-preferred-size: auto !important; } //IE11
+	.card {
+		-ms-flex-preferred-size: auto !important;
+	} //IE11
 }
 
 .card--article {
@@ -172,13 +126,12 @@ $rule-size: 1px;
 }
 
 .card__content {
-  @include oCardContent;
-
-  .core .card--lazy-loading-images & {
-    width: 100%;
-    margin-left: 0;
-    padding-left: 0;
-  }
+	@include oCardContent;
+	.core .card--lazy-loading-images & {
+		width: 100%;
+		margin-left: 0;
+		padding-left: 0;
+	}
 }
 
 .card__content--grow {
@@ -211,7 +164,6 @@ $rule-size: 1px;
 	margin: 8px 0 0;
 	padding-left: 15px;
 	position: relative;
-
 	&::before {
 		@include oIconsGetIcon('arrow-right', oColorsGetPaletteColor('claret'), 10);
 		content: '';
@@ -222,18 +174,17 @@ $rule-size: 1px;
 }
 
 .card__concept-article-link {
-  font-family: oFontsGetFontFamilyWithFallbacks(FinancierDisplayWeb);
-  color: oColorsGetPaletteColor('black-70');
-  border-bottom-width: 0;
-  font-size: 18px;
-  line-height: 22px;
+	font-family: oFontsGetFontFamilyWithFallbacks(FinancierDisplayWeb);
+	color: oColorsGetPaletteColor('black-70');
+	border-bottom-width: 0;
+	font-size: 18px;
+	line-height: 22px;
 }
 
 .card__concept-article-text {
 	display: inline;
 	font-size: inherit; // nullify H3's override
 	font-weight: inherit; // nullify H3's override
-
 	.card__concept-article-link:hover &,
 	.card__concept-article-link:focus & {
 		border-bottom: 1px dotted;
@@ -243,7 +194,6 @@ $rule-size: 1px;
 .card--myft {
 	background: mix(oColorsGetPaletteColor('claret'), oColorsGetPaletteColor('paper'), 4%);
 	border-bottom: 1px solid oColorsGetPaletteColor('claret');
-
 	&::before,
 	&::after {
 		display: none;
@@ -251,41 +201,37 @@ $rule-size: 1px;
 }
 
 .card__myft-header {
-  min-height: 51px;
-  padding: 0 0 10px 90px;
-
-  @include oGridRespondTo($from: XL) {
-    padding-left: 120px;
-    min-height: 67px;
-  }
-
-  .card--empty &,
-  .core .card--lazy-loading-images & {
-    padding-left: 0;
-    min-height: 0;
-  }
+	min-height: 51px;
+	padding: 0 0 10px 90px;
+	@include oGridRespondTo($from: XL) {
+		padding-left: 120px;
+		min-height: 67px;
+	}
+	.card--empty &,
+	.core .card--lazy-loading-images & {
+		padding-left: 0;
+		min-height: 0;
+	}
 }
 
 .card__myft-image-container {
-  left: 10px;
-  position: absolute;
-  top: 10px;
-  width: 90px;
-  height: 51px;
-  overflow-y: hidden;
-  padding-bottom: 10px;
-  text-align: center;
-
-  @include oGridRespondTo($from: XL) {
-    width: 120px;
-    height: 67px;
-    padding-bottom: 10px;
-    text-align: center;
-  }
-
-  &.n-image {
-    max-height: 100%;
-  }
+	left: 10px;
+	position: absolute;
+	top: 10px;
+	width: 90px;
+	height: 51px;
+	overflow-y: hidden;
+	padding-bottom: 10px;
+	text-align: center;
+	@include oGridRespondTo($from: XL) {
+		width: 120px;
+		height: 67px;
+		padding-bottom: 10px;
+		text-align: center;
+	}
+	&.n-image {
+		max-height: 100%;
+	}
 }
 
 .card__myft-image {
@@ -295,7 +241,6 @@ $rule-size: 1px;
 .card__myft-title {
 	@include oTypographySansBold(-1, $progressive: true);
 	margin: 0 0 0 10px;
-
 	.card--empty &,
 	.core .card--lazy-loading-images & {
 		margin-left: 0;
@@ -322,43 +267,37 @@ $rule-size: 1px;
 }
 
 .section__column {
-  align-items: stretch;
+	align-items: stretch;
 }
 
 .column {
 	@include displayFlex;
 	flex-direction: column;
-
 	&[data-o-grid-colspan~="hide"] {
 		@include oGridRespondTo($until: S) {
 			display: none;
 		}
 	}
-
 	&[data-o-grid-colspan~="Shide"] {
 		@include oGridRespondTo(S, $until: M) {
 			display: none;
 		}
 	}
-
 	&[data-o-grid-colspan~="Mhide"] {
 		@include oGridRespondTo(M, $until: L) {
 			display: none;
 		}
 	}
-
 	&[data-o-grid-colspan~="Lhide"] {
 		@include oGridRespondTo(L, $until: XL) {
 			display: none;
 		}
 	}
-
 	&[data-o-grid-colspan~="XLhide"] {
 		@include oGridRespondTo(XL) {
 			display: none;
 		}
 	}
-
 	.o-grid-row {
 		flex: 1 1 auto;
 		-ms-flex-preferred-size: auto;

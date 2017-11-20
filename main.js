@@ -3,61 +3,61 @@ import KmtHeaderContainer from './src/containers/kmt-header';
 import { KmtHeaderNs } from './src/reducers';
 
 const initKmtHeader = () => {
-  const theOptions = {
-    rootEl: "#root",
-    data: {
-      KmtHeaderNs: {
-        headerTitle: {// custom header title
-          label: "Knowledge & administration tools",
-          summary: ""
-        },
-        mainMenu: {
-          items: [
-            {
-              label: "myFT",
-              attrs: {
-                'data-trackable': "my-ft",
-                href: "#"
-              },
-              active: true
-            },
-            {
-              label: "USERS",
-              attrs: {
-                'data-trackable': "users",
-                href: "#",
-                target: "_blank"
-              }
-            },
-            {
-              label: "Feedback",
-              attrs: {
-                'data-trackable': "feedback",
-                href: "#"
-              },
-              cls: "kat-feedback__btn",
-              last: true
-            },
-            {
-              label: "My Account",
-              attrs: {
-                'data-trackable': "my-account",
-                href: "https://myaccount.ft.com/"
-              },
-              last: true
-            }
-          ],
-          enableMobile: true
-        },
-        helpers: {
-          doRequest: (theUrl, options) => { return new Promise((res) => { return res(theUrl); }); }
-        }
-      }
-    }
-  };
+	const theOptions = {
+		rootEl: '#root',
+		data: {
+			KmtHeaderNs: {
+				headerTitle: {// custom header title
+					label: 'Knowledge & administration tools',
+					summary: ''
+				},
+				mainMenu: {
+					items: [
+						{
+							label: 'myFT',
+							attrs: {
+								'data-trackable': 'my-ft',
+								href: '#'
+							},
+							active: true
+						},
+						{
+							label: 'USERS',
+							attrs: {
+								'data-trackable': 'users',
+								href: '#',
+								target: '_blank'
+							}
+						},
+						{
+							label: 'Feedback',
+							attrs: {
+								'data-trackable': 'feedback',
+								href: '#'
+							},
+							cls: 'kat-feedback__btn',
+							last: true
+						},
+						{
+							label: 'My Account',
+							attrs: {
+								'data-trackable': 'my-account',
+								href: 'https://myaccount.ft.com/'
+							},
+							last: true
+						}
+					],
+					enableMobile: true
+				},
+				helpers: {
+					doRequest: (theUrl) => { return new Promise((res) => { return res(theUrl); }); }
+				}
+			}
+		}
+	};
 
-  KmtHeader.init(theOptions);
-  document.removeEventListener('kmt.DOMContentLoaded', initKmtHeader);
+	KmtHeader.init(theOptions);
+	document.removeEventListener('kmt.DOMContentLoaded', initKmtHeader);
 };
 
 document.addEventListener('kmt.DOMContentLoaded', initKmtHeader);

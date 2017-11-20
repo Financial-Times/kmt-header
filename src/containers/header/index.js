@@ -5,86 +5,86 @@ import HeaderNav from './../../components/header-nav';
 import Overlay from './../../components/overlay';
 import FeedbackForm from './../../components/feedback-form';
 import Delegate from 'ftdomdelegate';
-import { togglePanel } from "./../../actions/feedback-form";
+import { togglePanel } from './../../actions/feedback-form';
 
 class HeaderContainer extends Component {
-  constructor(props) {
-    super(props);
+	constructor (props) {
+		super(props);
 
-    this.handleFeedbackOpenClick = this.handleFeedbackOpenClick.bind(this);
-    this.closeFeedback = this.closeFeedback.bind(this);
+		this.handleFeedbackOpenClick = this.handleFeedbackOpenClick.bind(this);
+		this.closeFeedback = this.closeFeedback.bind(this);
 
-    this.addListeners();
-  }
+		this.addListeners();
+	}
 
-  shouldComponentUpdate(nextProps, nextState) {
-    // only render if the props (state) have changed
-    return JSON.stringify(nextProps) !== JSON.stringify(this.props);
-  }
+	shouldComponentUpdate (nextProps) {
+		// only render if the props (state) have changed
+		return JSON.stringify(nextProps) !== JSON.stringify(this.props);
+	}
 
-  addListeners () {
-    const bodyDelegate = new Delegate();
-    bodyDelegate.root(document.body);
-    bodyDelegate.on('click', '.kat-feedback__btn', this.handleFeedbackOpenClick);
-  }
+	addListeners () {
+		const bodyDelegate = new Delegate();
+		bodyDelegate.root(document.body);
+		bodyDelegate.on('click', '.kat-feedback__btn', this.handleFeedbackOpenClick);
+	}
 
-  handleFeedbackOpenClick (e) {
-    e.preventDefault();
-    this.props.dispatch(togglePanel());
-  }
+	handleFeedbackOpenClick (e) {
+		e.preventDefault();
+		this.props.dispatch(togglePanel());
+	}
 
-  closeFeedback() {
-    this.props.dispatch(togglePanel());
-  }
+	closeFeedback () {
+		this.props.dispatch(togglePanel());
+	}
 
-  render() {
-    const headerTopProps = {
-      dispatch: this.props.dispatch,
-      headerTitle: this.props.headerTitle,
-      enableMobileMenu: this.props.menu.enableMobile,
-      extraActions: this.props.extraActions
-    };
+	render () {
+		const headerTopProps = {
+			dispatch: this.props.dispatch,
+			headerTitle: this.props.headerTitle,
+			enableMobileMenu: this.props.menu.enableMobile,
+			extraActions: this.props.extraActions
+		};
 
-    const overlayProps = {
-      title: "Help us improve",
-      closeFn: this.closeFeedback
-    };
+		const overlayProps = {
+			title: 'Help us improve',
+			closeFn: this.closeFeedback
+		};
 
-    return (
-      <header className='o-header-services o-header-services--b2b' data-o-component='o-header'>
-        <HeaderTop {...headerTopProps} />
-        <HeaderNav menu={this.props.menu}/>
-        {this.props.feedbackIsExpanded === true
-          ? <Overlay {...overlayProps}>
-              <FeedbackForm dispatch={this.props.dispatch} isValid={this.props.feedbackIsValid} />
-            </Overlay>
-          : null
-        }
-      </header>
-    );
-  }
+		return (
+			<header className='o-header-services o-header-services--b2b' data-o-component='o-header'>
+				<HeaderTop {...headerTopProps} />
+				<HeaderNav menu={this.props.menu}/>
+				{this.props.feedbackIsExpanded === true
+					? <Overlay {...overlayProps}>
+						<FeedbackForm dispatch={this.props.dispatch} isValid={this.props.feedbackIsValid} />
+					</Overlay>
+					: null
+				}
+			</header>
+		);
+	}
 }
 
-import { menuTypes } from "../../reducers/main-menu";
-import { headerTitleTypes } from "../../reducers/header-title";
-import { extraActionsTypes } from "../../reducers/extra-actions";
+import { menuTypes } from '../../reducers/main-menu';
+import { headerTitleTypes } from '../../reducers/header-title';
+import { extraActionsTypes } from '../../reducers/extra-actions';
 
 HeaderContainer.propTypes = {
-  menu: PropTypes.shape(menuTypes).isRequired,
-  headerTitle: PropTypes.shape(headerTitleTypes).isRequired,
-  extraActions: PropTypes.shape(extraActionsTypes).isRequired,
-  feedbackIsExpanded: PropTypes.bool.isRequired,
-  feedbackIsValid: PropTypes.bool.isRequired
+	menu: PropTypes.shape(menuTypes).isRequired,
+	headerTitle: PropTypes.shape(headerTitleTypes).isRequired,
+	extraActions: PropTypes.shape(extraActionsTypes).isRequired,
+	feedbackIsExpanded: PropTypes.bool.isRequired,
+	feedbackIsValid: PropTypes.bool.isRequired
 };
 
 const mapStateToProps = (store) => {
-  return {
-    menu: store.KmtHeaderNs.mainMenu,
-    headerTitle: store.KmtHeaderNs.headerTitle,
-    extraActions: store.KmtHeaderNs.extraActions,
-    feedbackIsExpanded: store.KmtHeaderNs.feedbackForm.isExpanded,
-    feedbackIsValid: store.KmtHeaderNs.feedbackForm.isValid
-  };
+	return {
+		menu: store.KmtHeaderNs.mainMenu,
+		headerTitle: store.KmtHeaderNs.headerTitle,
+		extraActions: store.KmtHeaderNs.extraActions,
+		feedbackIsExpanded: store.KmtHeaderNs.feedbackForm.isExpanded,
+		feedbackIsValid: store.KmtHeaderNs.feedbackForm.isValid
+	};
 };
 
 export default connect(mapStateToProps)(HeaderContainer);

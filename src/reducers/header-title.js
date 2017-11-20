@@ -1,17 +1,17 @@
 import { PropTypes } from 'react';
 
 export const headerTitleTypes ={
-  label: PropTypes.string.isRequired,
-  summary: PropTypes.string
+	label: PropTypes.string.isRequired,
+	summary: PropTypes.string
 };
 
 const defaultState = {
-  label: "Knowledge & administration tools",
-  summary: ""
+	label: 'Knowledge & administration tools',
+	summary: ''
 };
 
-const headerTitle = (state = defaultState, action = {}) => {
-  return state;
+const headerTitle = (state = defaultState) => {
+	return state;
 };
 
 export default headerTitle;

@@ -1,158 +1,158 @@
 .kmt-header {
-  &__license {
+	&__license {
 
-    &-wrapper {
-      cursor: pointer;
+		&-wrapper {
+			cursor: pointer;
 
-      // ignoring the nesting warning as it's not actually a nested class (it's BEM)
-      // scss-lint:disable NestingDepth
-      &--mobile {
-        .kmt-header {
-          &__license {
-            &-filter {
-              &-wrapper {
-                padding: 5px 15px;
-              }
-            }
+			// ignoring the nesting warning as it's not actually a nested class (it's BEM)
+			// scss-lint:disable NestingDepth
+			&--mobile {
+				.kmt-header {
+					&__license {
+						&-filter {
+							&-wrapper {
+								padding: 5px 15px;
+							}
+						}
 
-            &-dropdown {
-              padding: 0;
-              position: relative;
-              background-color: transparent;
-              max-width: 100%;
+						&-dropdown {
+							padding: 0;
+							position: relative;
+							background-color: transparent;
+							max-width: 100%;
 
-              .kmt-forms__select {
-                max-width: 100%;
-                background: none;
-              }
+							.kmt-forms__select {
+								max-width: 100%;
+								background: none;
+							}
 
-              option {
-                padding: 12px 16px;
-              }
+							option {
+								padding: 12px 16px;
+							}
 
-              select,
-              option {
-                @include oTypographySans(0);
-                background-color: oColorsGetPaletteColor("black-10");
-                color: oColorsGetPaletteColor("black");
-                border: 0;
-              }
+							select,
+							option {
+								@include oTypographySans(0);
+								background-color: oColorsGetPaletteColor("black-10");
+								color: oColorsGetPaletteColor("black");
+								border: 0;
+							}
 
-              .kmt-forms-option--selected {
-                background-color: oColorsGetPaletteColor("teal-40");
-                color: oColorsGetPaletteColor("white");
-              }
-            }
-          }
+							.kmt-forms-option--selected {
+								background-color: oColorsGetPaletteColor("teal-40");
+								color: oColorsGetPaletteColor("white");
+							}
+						}
+					}
 
-          &__license {
-            &-label {
-              color: oColorsGetPaletteColor("claret");
-              padding: 12px 16px;
-              &::after {
-                @include oIconsGetIcon('arrows-up-down', oColorsGetPaletteColor('claret'), 25);
-                margin: 12px 16px;
-              }
-            }
-            &-label--no-icon {
-              padding: 12px 16px;
-              color: oColorsGetPaletteColor('claret');
-            }
+					&__license {
+						&-label {
+							color: oColorsGetPaletteColor("claret");
+							padding: 12px 16px;
+							&::after {
+								@include oIconsGetIcon('arrows-up-down', oColorsGetPaletteColor('claret'), 25);
+								margin: 12px 16px;
+							}
+						}
+						&-label--no-icon {
+							padding: 12px 16px;
+							color: oColorsGetPaletteColor('claret');
+						}
 
 
-          }
-        }
-      }
-    }
+					}
+				}
+			}
+		}
 
-    &-label {
-      position: relative;
-      padding-right: 15px;
-      color: oColorsGetPaletteColor("white");
-      font-weight: 400;
+		&-label {
+			position: relative;
+			padding-right: 15px;
+			color: oColorsGetPaletteColor("white");
+			font-weight: 400;
 
-      // ignoring the nesting warning as it's not actually a nested class (it's BEM)
-      // scss-lint:disable NestingDepth
-      &::after {
-        @include oIconsGetIcon('arrows-up-down', oColorsGetPaletteColor('white'), 25);
-        content: "";
-        position: absolute;
-        top: -2px;
-        right: -5px;
-      }
+			// ignoring the nesting warning as it's not actually a nested class (it's BEM)
+			// scss-lint:disable NestingDepth
+			&::after {
+				@include oIconsGetIcon('arrows-up-down', oColorsGetPaletteColor('white'), 25);
+				content: "";
+				position: absolute;
+				top: -2px;
+				right: -5px;
+			}
 
-      &:hover {
-        color: oColorsGetPaletteColor("black-40");
+			&:hover {
+				color: oColorsGetPaletteColor("black-40");
 
-        &::after {
-          @include oIconsGetIcon('arrows-up-down', oColorsGetPaletteColor('black-40'), 25);
-        }
-      }
+				&::after {
+					@include oIconsGetIcon('arrows-up-down', oColorsGetPaletteColor('black-40'), 25);
+				}
+			}
 
-    }
+		}
 
-    &-label--no-icon {
-      position: relative;
-      font-weight: 400;
-      cursor: auto;
-    }
+		&-label--no-icon {
+			position: relative;
+			font-weight: 400;
+			cursor: auto;
+		}
 
-    &-filter {
-      padding: 5px;
-      width: 100%;
-      font-weight: normal;
-      border: 0;
-      // scss-lint:disable VendorPrefix
-      -webkit-box-sizing: border-box;
-      -moz-box-sizing: border-box;
-      box-sizing: border-box;
+		&-filter {
+			padding: 5px;
+			width: 100%;
+			font-weight: normal;
+			border: 0;
+			// scss-lint:disable VendorPrefix
+			-webkit-box-sizing: border-box;
+			-moz-box-sizing: border-box;
+			box-sizing: border-box;
 
-      // scss-lint:disable NestingDepth
-      &-wrapper {
-        padding: 5px 20px;
-      }
-    }
+			// scss-lint:disable NestingDepth
+			&-wrapper {
+				padding: 5px 20px;
+			}
+		}
 
-    &-dropdown {
-      display: none;
-      margin-top: 1px;
-      padding: 19px 0 0;
-      position: absolute;
-      background-color: oColorsGetPaletteColor("black");
-      cursor: auto;
-      z-index: 1;
-      max-width: 350px;
+		&-dropdown {
+			display: none;
+			margin-top: 1px;
+			padding: 19px 0 0;
+			position: absolute;
+			background-color: oColorsGetPaletteColor("black");
+			cursor: auto;
+			z-index: 1;
+			max-width: 350px;
 
-      // ignoring the nesting warning as it's not actually a nested class (it's BEM)
-      // scss-lint:disable NestingDepth
-      &--expanded {
-        display: block;
-      }
+			// ignoring the nesting warning as it's not actually a nested class (it's BEM)
+			// scss-lint:disable NestingDepth
+			&--expanded {
+				display: block;
+			}
 
-      select,
-      option {
-        @include oTypographySans(0);
-        margin: 0 auto;
-        font-weight: 400;
-        background-color: oColorsGetPaletteColor("black-90");
-        color: oColorsGetPaletteColor("white");
-        border: 0;
-        white-space: normal;
-      }
+			select,
+			option {
+				@include oTypographySans(0);
+				margin: 0 auto;
+				font-weight: 400;
+				background-color: oColorsGetPaletteColor("black-90");
+				color: oColorsGetPaletteColor("white");
+				border: 0;
+				white-space: normal;
+			}
 
-      select {
-        height: auto;
-        padding: 0;
-        overflow-y: auto;
-        overflow-x: hidden;
-      }
-      option {
-        padding: 11px 20px;
+			select {
+				height: auto;
+				padding: 0;
+				overflow-y: auto;
+				overflow-x: hidden;
+			}
+			option {
+				padding: 11px 20px;
 
-      }
-      .kmt-forms-option--selected {
-          background-color: oColorsGetPaletteColor("black");
-      }
-    }
-  }
+			}
+			.kmt-forms-option--selected {
+					background-color: oColorsGetPaletteColor("black");
+			}
+		}
+	}
 }
