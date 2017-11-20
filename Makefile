@@ -8,7 +8,7 @@ unit-test:
 	# jest src/*
 
 test:
-	verify unit-test
+	make verify unit-test
 
 build:
 	./node_modules/.bin/gulp
