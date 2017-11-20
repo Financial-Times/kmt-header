@@ -6,7 +6,7 @@ const bodyParser = require('body-parser');
 const http = require('http');
 
 const app = express({
-  systemCode: 'ft-kmt-header'
+	systemCode: 'ft-kmt-header'
 });
 
 require('dotenv').config({silent: true});
@@ -18,14 +18,14 @@ app.use(bodyParser.urlencoded({extended: true}));
 
 app.set('view engine', 'hbs');
 app.get('/', function (req, res) {
-  res.render(__dirname + '/index', {'BASE_PATH_URL': process.env['BASE_PATH_URL']});
+	res.render(__dirname + '/index', {'BASE_PATH_URL': process.env['BASE_PATH_URL']});
 });
 
 let port = process.env.PORT || 5000;
 let server = http.createServer(app);
 server.listen(port, () => {
-  /* eslint no-console: ['error', { allow: ['warn', 'log'] }] */
-  console.log('Express server listening on %d, in %s mode', port, app.get('env'));
+	/* eslint no-console: ['error', { allow: ['warn', 'log'] }] */
+	console.log('Express server listening on %d, in %s mode', port, app.get('env'));
 });
 
 module.exports = server;

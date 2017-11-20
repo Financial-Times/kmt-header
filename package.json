@@ -24,8 +24,9 @@
   "author": "ciprian.lujeru@ft.com",
   "license": "MIT",
   "devDependencies": {
-    "@financial-times/n-heroku-tools": "^6.19.4",
     "@financial-times/n-express": "^19.2.3",
+    "@financial-times/n-gage": "^1.16.0",
+    "@financial-times/n-heroku-tools": "^6.19.4",
     "babel-cli": "^6.9.0",
     "babel-core": "^6.2.1",
     "babel-loader": "^6.2.0",
@@ -54,6 +55,7 @@
     "redux-mock-store": "^1.2.3"
   },
   "dependencies": {
+    "@financial-times/n-ui": "^6.14.0",
     "babel-preset-stage-1": "^6.1.18",
     "@financial-times/n-notification": "^6.0.0",
     "dotenv": "^2.0.0",

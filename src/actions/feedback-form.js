@@ -5,9 +5,9 @@ import nNotification from '@financial-times/n-notification';
  * @returns {{type: String}}
  */
 export function togglePanel () {
-  return {
-    type: 'F_TOGGLE'
-  };
+	return {
+		type: 'F_TOGGLE'
+	};
 }
 
 /**
@@ -15,9 +15,9 @@ export function togglePanel () {
  * @returns {{type: String}}
  */
 export function toggleFeedbackValid () {
-  return {
-    type: 'F_TOGGLE_VALID'
-  };
+	return {
+		type: 'F_TOGGLE_VALID'
+	};
 }
 
 /**
@@ -25,14 +25,14 @@ export function toggleFeedbackValid () {
  * @returns {Function}
  */
 export function submitFeedback () {
-  return (dispatch) => {
-    dispatch(togglePanel());
+	return (dispatch) => {
+		dispatch(togglePanel());
 
-    let theMessage = {
-      type: 'success',
-      title: 'Thank you for your feedback',
-      content: ''
-    };
-    nNotification.show(theMessage);
-  };
+		let theMessage = {
+			type: 'success',
+			title: 'Thank you for your feedback',
+			content: ''
+		};
+		nNotification.show(theMessage);
+	};
 }
