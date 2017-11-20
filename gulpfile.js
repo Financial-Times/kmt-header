@@ -11,7 +11,7 @@ let appServer;
 const verifyFn = function () {
 	return obt.verify(gulp, {
 		scssLintPath: './.scss-lint.yml',
-		esLintPath: './.eslintrc'
+		esLintPath: './.eslintrc.js'
 	});
 };
 
