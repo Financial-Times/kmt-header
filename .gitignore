@@ -19,5 +19,5 @@ system
 docker-compose.yml
 
 # configs
-/.env
+*.env*
 /config.js
