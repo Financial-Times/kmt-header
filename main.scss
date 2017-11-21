@@ -20,6 +20,10 @@ $o-forms-is-silent: false; // TODO: make this silent and only include mixins for
 	@include oButtons();
 }
 
+.o-header-services__nav-link {
+	border-bottom: none;
+}
+
 .o-header-services__nav-item--last {
 	float: right;
 
