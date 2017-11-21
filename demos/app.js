@@ -18,42 +18,7 @@ const app = module.exports = express({
 	s3o: false
 });
 
-const navigation = {
-	nav: {
-		heading: {
-			name: 'Knowledge & administration tools'
-		},
-		items: [
-			{
-				name: 'Overview',
-				href: '#',
-				selected: true,
-			},
-			{
-				name: 'Content Distribution',
-				href: '#',
-			},
-			{
-				name: 'Usage Reports',
-				href: '#',
-			},
-			{
-				name: 'Licence Administration',
-				href: '#'
-			},
-			{
-				name: 'Groups',
-				href: '#',
-				flag: 'katGroupsManagement'
-			},
-			{
-				name: 'Users',
-				href: '#',
-				flag: 'katUsersManagement'
-			}
-		]
-	}
-};
+const navigation = require('../navigation-config');
 
 const data = {
 	licenceList: [
