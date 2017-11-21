@@ -29,10 +29,19 @@
 			<ul class="o-header__drawer-menu-list">
 				<li class="o-header__drawer-menu-item o-header__drawer-menu-item--heading">{{nav.heading.name}}</li>
 				{{#each nav.items}}
+				{{#if flag}}
+					{{#if (lookup @root.flags flag)}}
+					<li class="o-header__drawer-menu-item">
+						<a class="o-header__drawer-menu-link o-header__drawer-menu-link--{{#if selected}}selected{{else}}unselected{{/if}}" href="{{href}}"
+						{{#if selected}}aria-label="Current page" aria-selected="true" {{/if}}>{{name}}</a>
+					</li>
+					{{/if}}
+				{{else}}
 				<li class="o-header__drawer-menu-item">
-					<a class="o-header__drawer-menu-link o-header__drawer-menu-link--{{#if selected}}selected{{else}}unselected{{/if}}"
-						href="{{href}}" {{#if selected}}aria-label="Current page" aria-selected="true" {{/if}}>{{name}}</a>
+					<a class="o-header__drawer-menu-link o-header__drawer-menu-link--{{#if selected}}selected{{else}}unselected{{/if}}" href="{{href}}"
+					 {{#if selected}}aria-label="Current page" aria-selected="true" {{/if}}>{{name}}</a>
 				</li>
+				{{/if}}
 				{{/each}}
 			</ul>
 		</nav>
