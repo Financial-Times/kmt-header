@@ -7,9 +7,9 @@ let appServer;
 
 gulp.task('build', ['global-config'], function () {
 	return obt.build(gulp, {
-		js: './src/index.js',
-		sass: './main.scss',
-		buildJs: 'bundle.js',
+		js: './demos/index.js',
+		sass: './demos/main.scss',
+		buildJs: 'main.js',
 		buildCss: 'main.css',
 		buildFolder: 'public',
 		env: process.env.NODE_ENV
@@ -18,7 +18,9 @@ gulp.task('build', ['global-config'], function () {
 
 gulp.task('build-page', function () {
 	return obt.build(gulp, {
+		js: './demos/index.js',
 		sass: './demos/main.scss',
+		buildJs: 'main.js',
 		buildCss: 'main.css',
 		buildFolder: 'public',
 		env: process.env.NODE_ENV
@@ -60,8 +62,15 @@ gulp.task('global-config', function () {
 
 gulp.task('watch', ['serve'], function () {
 	livereload.listen({port: process.env.LIVERELOAD_PORT});
-	gulp.watch(['./style/**/*', './src/**/*'], ['refresh-page']);
-	gulp.watch('./*.*', ['restart-server']);
+	gulp.watch([
+		'demos/*.scss',
+		'demos/*.js',
+		'header.html',
+		'drawer.html',
+		'main.scss',
+		'index.js'
+	], ['refresh-page']);
+	gulp.watch('./*.*', 'demos/app.js', ['restart-server']);
 });
 
 gulp.task('dev-add-livereload', function () {
