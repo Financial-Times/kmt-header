@@ -10,7 +10,7 @@
 			</button>
 		</div>
 
-		 {{#if @root.licenceList.length }}
+		{{#if @root.licenceList.length }}
 				<div class="o-forms licence-switcher__form">
 					<form action="/overview/licenceSwitch" method="POST" class="o-forms__affix-wrapper">
 						<select id="licenceSwitcherDrawer" name="licenceSelection" class="o-forms__select">
@@ -39,7 +39,7 @@
 				{{else}}
 				<li class="o-header__drawer-menu-item">
 					<a class="o-header__drawer-menu-link o-header__drawer-menu-link--{{#if selected}}selected{{else}}unselected{{/if}}" href="{{href}}"
-					 {{#if selected}}aria-label="Current page" aria-selected="true" {{/if}}>{{name}}</a>
+					{{#if selected}}aria-label="Current page" aria-selected="true" {{/if}}>{{name}}</a>
 				</li>
 				{{/if}}
 				{{/each}}
