@@ -14,10 +14,29 @@ $o-forms-is-silent: false; // TODO: make this silent and only include mixins for
 
 .licence-switcher__form {
 	margin: 0;
+	max-width: 250px;
+	padding-left: 0;
+	padding-right: 0;
 }
 
 .licence-switcher__submit {
 	@include oButtons();
+}
+
+.header__drawer-form-container {
+	padding: 15px;
+}
+
+.header__drawer-form-container .o-forms__affix-wrapper {
+	margin-top: 0;
+}
+
+.no-js .o-header__drawer {
+	height: 100vh;
+}
+
+.o-header-services__primary-nav {
+	border-bottom: 0;
 }
 
 .o-header-services__nav-link {
