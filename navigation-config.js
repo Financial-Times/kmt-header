@@ -1,8 +1,6 @@
 module.exports = {
     nav: {
-        heading: {
-            name: 'Knowledge & administration tools'
-        },
+        heading: 'Knowledge & administration tools',
         items: [
             {
                 name: 'Overview',
