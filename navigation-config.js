@@ -28,6 +28,12 @@ module.exports = {
 				name: 'Users',
 				href: '#',
 				flag: 'katUsersManagement'
+			},
+			{
+				name: 'My Account',
+				href: 'https://myaccount.ft.com/',
+				flag: 'katLicenceAdmin',
+				last: true
 			}
 		]
 	}
