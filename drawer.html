@@ -11,6 +11,7 @@
 		</div>
 
 		{{#if @root.licenceList.length }}
+			<div class="header__drawer-form-container">
 				<div class="o-forms licence-switcher__form">
 					<form action="/overview/licenceSwitch" method="POST" class="o-forms__affix-wrapper">
 						<select id="licenceSwitcherDrawer" name="licenceSelection" class="o-forms__select">
@@ -23,6 +24,7 @@
 						</div>
 					</form>
 				</div>
+			</div>
 		{{/if}}
 
 		<nav class="o-header__drawer-menu o-header__drawer-menu--primary">
