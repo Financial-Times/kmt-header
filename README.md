@@ -36,6 +36,7 @@ It also will take an `items` property which is an array of objects to populate t
 - `href` - String - the URL to link to
 - `flag` - String (optional) - if the nav item requires a flag to be on, the value of this is the flag name. When that flag is true this nav item will render
 - `selected` - Boolean (optional) - when true this nav item will render as "selected" to denote the curent page. Only one nav item should be "selected".
+- `last` - Boolean (optional) - when true this nav item will float to the right of the header
 
 There is a [default config object](./navigation-config.js) you can use and extend if needed. You can use this in your controller as the example shown below:
 
