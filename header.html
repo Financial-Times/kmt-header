@@ -7,8 +7,7 @@
 		</div>
 		<div class="o-header-services__ftlogo"></div>
 		<div class="o-header-services__title">
-			<h1 class="o-header-services__product-name">Knowledge & administration tools</h1>
-			{{!-- <span class="o-header-subrand__product-tagline ">Tagline to explain the product here</span> --}}
+			<h1 class="o-header-services__product-name">{{ nav.heading.name }}</h1>
 		</div>
 		{{#if @root.licenceList.length }}
 		<div class="o-header-services__related-content licence-switcher__container">
@@ -17,7 +16,7 @@
 					<form action="/overview/licenceSwitch" method="POST" class="o-forms__affix-wrapper">
 						<select id="licenceSwitcher" name="licenceSelection" class="o-forms__select">
 							{{#each @root.licenceList}}
-							<option value="{{licenceId}}" {{#ifEquals licenceId @root.LICENCE_ID }}selected="true" {{/ifEquals}}>{{contractId}} - {{name}}</option>
+							<option value="{{licenceId}}" {{#ifEquals licenceId @root.LICENCE_ID }}selected="true"{{/ifEquals}}>{{contractId}} - {{name}}</option>
 							{{/each}}
 						</select>
 						<div class="o-forms__suffix n-util-hide-js">
@@ -32,31 +31,34 @@
 	<nav class="o-header-services__primary-nav">
 		<div class="o-header-services__container">
 			<ul class="o-header-services__nav-list">
-				<li class="o-header-services__nav-item">
-					<a class="o-header-services__nav-link o-header-services__nav-link--selected" href="#">
-						Nav item 1
-					</a>
-				</li>
-				<li class="o-header-services__nav-item">
-					<a class="o-header-services__nav-link" href="#">
-						Nav 2
-					</a>
-				</li>
-				<li class="o-header-services__nav-item">
-					<a class="o-header-services__nav-link" href="#">
-						Nav 3
-					</a>
-				</li>
-				<li class="o-header-services__nav-item">
-					<a class="o-header-services__nav-link" href="#">
-						Nav 4
-					</a>
-				</li>
-				{{#if @root.flags.katLicenceAdmin}}
+				{{#each nav.items}}
+				{{#if flag}}
+					{{#if (lookup @root.flags flag)}}
+						<li class="o-header-services__nav-item">
+							<a class="o-header-services__nav-link {{#if selected}}o-header-services__nav-link--selected{{/if}}" href="{{href}}">
+								{{name}}
+							</a>
+						</li>
+					{{/if}}
+				{{else}}
+					<li class="o-header-services__nav-item">
+						<a class="o-header-services__nav-link {{#if selected}}o-header-services__nav-link--selected{{/if}}" href="{{href}}">
+							{{name}}
+						</a>
+					</li>
+				{{/if}}
+				{{/each}}
+
+
+
+
+
+
+				{{!-- {{#if @root.flags.katLicenceAdmin}}
 				<li class="o-header-services__nav-item o-header-services__nav-item--last kmt-text--transform-none">
 					<a class="o-header-services__nav-link" href="https://myaccount.ft.com/" data-trackable="my-account" title="">My Account</a>
 				</li>
-				{{/if}}
+				{{/if}} --}}
 			</ul>
 		</div>
 	</nav>
