@@ -1,5 +1,5 @@
 {
-  "name": "kat-header",
+  "name": "kmt-header",
   "main": [
     "index.js",
     "main.scss"

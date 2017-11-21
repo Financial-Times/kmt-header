@@ -45,7 +45,7 @@ res.render('index', navigationConfig)
 ### Styles
 Include the styles for the header by adding the following to your SCSS
 ```scss
-@import 'kat-header/main';
+@import 'kmt-header/main';
 ```
 
 ### Javascript
