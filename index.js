@@ -11,7 +11,7 @@ module.exports = {
 		];
 
 		licenceSwitchers.forEach(switcher => {
-			switcher.addEventListener('change', event => {
+			switcher && switcher.addEventListener('change', event => {
 				event.preventDefault();
 				const currentPath = location.pathname;
 				const newLicenceSelection = event.target.value;
