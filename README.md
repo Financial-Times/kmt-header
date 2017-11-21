@@ -18,6 +18,10 @@ bower install --save kat-header
 Use handlebars template
 ```hbs
 {{> kat-header/header }}
+
+{{!-- Put the rest of your body content here. The footer should be included before the drawer --}}
+
+{{>kat-header/drawer}}
 ```
 
 It will display a licence switcher form if a `licenceList` property exists in the template. See the [demo](./demos/app.js) for example usage. /* You should provide a route for the core form to fallback to, this ideally would be a route that directs the user to the same page but for the licence selected via the form */
@@ -36,7 +40,7 @@ It also will take an `items` property which is an array of objects to populate t
 There is a [default config object](./navigation-config.js) you can use and extend if needed. You can use this in your controller as the example shown below:
 
 ```js
-const { navigationConfig } = require('@financial-times/kat-header')
+const navigationConfig = require('@financial-times/kat-header/navigation-config');
 
 res.render('index', navigationConfig)
 ```
