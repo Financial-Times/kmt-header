@@ -1,5 +1,8 @@
+const oHeader = require('o-header');
+
 module.exports = {
 	init: function init () {
+		oHeader.init();
 		const licenceSwitcher = document.getElementById('licenceSwitcher');
 
 		licenceSwitcher && licenceSwitcher.addEventListener('change', event => {
