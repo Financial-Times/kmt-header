@@ -7,8 +7,12 @@
 	<link rel="stylesheet" href="../public/main.css" />
 </head>
 
-<body>
-	<div class="{{#if enableJS}}js{{else}}no-js{{/if}}">
-		{{> header withLicences }}
-	</div>
+<body class="{{#if enableJS}}js{{else}}no-js{{/if}}">
+	{{> header }}
+	{{> drawer}}
+
+	{{#if enableJS}}
+		<script src="../public/main.js"></script>
+	{{/if}}
+
 </body>

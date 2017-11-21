@@ -6,7 +6,7 @@ const highlight = chalk.bold.green;
 const app = module.exports = express({
 	name: 'public',
 	systemCode: 'kat-header-demo',
-	withFlags: false,
+	withFlags: true,
 	withHandlebars: true,
 	withNavigation: false,
 	withAnonMiddleware: false,
@@ -18,17 +18,54 @@ const app = module.exports = express({
 	s3o: false
 });
 
+const navigation = {
+	nav: {
+		heading: {
+			name: 'Knowledge & administration tools'
+		},
+		items: [
+			{
+				name: 'Overview',
+				href: '#',
+				selected: true,
+			},
+			{
+				name: 'Content Distribution',
+				href: '#',
+			},
+			{
+				name: 'Usage Reports',
+				href: '#',
+			},
+			{
+				name: 'Licence Administration',
+				href: '#'
+			},
+			{
+				name: 'Groups',
+				href: '#',
+				flag: 'katGroupsManagement'
+			},
+			{
+				name: 'Users',
+				href: '#',
+				flag: 'katUsersManagement'
+			}
+		]
+	}
+};
+
 const data = {
 	licenceList: [
 		{
 			name: 'Licence Number 1',
 			contractId: 'contract1',
-			licenceId: 'licence1'
+			licenceId: '#'
 		},
 		{
 			name: 'Licence Number 2',
 			contractId: 'contract2',
-			licenceId: 'licence2'
+			licenceId: '#'
 		},
 	]
 };
@@ -37,14 +74,14 @@ app.get('/', (req, res) => {
 	res.render('demo', Object.assign({
 		title: 'Test App'
 	},
-	Object.assign({}, data, { enableJS: true })));
+	Object.assign({}, navigation, data, { enableJS: true })));
 });
 
 app.get('/core', (req, res) => {
 	res.render('demo', Object.assign({
 		title: 'Test App'
 	},
-	Object.assign({}, data, { enableJS: false })));
+	Object.assign({}, navigation, data, { enableJS: false })));
 });
 
 function runPa11yTests () {

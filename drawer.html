@@ -1,0 +1,40 @@
+<div class="o-header__drawer" id="o-header-drawer" role="navigation" aria-label="Drawer menu" data-o-header-drawer data-o-header-drawer--no-js>
+	<div class="o-header__drawer-inner">
+
+		<div class="o-header__drawer-tools">
+			<a class="o-header__drawer-tools-logo" href="/">
+				<span class="o-header__visually-hidden">Financial Times</span>
+			</a>
+			<button type="button" class="o-header__drawer-tools-close" aria-controls="o-header-drawer" title="Close drawer menu">
+				<span class="o-header__visually-hidden">Close</span>
+			</button>
+		</div>
+
+		 {{#if @root.licenceList.length }}
+				<div class="o-forms licence-switcher__form">
+					<form action="/overview/licenceSwitch" method="POST" class="o-forms__affix-wrapper">
+						<select id="licenceSwitcher" name="licenceSelection" class="o-forms__select">
+							{{#each @root.licenceList}}
+							<option value="{{licenceId}}" {{#ifEquals licenceId @root.LICENCE_ID }}selected="true" {{/ifEquals}}>{{contractId}} - {{name}}</option>
+							{{/each}}
+						</select>
+						<div class="o-forms__suffix n-util-hide-js">
+							<button type="submit" class="licence-switcher__submit">Go To Licence</button>
+						</div>
+					</form>
+				</div>
+		{{/if}}
+
+		<nav class="o-header__drawer-menu o-header__drawer-menu--primary">
+			<ul class="o-header__drawer-menu-list">
+				<li class="o-header__drawer-menu-item o-header__drawer-menu-item--heading">{{nav.heading.name}}</li>
+				{{#each nav.items}}
+				<li class="o-header__drawer-menu-item">
+					<a class="o-header__drawer-menu-link o-header__drawer-menu-link--{{#if selected}}selected{{else}}unselected{{/if}}"
+						href="{{href}}" {{#if selected}}aria-label="Current page" aria-selected="true" {{/if}}>{{name}}</a>
+				</li>
+				{{/each}}
+			</ul>
+		</nav>
+	</div>
+</div>
