@@ -1,4 +1,5 @@
 const oHeader = require('o-header');
+const navigationConfig = require('./navigation-config');
 
 module.exports = {
 	init: function init () {
@@ -21,5 +22,6 @@ module.exports = {
 				location.pathname = newPath;
 			});
 		});
-	}
+	},
+	navigationConfig
 };
