@@ -13,7 +13,7 @@
 		 {{#if @root.licenceList.length }}
 				<div class="o-forms licence-switcher__form">
 					<form action="/overview/licenceSwitch" method="POST" class="o-forms__affix-wrapper">
-						<select id="licenceSwitcher" name="licenceSelection" class="o-forms__select">
+						<select id="licenceSwitcherDrawer" name="licenceSelection" class="o-forms__select">
 							{{#each @root.licenceList}}
 							<option value="{{licenceId}}" {{#ifEquals licenceId @root.LICENCE_ID }}selected="true" {{/ifEquals}}>{{contractId}} - {{name}}</option>
 							{{/each}}
