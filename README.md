@@ -52,7 +52,7 @@ Include the styles for the header by adding the following to your SCSS
 
 Include the javascript by adding the following to your JS and initialise when ready using the `init` function. This will add an enhanced experience to the licence switcher.
 ```js
-const katHeader = require('@financial-times/kat-header').init;
+const katHeader = require('@financial-times/kat-header');
 
 // when ready
 katHeader.init();
