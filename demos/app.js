@@ -36,17 +36,15 @@ const data = {
 };
 
 app.get('/', (req, res) => {
-	res.render('demo', Object.assign({
-		title: 'Test App'
-	},
-	Object.assign({}, navigation('overview'), data, { enableJS: true })));
+	res.render('demo',
+		Object.assign({}, navigation('overview'), data, { enableJS: true, title: 'Test App' } )
+	);
 });
 
 app.get('/core', (req, res) => {
-	res.render('demo', Object.assign({
-		title: 'Test App'
-	},
-	Object.assign({}, navigation('overview'), data, { enableJS: false })));
+	res.render('demo',
+		Object.assign({}, navigation('overview'), data, { enableJS: false, title: 'Test App' })
+	);
 });
 
 function runPa11yTests () {
