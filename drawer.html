@@ -35,12 +35,14 @@
 					{{#if (lookup @root.flags flag)}}
 					<li class="o-header__drawer-menu-item">
 						<a class="o-header__drawer-menu-link o-header__drawer-menu-link--{{#if selected}}selected{{else}}unselected{{/if}}" href="{{href}}"
+						{{#if trackable}}data-trackable={{trackable}}{{/if}}
 						{{#if selected}}aria-label="Current page" aria-selected="true" {{/if}}>{{name}}</a>
 					</li>
 					{{/if}}
 				{{else}}
 				<li class="o-header__drawer-menu-item">
 					<a class="o-header__drawer-menu-link o-header__drawer-menu-link--{{#if selected}}selected{{else}}unselected{{/if}}" href="{{href}}"
+					{{#if trackable}}data-trackable={{trackable}}{{/if}}
 					{{#if selected}}aria-label="Current page" aria-selected="true" {{/if}}>{{name}}</a>
 				</li>
 				{{/if}}
