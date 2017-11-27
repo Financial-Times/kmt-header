@@ -38,14 +38,14 @@ It also will take an `items` property which is an array of objects to populate t
 - `selected` - Boolean (optional) - when true this nav item will render as "selected" to denote the curent page. Only one nav item should be "selected".
 - `last` - Boolean (optional) - when true this nav item will float to the right of the header
 
-There is a [default config object](./navigation-config.js) you can use by calling the function and extend if needed. In order to mark an item as "selected" you can pass the `trackable` value to the function which will mark that item as selected. You can use this in your controller as the example shown below:
+There is a [default config object](./navigation-config.js) you can use by calling the function and extend if needed. Pass in the `licenceId` as the first parameter in order to populate the link URLs, In order to mark an item as "selected" you can pass the `trackable` value to the function which will mark that item as selected. You can use this in your controller as the example shown below:
 
 ```js
 const navigationConfig = require('@financial-times/kat-header/navigation-config');
 
-res.render('index', navigationConfig()) // this won't show any tabs as selected
+res.render('index', navigationConfig('licenceId123')) // this won't show any tabs as selected
 // or
-res.render('overview', navigationConfig('overview')) // this will show overview as the selected tab
+res.render('overview', navigationConfig('licenceId123', 'overview')) // this will show overview as the selected tab
 ```
 
 
