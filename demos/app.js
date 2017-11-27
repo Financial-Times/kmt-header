@@ -39,14 +39,14 @@ app.get('/', (req, res) => {
 	res.render('demo', Object.assign({
 		title: 'Test App'
 	},
-	Object.assign({}, navigation, data, { enableJS: true })));
+	Object.assign({}, navigation('overview'), data, { enableJS: true })));
 });
 
 app.get('/core', (req, res) => {
 	res.render('demo', Object.assign({
 		title: 'Test App'
 	},
-	Object.assign({}, navigation, data, { enableJS: false })));
+	Object.assign({}, navigation('overview'), data, { enableJS: false })));
 });
 
 function runPa11yTests () {
