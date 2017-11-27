@@ -4,34 +4,41 @@ module.exports = {
 		items: [
 			{
 				name: 'Overview',
-				href: '#',
+				href: '/overview',
+				trackable: 'overview',
 				selected: true,
 			},
 			{
 				name: 'Content Distribution',
-				href: '#',
+				href: '/myft',
+				trackable: 'content-distribution',
 			},
 			{
 				name: 'Usage Reports',
-				href: '#',
+				href: '/usage',
+				trackable: 'usage-reports',
 			},
 			{
 				name: 'Licence Administration',
-				href: '#'
+				href: '#', // TODO
+				trackable: 'licence-admin',
 			},
 			{
 				name: 'Groups',
-				href: '#',
+				href: '/groups',
+				trackable: 'groups',
 				flag: 'katGroupManagement'
 			},
 			{
 				name: 'Users',
-				href: '#',
+				href: '/users',
+				trackable: 'users',
 				flag: 'katUsersManagement'
 			},
 			{
 				name: 'My Account',
 				href: 'https://myaccount.ft.com/',
+				trackable: 'my-account',
 				flag: 'katLicenceAdmin',
 				last: true
 			}
