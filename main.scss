@@ -6,6 +6,7 @@ $o-forms-is-silent: false; // TODO: make this silent and only include mixins for
 @import 'o-header-services/main';
 @import 'o-forms/main';
 @import 'o-buttons/main';
+@import 'o-colors/main';
 
 .licence-switcher__container {
 	padding: 5px 0 0;
@@ -21,6 +22,7 @@ $o-forms-is-silent: false; // TODO: make this silent and only include mixins for
 
 .licence-switcher__submit {
 	@include oButtons();
+	color: oColorsGetPaletteColor('claret');
 }
 
 .header__drawer-form-container {

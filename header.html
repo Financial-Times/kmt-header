@@ -14,6 +14,7 @@
 			<span class="o-header-services__related-content-link">
 				<div class="o-forms licence-switcher__form">
 					<form action="/overview/licenceSwitch" method="POST" class="o-forms__affix-wrapper">
+						<label for="licenceSwitcher" class="n-util-visually-hidden">Licences</label>
 						<select id="licenceSwitcher" name="licenceSelection" class="o-forms__select">
 							{{#each @root.licenceList}}
 							<option value="{{licenceId}}" {{#ifEquals licenceId @root.LICENCE_ID }}selected="true"{{/ifEquals}}>{{contractId}} - {{name}}</option>

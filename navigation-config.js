@@ -40,7 +40,7 @@ module.exports = (licence, selectedTab) => {
 			flag: 'katLicenceAdmin',
 			last: true
 		}
-	]
+	];
 	return {
 		nav: {
 			heading: 'Knowledge & administration tools',
