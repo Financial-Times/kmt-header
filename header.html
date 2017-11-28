@@ -37,13 +37,17 @@
 					{{#if (lookup @root.flags flag)}}
 						<li class="o-header-services__nav-item {{#if last}}o-header-services__nav-item--last kmt-text--transform-none{{/if}}">
 							<a class="o-header-services__nav-link {{#if selected}}o-header-services__nav-link--selected{{/if}}" href="{{href}}"
-							{{#if trackable}}data-trackable={{trackable}}{{/if}}>{{name}}</a>
+							{{#if trackable}}data-trackable={{trackable}}{{/if}}>
+							{{~ name ~}}
+							{{#if selected}}<span class="n-util-visually-hidden"> Current page.</span>{{/if}}</a>
 						</li>
 					{{/if}}
 				{{else}}
 					<li class="o-header-services__nav-item {{#if last}}o-header-services__nav-item--last kmt-text--transform-none{{/if}}">
 						<a class="o-header-services__nav-link {{#if selected}}o-header-services__nav-link--selected{{/if}}" href="{{href}}"
-						{{#if trackable}}data-trackable={{trackable}}{{/if}}>{{name}}</a>
+						{{#if trackable}}data-trackable={{trackable}}{{/if}}>
+						{{~ name ~}}
+						{{#if selected}}<span class="n-util-visually-hidden"> Current page.</span>{{/if}}</a>
 					</li>
 				{{/if}}
 				{{/each}}

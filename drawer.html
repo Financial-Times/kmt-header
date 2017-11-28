@@ -1,4 +1,4 @@
-<div class="o-header__drawer" id="o-header-drawer" role="navigation" aria-label="Drawer menu" data-o-header-drawer data-o-header-drawer--no-js>
+<div class="o-header__drawer" id="o-header-drawer" role="navigation" aria-label="Main menu" data-o-header-drawer data-o-header-drawer--no-js>
 	<div class="o-header__drawer-inner">
 
 		<div class="o-header__drawer-tools">
@@ -36,15 +36,17 @@
 					{{#if (lookup @root.flags flag)}}
 					<li class="o-header__drawer-menu-item">
 						<a class="o-header__drawer-menu-link o-header__drawer-menu-link--{{#if selected}}selected{{else}}unselected{{/if}}" href="{{href}}"
-						{{#if trackable}}data-trackable={{trackable}}{{/if}}
-						{{#if selected}}aria-label="Current page" aria-selected="true" {{/if}}>{{name}}</a>
+						{{#if trackable}}data-trackable={{trackable}}{{/if}}>
+						{{~ name ~}}
+						{{#if selected}}<span class="n-util-visually-hidden"> Current page.</span>{{/if}}</a>
 					</li>
 					{{/if}}
 				{{else}}
 				<li class="o-header__drawer-menu-item">
 					<a class="o-header__drawer-menu-link o-header__drawer-menu-link--{{#if selected}}selected{{else}}unselected{{/if}}" href="{{href}}"
-					{{#if trackable}}data-trackable={{trackable}}{{/if}}
-					{{#if selected}}aria-label="Current page" aria-selected="true" {{/if}}>{{name}}</a>
+					{{#if trackable}}data-trackable={{trackable}}{{/if}}>
+					{{~ name ~}}
+					{{#if selected}}<span class="n-util-visually-hidden"> Current page.</span>{{/if}}</a>
 				</li>
 				{{/if}}
 				{{/each}}
