@@ -28,7 +28,7 @@ module.exports = (licence, selectedTab) => {
 			flag: 'katGroupManagement'
 		},
 		{
-			name: 'Users',
+			name: 'User Management',
 			href: `/users/${licenceId}`,
 			trackable: 'users',
 			flag: 'katUsersManagement'
