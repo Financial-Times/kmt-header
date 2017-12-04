@@ -30,7 +30,7 @@ pa11y_screenCapture
 
 *.env*
 
-.scss-lint.yml
+.stylelintrc
 
 dist
 
