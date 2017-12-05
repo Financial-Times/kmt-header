@@ -46,7 +46,11 @@ $o-forms-is-silent: false; // TODO: make this silent and only include mixins for
 }
 
 .o-header-services__nav-list {
-	display: inline-flex;
+	display: table;
+}
+
+.o-header-services__nav-item {
+	display: table-cell;
 }
 
 .o-header-services__nav-item--last {
