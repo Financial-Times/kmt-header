@@ -57,3 +57,9 @@ $o-forms-is-silent: false; // TODO: make this silent and only include mixins for
 		font-weight: 400;
 	}
 }
+
+@media (min-width: 740px) {
+	.o-header__drawer {
+		visibility: hidden;
+	}
+}
