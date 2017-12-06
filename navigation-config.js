@@ -1,4 +1,4 @@
-module.exports = (licence, selectedTab) => {
+module.exports = (licence, selectedTab, path) => {
 	const licenceId = licence || '';
 	const items = [
 		{
@@ -42,6 +42,7 @@ module.exports = (licence, selectedTab) => {
 			last: true
 		}
 	];
+	const basePath = path || '';
 	return {
 		nav: {
 			heading: 'Knowledge & administration tools',
@@ -49,6 +50,7 @@ module.exports = (licence, selectedTab) => {
 				item.selected = (item.trackable === selectedTab);
 				return item;
 			})
-		}
+		},
+		basePath
 	};
 };
