@@ -34,8 +34,9 @@ This will have a `heading` property which will act as the heading of the page (d
 It also will take an `items` property which is an array of objects to populate the navigation links, each of these have the following properties:
 - `name` - String - the text to render
 - `href` - String - the URL to link to
-- `flag` - String (optional) - if the nav item requires a flag to be on, the value of this is the flag name. When that flag is true this nav item will render
-- `selected` - Boolean (optional) - when true this nav item will render as "selected" to denote the curent page. Only one nav item should be "selected".
+- `showFlag` - String (optional) - if the nav item requires a flag to be on, the value of this is the flag name. When that flag is true this nav item will render
+- `hideFlag` - String (optional) - if the nav item requires a flag to be off, the value of this is the flag name. When that flag is false this nav item will render
+- `selected` - Boolean (optional) - when true this nav item will render as "selected" to denote the current page. Only one nav item should be "selected".
 - `last` - Boolean (optional) - when true this nav item will float to the right of the header
 
 There is a [default config object](./navigation-config.js) you can use by calling the function and extend if needed. Pass in the `licenceId` as the first parameter in order to populate the link URLs, In order to mark an item as "selected" you can pass the `trackable` value to the function which will mark that item as selected. You can use this in your controller as the example shown below:
@@ -45,7 +46,7 @@ const navigationConfig = require('@financial-times/kat-header/navigation-config'
 
 res.render('index', navigationConfig('licenceId123')) // this won't show any tabs as selected
 // or
-res.render('overview', navigationConfig('licenceId123', 'overview')) // this will show overview as the selected tab
+res.render('overview', navigationConfig('licenceId123', 'overview', '/overview/')) // this will show overview as the selected tab
 ```
 
 
