@@ -20,24 +20,25 @@ module.exports = (licence, selectedTab) => {
 			name: 'Licence Administration',
 			href: `https://licence-admin.ft.com/licences/${licenceId}/users`,
 			trackable: 'licence-admin',
+			hideFlag: 'katUsersManagement'
+		},
+		{
+			name: 'User Management',
+			href: `/users/${licenceId}`,
+			trackable: 'users',
+			showFlag: 'katUsersManagement'
 		},
 		{
 			name: 'Groups',
 			href: `/groups/${licenceId}`,
 			trackable: 'groups',
-			flag: 'katGroupManagement'
-		},
-		{
-			name: 'Users',
-			href: `/users/${licenceId}`,
-			trackable: 'users',
-			flag: 'katUsersManagement'
+			showFlag: 'katGroupManagement'
 		},
 		{
 			name: 'My Account',
 			href: 'https://myaccount.ft.com/',
 			trackable: 'my-account',
-			flag: 'katLicenceAdmin',
+			showFlag: 'katLicenceAdmin',
 			last: true
 		}
 	];

@@ -45,6 +45,14 @@ $o-forms-is-silent: false; // TODO: make this silent and only include mixins for
 	border-bottom: 0;
 }
 
+.o-header-services__nav-list {
+	display: table;
+}
+
+.o-header-services__nav-item {
+	display: table-cell;
+}
+
 .o-header-services__nav-item--last {
 	float: right;
 
