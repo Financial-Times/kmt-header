@@ -13,7 +13,7 @@
 		{{#if @root.licenceList.length }}
 			<div class="header__drawer-form-container">
 				<div class="o-forms licence-switcher__form">
-					<form action="/overview/licenceSwitch" method="POST" class="o-forms__affix-wrapper">
+					<form action="{{basePath}}licenceSwitch" method="POST" class="o-forms__affix-wrapper">
 						<label for="licenceSwitcherDrawer" class="n-util-visually-hidden">Licences</label>
 						<select id="licenceSwitcherDrawer" name="licenceSelection" class="o-forms__select">
 							{{#each @root.licenceList}}
@@ -32,24 +32,27 @@
 			<ul class="o-header__drawer-menu-list">
 				<li class="o-header__drawer-menu-item o-header__drawer-menu-item--heading">{{nav.heading}}</li>
 				{{#each nav.items}}
-				{{#if flag}}
-					{{#if (lookup @root.flags flag)}}
-					<li class="o-header__drawer-menu-item">
-						<a class="o-header__drawer-menu-link o-header__drawer-menu-link--{{#if selected}}selected{{else}}unselected{{/if}}" href="{{href}}"
-						{{#if trackable}}data-trackable={{trackable}}{{/if}}>
-						{{~ name ~}}
-						{{#if selected}}<span class="n-util-visually-hidden"> Current page.</span>{{/if}}</a>
-					</li>
+				{{#if showFlag}}
+					{{#if (lookup @root.flags showFlag)}}
+						<li class="o-header__drawer-menu-item">
+							<a class="o-header__drawer-menu-link o-header__drawer-menu-link--{{#if selected}}selected{{else}}unselected{{/if}}" href="{{href}}"
+							{{#if trackable}}data-trackable={{trackable}}{{/if}}>
+							{{~ name ~}} {{#if selected}}
+							<span class="n-util-visually-hidden"> Current page.</span>{{/if}}</a>
+						</li>
 					{{/if}}
 				{{else}}
-				<li class="o-header__drawer-menu-item">
-					<a class="o-header__drawer-menu-link o-header__drawer-menu-link--{{#if selected}}selected{{else}}unselected{{/if}}" href="{{href}}"
-					{{#if trackable}}data-trackable={{trackable}}{{/if}}>
-					{{~ name ~}}
-					{{#if selected}}<span class="n-util-visually-hidden"> Current page.</span>{{/if}}</a>
-				</li>
+					{{#ifAll hideFlag (lookup @root.flags hideFlag)}}
+					{{else}}
+						<li class="o-header__drawer-menu-item">
+							<a class="o-header__drawer-menu-link o-header__drawer-menu-link--{{#if selected}}selected{{else}}unselected{{/if}}" href="{{href}}"
+							{{#if trackable}}data-trackable={{trackable}}{{/if}}>
+							{{~ name ~}} {{#if selected}}
+							<span class="n-util-visually-hidden"> Current page.</span>{{/if}}</a>
+						</li>
+					{{/ifAll}}
 				{{/if}}
-				{{/each}}
+			{{/each}}
 			</ul>
 		</nav>
 	</div>
