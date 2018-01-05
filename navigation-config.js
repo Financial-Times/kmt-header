@@ -15,6 +15,7 @@ module.exports = (licence, selectedTab, path) => {
 			name: 'Usage Reports',
 			href: `/usage/${licenceId}`,
 			trackable: 'usage-reports',
+			showFlag: 'katUsagePage'
 		},
 		{
 			name: 'Licence Administration',
