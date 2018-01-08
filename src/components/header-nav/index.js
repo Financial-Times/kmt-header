@@ -16,7 +16,11 @@ class HeaderNav extends Component {
 	}
 
 	createItem (item, index, liCls, aCls) {
-		if (this.props.flags && (item.label === 'GROUPS' && !this.props.flags.groups)) {
+		// HACK: Find a better way to pass through flags to render/not render a nav item
+		if (this.props.flags
+			&& ( (item.label === 'GROUPS' && !this.props.flags.groups)
+				|| (item.label === 'USAGE REPORTS' && !this.props.flags.usage) )
+			) {
 			return null;
 		} else if (this.props.flags && (item.label === 'USER MANAGEMENT' && !this.props.flags.users)) {
 			return (
