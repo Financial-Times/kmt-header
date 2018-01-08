@@ -17,7 +17,7 @@ module.exports = {
 				const newLicenceSelection = event.target.value;
 				let newPath = currentPath.split('/');
 				newPath[2] = newLicenceSelection;
-				newPath = newPath.join('/');
+				newPath = newPath.slice(0, 3).join('/');
 
 				location.pathname = newPath;
 			});
