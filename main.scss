@@ -47,6 +47,7 @@ $o-forms-is-silent: false; // TODO: make this silent and only include mixins for
 
 .o-header-services__nav-list {
 	display: table;
+	width: 100%;
 }
 
 .o-header-services__nav-item--last {
