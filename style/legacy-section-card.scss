@@ -1,6 +1,6 @@
 /* OLD n-section and n-card styles used in both kat-overview and kat-myft */
 @function to-px($number) {
-	@return $number + 0px;
+	@return $number * 1px;
 }
 
 @mixin displayFlex() {
