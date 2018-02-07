@@ -52,9 +52,9 @@ If you want to update connected components with the latest version, you need to 
 3. Run `$ bower install` in the component repository.
 
 The following KAT components are currently using `kmt-header`:
--   [kmt-overview](https://github.com/Financial-Times/kmt-overview)
--   [kmt-myft](https://github.com/Financial-Times/kmt-myft)
--   [kat-usage-report](https://github.com/Financial-Times/kat-usage-report)
+-   [kat-overview](https://github.com/Financial-Times/kat-overview)
+-   [kat-myft](https://github.com/Financial-Times/kat-myft)
+-   [kat-usage](https://github.com/Financial-Times/kat-usage)
 
 ### How to use the component
 
