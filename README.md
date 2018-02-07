@@ -13,9 +13,9 @@ $ npm install
 $ bower install
 ```
 
-Then you can run `$ npm start` and go to `http://local.ft.com:5000/` in your browser to see the footer module running locally on your machine.
+Then you can run `$ npm start` and go to `http://local.ft.com:5000/` in your browser to see the header module running locally on your machine.
 
-To be able to manage footer main settings you can create an `.env` file in the root directory with the following variables:
+To be able to manage header main settings you can create an `.env` file in the root directory with the following variables:
 
 ```
 NODE_ENV=development
@@ -52,9 +52,9 @@ If you want to update connected components with the latest version, you need to 
 3. Run `$ bower install` in the component repository.
 
 The following KAT components are currently using `kmt-header`:
--   [kmt-overview](https://github.com/Financial-Times/kmt-overview)
--   [kmt-myft](https://github.com/Financial-Times/kmt-myft)
--   [kat-usage-report](https://github.com/Financial-Times/kat-usage-report)
+-   [kat-overview](https://github.com/Financial-Times/kat-overview)
+-   [kat-myft](https://github.com/Financial-Times/kat-myft)
+-   [kat-usage](https://github.com/Financial-Times/kat-usage)
 
 ### How to use the component
 
