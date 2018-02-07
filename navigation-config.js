@@ -2,17 +2,29 @@ module.exports = (licence, selectedTab, path) => {
 	const licenceId = licence || '';
 	const items = [
 		{
-			name: 'Overview',
+			name: 'Your Overview',
 			href: `/overview/${licenceId}`,
 			trackable: 'overview',
 		},
 		{
-			name: 'Content Distribution',
+			name: 'Manage Users',
+			href: `/users/${licenceId}`,
+			trackable: 'users',
+			showFlag: 'katUsersManagement'
+		},
+		{
+			name: 'Manage Groups',
+			href: `/groups/${licenceId}`,
+			trackable: 'groups',
+			showFlag: 'katGroupManagement'
+		},
+		{
+			name: 'Select Topics',
 			href: `/myft/${licenceId}`,
 			trackable: 'content-distribution',
 		},
 		{
-			name: 'Usage Reports',
+			name: 'Usage Insights',
 			href: `/usage/${licenceId}`,
 			trackable: 'usage-reports',
 			showFlag: 'katUsagePage'
@@ -22,18 +34,6 @@ module.exports = (licence, selectedTab, path) => {
 			href: `https://licence-admin.ft.com/licences/${licenceId}/users`,
 			trackable: 'licence-admin',
 			hideFlag: 'katUsersManagement'
-		},
-		{
-			name: 'User Management',
-			href: `/users/${licenceId}`,
-			trackable: 'users',
-			showFlag: 'katUsersManagement'
-		},
-		{
-			name: 'Groups',
-			href: `/groups/${licenceId}`,
-			trackable: 'groups',
-			showFlag: 'katGroupManagement'
 		},
 		{
 			name: 'My Account',
