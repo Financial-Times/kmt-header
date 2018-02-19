@@ -1,19 +1,16 @@
-require('dotenv').config({silent: true});
 const gulp = require('gulp');
 const obt = require('origami-build-tools');
 const nodemon = require('gulp-nodemon');
 const exec = require('child_process').exec;
-const imagemin = require('gulp-imagemin');
-const size = require('gulp-size');
 const livereload = require('gulp-livereload');
 let appServer;
 
 gulp.task('build', ['global-config'], function () {
 	return obt.build(gulp, {
-		js: './src/index.js',
-		sass: './style/main.scss',
-		buildJs: 'bundle.js',
-		buildCss: 'kmt-header.css',
+		js: './demos/index.js',
+		sass: './demos/main.scss',
+		buildJs: 'main.js',
+		buildCss: 'main.css',
 		buildFolder: 'public',
 		env: process.env.NODE_ENV
 	});
@@ -21,8 +18,10 @@ gulp.task('build', ['global-config'], function () {
 
 gulp.task('build-page', function () {
 	return obt.build(gulp, {
-		sass: './style/page.scss',
-		buildCss: 'page.css',
+		js: './demos/index.js',
+		sass: './demos/main.scss',
+		buildJs: 'main.js',
+		buildCss: 'main.css',
 		buildFolder: 'public',
 		env: process.env.NODE_ENV
 	});
@@ -39,8 +38,8 @@ gulp.task('test', function () {
 
 gulp.task('serve', ['dev-add-livereload', 'build', 'build-page'], function () {
 	appServer = nodemon({
-		'script': 'server.js',
-		'verbose': true,
+		'script': 'demos/app.js',
+		'verbose': false,
 		'watch': false,
 		'ignore': ['*.*']
 	}).on('restart', function () {
@@ -63,24 +62,20 @@ gulp.task('global-config', function () {
 
 gulp.task('watch', ['serve'], function () {
 	livereload.listen({port: process.env.LIVERELOAD_PORT});
-	gulp.watch(['./style/**/*', './src/**/*'], ['refresh-page']);
-	gulp.watch('./*.*', ['restart-server']);
-});
-
-gulp.task('img', function () {
-	return gulp.src('./style/images/*')
-		.pipe(imagemin({
-			progressive: true,
-			interlaced: true,
-			svgoPlugins: []
-		}))
-		.pipe(size({ showFiles: true, title: 'images compressed:' }))
-		.pipe(gulp.dest('./public/images'));
+	gulp.watch([
+		'demos/*.scss',
+		'demos/*.js',
+		'header.html',
+		'drawer.html',
+		'main.scss',
+		'index.js'
+	], ['refresh-page']);
+	gulp.watch('./*.*', 'demos/app.js', ['restart-server']);
 });
 
 gulp.task('dev-add-livereload', function () {
 	process.env.DEV_ADD_LIVERELOAD = true;
 });
 
-gulp.task('default', ['build', 'img']);
+gulp.task('default', ['build']);
 gulp.task('dev');

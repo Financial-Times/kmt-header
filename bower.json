@@ -1,16 +1,11 @@
 {
   "name": "kmt-header",
-  "main": "index.js",
-  "homepage": "https://github.com/Financial-Times/kmt-header",
-  "authors": [
-    "Ciprian Lujeru <ciprian.lujeru@ft.com>"
+  "main": [
+    "index.js",
+    "main.scss"
   ],
-  "description": "react wrapper of o-header-services",
-  "keywords": [
-    "knowledge",
-    "management",
-    "tool"
-  ],
+  "homepage": "https://github.com/Financial-Times/kat-header",
+  "description": "kat wrapper of o-header-services",
   "license": "MIT",
   "private": true,
   "ignore": [
@@ -18,16 +13,15 @@
     "node_modules",
     "bower_components",
     "test",
-    "tests"
+    "tests",
+    "demos",
+    "public"
   ],
   "dependencies": {
-    "n-ui": "^6.14.0",
-    "o-header-services": "^2.0.1",
+    "n-ui-foundations": "^2.5.0",
+    "o-buttons": "^5.7.0",
     "o-forms": "^4.0.3",
-    "n-notification": "^6.0.0",
-    "o-card": "^3.0.0"
-  },
-  "resolutions": {
-    "n-ui-foundations": "^2.4.3"
+    "o-header-services": "^2.0.1",
+    "o-colors": "^4.1.4"
   }
 }

@@ -4,12 +4,17 @@ node_modules/@financial-times/n-gage/index.mk:
 
 -include node_modules/@financial-times/n-gage/index.mk
 
-unit-test:
-	# jest src/*
 
-test:
-	make verify unit-test
+test: verify a11y
 
 build:
 	./node_modules/.bin/gulp
 	make build-n-makefile
+
+run:
+	./node_modules/.bin/nodemon demos/app.js
+
+a11y: build
+	@node .pa11yci.js
+	@PA11Y=true node demos/app
+	@$(DONE)

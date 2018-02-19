@@ -1,0 +1,18 @@
+<html lang="en-GB">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>KAT Header demo</title>
+	<link rel="stylesheet" href="../public/main.css" />
+</head>
+
+<body class="{{#if enableJS}}js{{else}}no-js{{/if}}">
+	{{> header }}
+	{{> drawer}}
+
+	{{#if enableJS}}
+		<script src="../public/main.js"></script>
+	{{/if}}
+
+</body>

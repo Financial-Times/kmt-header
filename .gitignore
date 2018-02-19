@@ -13,6 +13,7 @@ npm-debug.log*
 
 # IDE directory
 /.idea
+.vscode
 
 # Docker dependencies
 system
@@ -24,13 +25,13 @@ docker-compose.yml
 
 .eslintrc.js
 .editorconfig
-.pa11yci.js
+pa11y_screenCapture
 .eslintrc
 
 *.env*
 
-.scss-lint.yml
+.stylelintrc
 
 dist
 
-package-lock.json
+package-lock.json*

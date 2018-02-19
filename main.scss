@@ -1,1 +1,66 @@
-@import './style/main';
+// @import './style/main';
+
+$o-header-services-is-silent: false;
+$o-forms-is-silent: false; // TODO: make this silent and only include mixins for the relevant form
+
+@import 'o-header-services/main';
+@import 'o-forms/main';
+@import 'o-buttons/main';
+@import 'o-colors/main';
+
+.licence-switcher__container {
+	padding: 5px 0 0;
+	margin-bottom: -7px; // To provide consistent height when switcher doesn't exist
+}
+
+.licence-switcher__form {
+	margin: 0;
+	max-width: 250px;
+	padding-left: 0;
+	padding-right: 0;
+}
+
+.licence-switcher__submit {
+	@include oButtons();
+	color: oColorsGetPaletteColor('claret');
+}
+
+.header__drawer-form-container {
+	padding: 15px;
+}
+
+.header__drawer-form-container .o-forms__affix-wrapper {
+	margin-top: 0;
+}
+
+.no-js .o-header__drawer {
+	height: 100vh;
+}
+
+.o-header-services__primary-nav {
+	border-bottom: 0;
+}
+
+.o-header-services__nav-link {
+	border-bottom: 0;
+}
+
+.o-header-services__nav-list {
+	display: table;
+	width: 100%;
+}
+
+.o-header-services__nav-item--last {
+	float: right;
+
+	.o-header-services__nav-link {
+		text-transform: none;
+		font-weight: 400;
+	}
+}
+
+@media (min-width: 740px) {
+	.o-header__drawer {
+		visibility: hidden;
+	}
+}
