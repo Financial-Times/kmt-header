@@ -45,7 +45,7 @@ module.exports = (licence, selectedTab, path) => {
 	const basePath = path || '';
 	return {
 		nav: {
-			heading: 'Knowledge & administration tools',
+			heading: 'Enterprise Tools',
 			items: items.map(item => {
 				item.selected = (item.trackable === selectedTab);
 				return item;
