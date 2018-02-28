@@ -36,17 +36,16 @@ module.exports = (licence, selectedTab, path) => {
 			hideFlag: 'katUsersManagement'
 		},
 		{
-			name: 'My Account',
-			href: 'https://myaccount.ft.com/',
-			trackable: 'my-account',
-			showFlag: 'katLicenceAdmin',
+			name: 'Sign out',
+			href: 'https://www.ft.com/logout',
+			trackable: 'sign-out',
 			last: true
 		}
 	];
 	const basePath = path || '';
 	return {
 		nav: {
-			heading: 'Knowledge & administration tools',
+			heading: 'Enterprise Tools',
 			items: items.map(item => {
 				item.selected = (item.trackable === selectedTab);
 				return item;
