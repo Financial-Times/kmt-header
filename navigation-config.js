@@ -36,7 +36,7 @@ module.exports = (licence, selectedTab, path) => {
 			hideFlag: 'katUsersManagement'
 		},
 		{
-			name: 'Sign out',
+			name: 'Sign Out',
 			href: 'https://www.ft.com/logout',
 			trackable: 'sign-out',
 			last: true
