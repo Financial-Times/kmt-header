@@ -20,7 +20,6 @@
   "dependencies": {
     "n-ui-foundations": "^2.5.0",
     "o-buttons": "^5.7.0",
-    "o-forms": "^4.0.3",
     "o-header-services": "^2.0.1",
     "o-colors": "^4.1.4"
   }

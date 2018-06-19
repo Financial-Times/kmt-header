@@ -19,8 +19,7 @@ $o-forms-is-silent: false;
 }
 
 .licence-switcher__submit {
-	@include oButtons();
-	color: oColorsGetPaletteColor('claret');
+	@include oButtons(big, primary);
 }
 
 .header__drawer-form-container {
