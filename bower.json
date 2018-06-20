@@ -21,6 +21,7 @@
     "n-ui-foundations": "^2.5.0",
     "o-buttons": "^5.7.0",
     "o-header-services": "^2.0.1",
-    "o-colors": "^4.1.4"
+    "o-colors": "^4.1.4",
+    "o-forms": "^5.7.2"
   }
 }
