@@ -28,12 +28,6 @@ module.exports = (licence, selectedTab, path) => {
 			showFlag: 'katUsagePage'
 		},
 		{
-			name: 'Licence Administration',
-			href: `https://licence-admin.ft.com/licences/${licenceId}/users`,
-			trackable: 'licence-admin',
-			hideFlag: 'katUsersManagement'
-		},
-		{
 			name: 'Sign Out',
 			href: 'https://www.ft.com/logout',
 			trackable: 'sign-out',
