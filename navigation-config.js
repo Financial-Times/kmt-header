@@ -9,14 +9,12 @@ module.exports = (licence, selectedTab, path) => {
 		{
 			name: 'Manage Users',
 			href: `/users/${licenceId}`,
-			trackable: 'users',
-			showFlag: 'katUsersManagement'
+			trackable: 'users'
 		},
 		{
 			name: 'Manage Groups',
 			href: `/groups/${licenceId}`,
-			trackable: 'groups',
-			showFlag: 'katGroupManagement'
+			trackable: 'groups'
 		},
 		{
 			name: 'Select Topics',
