@@ -27,6 +27,7 @@ docker-compose.yml
 .editorconfig
 pa11y_screenCapture
 .eslintrc
+.bowerrc
 
 *.env*
 

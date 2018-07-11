@@ -9,14 +9,12 @@ module.exports = (licence, selectedTab, path) => {
 		{
 			name: 'Manage Users',
 			href: `/users/${licenceId}`,
-			trackable: 'users',
-			showFlag: 'katUsersManagement'
+			trackable: 'users'
 		},
 		{
 			name: 'Manage Groups',
 			href: `/groups/${licenceId}`,
-			trackable: 'groups',
-			showFlag: 'katGroupManagement'
+			trackable: 'groups'
 		},
 		{
 			name: 'Select Topics',
@@ -28,12 +26,6 @@ module.exports = (licence, selectedTab, path) => {
 			href: `/usage/${licenceId}`,
 			trackable: 'usage-reports',
 			showFlag: 'katUsagePage'
-		},
-		{
-			name: 'Licence Administration',
-			href: `https://licence-admin.ft.com/licences/${licenceId}/users`,
-			trackable: 'licence-admin',
-			hideFlag: 'katUsersManagement'
 		},
 		{
 			name: 'Sign Out',
