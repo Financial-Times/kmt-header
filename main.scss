@@ -1,7 +1,5 @@
-// @import './style/main';
-
 $o-header-services-is-silent: false;
-$o-forms-is-silent: false; // TODO: make this silent and only include mixins for the relevant form
+$o-forms-is-silent: false;
 
 @import 'o-header-services/main';
 @import 'o-forms/main';
@@ -10,7 +8,7 @@ $o-forms-is-silent: false; // TODO: make this silent and only include mixins for
 
 .licence-switcher__container {
 	padding: 5px 0 0;
-	margin-bottom: -7px; // To provide consistent height when switcher doesn't exist
+	margin-bottom: -7px;
 }
 
 .licence-switcher__form {
