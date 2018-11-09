@@ -14,13 +14,13 @@
 			<div class="header__drawer-form-container">
 				<div class="o-forms licence-switcher__form">
 					<form action="{{basePath}}licenceSwitch" method="POST" class="o-forms__affix-wrapper">
-						<label for="licenceSwitcherDrawer" class="n-util-visually-hidden o-normalise-visually-hidden">Licences</label>
+						<label for="licenceSwitcherDrawer" class="o-normalise-visually-hidden">Licences</label>
 						<select id="licenceSwitcherDrawer" name="licenceSelection" class="o-forms__select">
 							{{#each @root.licenceList}}
 							<option value="{{licenceId}}" {{#ifEquals licenceId @root.LICENCE_ID }}selected="true" {{/ifEquals}}>{{contractId}} - {{name}}</option>
 							{{/each}}
 						</select>
-						<div class="o-forms__suffix n-util-hide-js n-ui-hide-js">
+						<div class="o-forms__suffix n-ui-hide-js">
 							<button type="submit" class="licence-switcher__submit">Go To Licence</button>
 						</div>
 					</form>
@@ -38,7 +38,7 @@
 							<a class="o-header__drawer-menu-link o-header__drawer-menu-link--{{#if selected}}selected{{else}}unselected{{/if}}" href="{{href}}"
 							{{#if trackable}}data-trackable={{trackable}}{{/if}}>
 							{{~ name ~}} {{#if selected}}
-							<span class="n-util-visually-hidden o-normalise-visually-hidden"> Current page.</span>{{/if}}</a>
+							<span class="o-normalise-visually-hidden"> Current page.</span>{{/if}}</a>
 						</li>
 					{{/if}}
 				{{else}}
@@ -48,7 +48,7 @@
 							<a class="o-header__drawer-menu-link o-header__drawer-menu-link--{{#if selected}}selected{{else}}unselected{{/if}}" href="{{href}}"
 							{{#if trackable}}data-trackable={{trackable}}{{/if}}>
 							{{~ name ~}} {{#if selected}}
-							<span class="n-util-visually-hidden o-normalise-visually-hidden"> Current page.</span>{{/if}}</a>
+							<span class="o-normalise-visually-hidden"> Current page.</span>{{/if}}</a>
 						</li>
 					{{/ifAll}}
 				{{/if}}
