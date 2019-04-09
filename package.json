@@ -10,7 +10,7 @@
   "devDependencies": {
     "@financial-times/n-express": "^19.2.3",
     "@financial-times/n-gage": "^3.5.0",
-    "@financial-times/n-heroku-tools": "^7.4.0",
+    "@financial-times/n-heroku-tools": "^8.0.0",
     "@financial-times/n-internal-tool": "^2.2.1",
     "bower": "^1.7.9",
     "eslint": "^4.10.0",
