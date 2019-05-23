@@ -21,7 +21,7 @@
     "o-buttons": "^5.7.0",
     "o-header-services": "^2.0.1",
     "o-colors": "^4.1.4",
-    "o-forms": "^5.7.2"
+    "o-forms": "^6.0.2"
   },
   "devDependencies": {
     "n-ui-foundations": "^v3.0.0"
